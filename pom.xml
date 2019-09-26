@@ -6,9 +6,11 @@
 
     <groupId>lt.mikasdu</groupId>
     <artifactId>canteen-menu</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
         <itext.version>RELEASE</itext.version>
     </properties>
 <dependencies>
@@ -53,5 +55,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

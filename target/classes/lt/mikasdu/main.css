@@ -1,0 +1,59 @@
+#headerLabel {
+    -fx-background-color: steelblue;
+    -fx-text-fill: white;
+    -fx-padding: 5px;
+}
+
+#vistaHolder {
+    -fx-graphic: url("fork.png");
+}
+#tophbox {
+-fx-background-color: red;
+}
+
+#produktai {
+    -fx-background-color: aqua;
+}
+
+#receptai {
+    -fx-background-color: coral;
+}
+
+.button {
+    -fx-base: lightblue;
+    -fx-font-size: 12px;
+}
+.button-remove {
+    -fx-base: LIGHTCORAL;
+    -fx-font-size: 12px;
+}
+.button-edit {
+    -fx-base: LIGHTGREEN;
+    -fx-font-size: 12px;
+}
+.box-borders {
+    -fx-padding: 5 5 5 5;
+    -fx-border-insets:0 5 0 5;
+    -fx-border-color: lightgray;
+    -fx-border-style: solid inside;
+}
+
+.box-borders VBox {
+    -fx-padding: 0 5 5 5;
+}
+
+.headerLabel {
+-fx-padding: 15 0 0 0;
+-fx-font-weight: bold;
+}
+
+
+.priceInput {
+-fx-padding: 8 5 5 0;
+}
+.priceInput Label {
+-fx-padding: 3 5 5 0;
+}
+.priceInput TextField {
+-fx-pref-width: 45;
+}
