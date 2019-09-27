@@ -11,11 +11,9 @@ import lt.mikasdu.WeekMenuRecipes;
 import lt.mikasdu.ui.alerts.AlertBox;
 import lt.mikasdu.ui.alerts.AlertMessage;
 import lt.mikasdu.ui.sqlConnection.SqlConnection;
-
 import java.math.BigInteger;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.function.UnaryOperator;
 import java.util.regex.Pattern;
 
 public class MenuAddRecipeController implements Initializable {
@@ -28,9 +26,8 @@ public class MenuAddRecipeController implements Initializable {
     private WeekMenuRecipes weekMenuRecipes;
     private boolean isNew;
 
-    Pattern pattern = Pattern.compile("^[1-9][0-9]*$");
-    //Pattern pattern = Pattern.compile("\\d*|\\d+\\.\\d*");
-    private TextFormatter quantityFormatter = new TextFormatter((UnaryOperator<TextFormatter.Change>) change ->
+    private Pattern pattern = Pattern.compile("^[1-9][0-9]*$");
+    private TextFormatter quantityFormatter = new TextFormatter<>(change ->
             pattern.matcher(change.getControlNewText()).matches() ? change : null);
 
     @Override
@@ -45,7 +42,6 @@ public class MenuAddRecipeController implements Initializable {
         if (!weekDays.getSelectionModel().isEmpty()) {
             if (!recipesListComboBox.getSelectionModel().isEmpty()) {
                 if (!quantityInput.getText().isEmpty()) {
-//int id, int weekMenuId, int recipeId, int weekDay, BigInteger quantity, boolean status
                     int newRecipeId = recipesListComboBox.getSelectionModel().getSelectedItem().getId();
                     int newWeekDay = weekDays.getSelectionModel().getSelectedItem().getDayNumber();
                     BigInteger newQuantity = new BigInteger(quantityInput.getText());
