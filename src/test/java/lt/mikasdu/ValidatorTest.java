@@ -2,6 +2,7 @@ package lt.mikasdu;
 
 
 import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 public class ValidatorTest {
@@ -20,6 +21,21 @@ public class ValidatorTest {
     @Test
     public void validatorStringValidMinMax() {
         assertFalse(Validator.stringValid("asdafa", 5, 2));
+    }
+
+    @Test
+    public void validatorNotExistingDirectory() {
+        assertFalse(Validator.directoryExists("src\\main\\java\\nonExistingDirectory"));
+    }
+
+    @Test
+    public void validatorExistingDirectory() {
+        assertTrue(Validator.directoryExists("src\\main\\java"));
+    }
+
+    @Test
+    public void validatorExistingFileNotAsDirectory() {
+        assertFalse(Validator.directoryExists("src\\main\\java\\lt\\mikasdu\\App.java"));
     }
 
 }

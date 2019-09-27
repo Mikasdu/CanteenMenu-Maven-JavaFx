@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="68a7ebb9-642d-498c-a95e-2174f80e25e8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/Validator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/SettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/SettingsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/lt/mikasdu/appSettings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lt/mikasdu/appSettings.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lt/mikasdu/ValidatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lt/mikasdu/ValidatorTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +74,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.App">
+  <component name="RunManager" selected="JUnit.ValidatorTest.validatorExistingFileNotAsDirectory">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="lt.mikasdu.App" />
       <module name="canteen-menu" />
@@ -84,53 +84,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AppNavigatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="canteen-menu" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="lt.mikasdu.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="lt.mikasdu" />
-      <option name="MAIN_CLASS_NAME" value="lt.mikasdu.AppNavigatorTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AppNavigatorTest.fileExists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="canteen-menu" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="lt.mikasdu.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="lt.mikasdu" />
-      <option name="MAIN_CLASS_NAME" value="lt.mikasdu.AppNavigatorTest" />
-      <option name="METHOD_NAME" value="fileExists" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AppNavigatorTest.testLoadApp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="canteen-menu" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="lt.mikasdu.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="lt.mikasdu" />
-      <option name="MAIN_CLASS_NAME" value="lt.mikasdu.AppNavigatorTest" />
-      <option name="METHOD_NAME" value="testLoadApp" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -150,13 +103,61 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ValidatorTest.validatorExistingDirectory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="canteen-menu" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lt.mikasdu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="lt.mikasdu" />
+      <option name="MAIN_CLASS_NAME" value="lt.mikasdu.ValidatorTest" />
+      <option name="METHOD_NAME" value="validatorExistingDirectory" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ValidatorTest.validatorExistingFileNotAsDirectory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="canteen-menu" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lt.mikasdu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="lt.mikasdu" />
+      <option name="MAIN_CLASS_NAME" value="lt.mikasdu.ValidatorTest" />
+      <option name="METHOD_NAME" value="validatorExistingFileNotAsDirectory" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ValidatorTest.validatorNotExistingDirectory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="canteen-menu" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lt.mikasdu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="lt.mikasdu" />
+      <option name="MAIN_CLASS_NAME" value="lt.mikasdu.ValidatorTest" />
+      <option name="METHOD_NAME" value="validatorNotExistingDirectory" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ValidatorTest.validatorExistingFileNotAsDirectory" />
+        <item itemvalue="JUnit.ValidatorTest.validatorNotExistingDirectory" />
+        <item itemvalue="JUnit.ValidatorTest.validatorExistingDirectory" />
         <item itemvalue="Application.App" />
         <item itemvalue="JUnit.ValidatorTest" />
-        <item itemvalue="JUnit.AppNavigatorTest.testLoadApp" />
-        <item itemvalue="JUnit.AppNavigatorTest" />
-        <item itemvalue="JUnit.AppNavigatorTest.fileExists" />
       </list>
     </recent_temporary>
   </component>
@@ -213,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569615758858</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="settings update">
+      <created>1569616333282</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1569616333282</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -233,7 +241,8 @@
     <MESSAGE value="Initial merge with old project" />
     <MESSAGE value="update" />
     <MESSAGE value="minor update" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor update" />
+    <MESSAGE value="settings update" />
+    <option name="LAST_COMMIT_MESSAGE" value="settings update" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

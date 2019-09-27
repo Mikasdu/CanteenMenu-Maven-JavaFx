@@ -43,12 +43,14 @@ public class SettingsController implements Initializable {
         DirectoryChooser directoryChooser = new DirectoryChooser();
         directoryChooser.setInitialDirectory(new File(settings.getFilesPath()));
         File selectedDirectory = directoryChooser.showDialog(defaultFolderTextField.getScene().getWindow());
-        //todo cancel button ?
         if(selectedDirectory != null){
             defaultFolderTextField.setText(selectedDirectory.getAbsolutePath());
             System.out.println("New Path: " + selectedDirectory.getAbsolutePath());
         }
     }
+
+
+
 
     public void buttonSave() {
 
