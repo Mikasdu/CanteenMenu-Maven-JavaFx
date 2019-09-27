@@ -12,8 +12,8 @@
         <MenuBar BorderPane.alignment="CENTER">
             <Menu text="File">
                 <Menu text="Nustatymai...">
+                    <MenuItem onAction="#showSettingsWindow" text="Programos nustatymai"/>
                     <MenuItem onAction="#changeContentProductCategories" text="Produkų kategorijos" />
-                    <MenuItem text="Produktų mato vienetai"/>
                 </Menu>
                 <MenuItem text="Išjungti" onAction="#closeProgram"/>
             </Menu>

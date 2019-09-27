@@ -21,6 +21,7 @@ public class AppNavigator {
     public static final String PURCHASE = "purchase.fxml";
     public static final String RECEPTAI = "recipes.fxml";
     public static final String PRODUCTCATEGORIES = "productcategories.fxml";
+    public static final String APP_SETTINGS ="appSettings.fxml";
     public static final String ADD_MENU_ITEM = "sub/menuAddItem.fxml";
     public static final String ADD_MENU_RECIPE = "sub/menuAddRecipe.fxml";
     public static final String GENERATE_MENIU = "sub/menuGenerateFile.fxml";
@@ -39,6 +40,15 @@ public class AppNavigator {
             e.printStackTrace();
         }
     }
+
+    public static void openAppSettingsWindow() {
+        Stage window = new Stage();
+        window.setTitle("Programos nustatymai");
+        FXMLLoader loader = new FXMLLoader();
+        Scene scene = getScene(APP_SETTINGS, new StackPane(), loader);
+        showWindow(window, scene);
+    }
+
     public static void generateMenuWindow(String fxml, ObservableList<WeekMenuRecipes> weekMenuRecipes) {
         Stage window = new Stage();
         window.setTitle("Generuoti savaitės meniu PDF");

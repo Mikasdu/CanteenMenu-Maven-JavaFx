@@ -1,6 +1,7 @@
 package lt.mikasdu.ui.controller;
 
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.layout.StackPane;
@@ -29,4 +30,7 @@ public class MainController {
     public void showAbout() { AlertBox.alertSimple(AlertMessage.ABOUT); }
     public void closeProgram() { Platform.exit(); }
 
+    public void showSettingsWindow() {
+        AppNavigator.openAppSettingsWindow();
+    }
 }

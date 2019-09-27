@@ -2,8 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68a7ebb9-642d-498c-a95e-2174f80e25e8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/SettingsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/lt/mikasdu/appSettings.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/lt/mikasdu/ProductsTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/lt/mikasdu/ValidatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/AppNavigator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/AppNavigator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/Validator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/settings/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/settings/Settings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lt/mikasdu/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lt/mikasdu/main.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/settings/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/settings/config.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,6 +28,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -24,22 +38,33 @@
   <component name="ProjectId" id="1RO0298G915UwizBLHr1o1Toa5c" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Groovy JUnit" value="groovy.util.GroovyTestCase" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/lt/mikasdu" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15527344" />
     <property name="project.structure.side.proportion" value="0.36763006" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="lt.mikasdu" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+      <recent name="groovy.util.GroovyTestCase" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GitHub\CanteenMenu-Maven-JavaFx\src\main\resources\lt\mikasdu" />
       <recent name="D:\GitHub\CanteenMenu-Maven-JavaFx" />
       <recent name="D:\GitHub\CanteenMenu-Maven-JavaFx\src\main\java\lt\mikasdu" />
       <recent name="D:\GitHub\CanteenMenu-Maven-JavaFx\src\main" />
       <recent name="D:\GitHub\CanteenMenu-Maven-JavaFx\src\main\resources\lt\mikasdu\sub" />
-      <recent name="D:\GitHub\CanteenMenu-Maven-JavaFx\src\main\resources\lt\mikasdu" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="lt.mikasdu.ui.controller" />
       <recent name="lt.mikasdu" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -60,7 +85,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.ValidatorTest">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="lt.mikasdu.App" />
       <module name="canteen-menu" />
@@ -74,9 +99,66 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="All in canteen-menu" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="canteen-menu" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ValidatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="canteen-menu" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lt.mikasdu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="lt.mikasdu" />
+      <option name="MAIN_CLASS_NAME" value="lt.mikasdu.ValidatorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ValidatorTest.stringValid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="canteen-menu" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lt.mikasdu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="lt.mikasdu" />
+      <option name="MAIN_CLASS_NAME" value="lt.mikasdu.ValidatorTest" />
+      <option name="METHOD_NAME" value="stringValid" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="lt.mikasdu in canteen-menu" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="canteen-menu" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lt.mikasdu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="lt.mikasdu" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ValidatorTest" />
         <item itemvalue="Application.App" />
+        <item itemvalue="JUnit.lt.mikasdu in canteen-menu" />
+        <item itemvalue="JUnit.All in canteen-menu" />
+        <item itemvalue="JUnit.ValidatorTest.stringValid" />
       </list>
     </recent_temporary>
   </component>
@@ -113,7 +195,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -122,5 +206,21 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial merge with old project" />
     <option name="LAST_COMMIT_MESSAGE" value="Initial merge with old project" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/SettingsController.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="directoryChooser.initialDirectory" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

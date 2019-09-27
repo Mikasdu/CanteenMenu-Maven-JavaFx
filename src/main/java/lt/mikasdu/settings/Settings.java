@@ -12,6 +12,14 @@ public class Settings {
     private File configFile = new File(CONFIG_FILE_PATH);
     public Properties configProps = new Properties();
 
+    private String propUserName = "userName";
+    private String propFilesPath = "filePath";
+    private String propFullScreen = "fullScreen";
+    private String propAppHeight = "appHeight";
+    private String propAppWidth = "appWidth";
+
+
+
     public Settings() {
         this.loadSettings();
     }
@@ -29,14 +37,32 @@ public class Settings {
         loadConfigFile();
     }
 
+    public String getUserName() {
+        return this.configProps.getProperty(propUserName);
+    }
+    public String getFilesPath(){
+        return this.configProps.getProperty(propFilesPath);
+    }
+    public boolean isFullScreen() {
+        return this.configProps.getProperty(propFullScreen).equals("true");
+    }
+    public String getAppWidth() {
+        return this.configProps.getProperty(propAppWidth);
+    }
+
+    public String getAppHeight() {
+        return this.configProps.getProperty(propAppHeight);
+    }
+
     private void defaultConfigProperties() {
-        configProps.setProperty("appName", "Dienos Pietūs " + Calendar.getInstance().get(Calendar.YEAR));
-        configProps.setProperty("userName", "Dienos Pietūs");
-        configProps.setProperty("filePath",
+        configProps.setProperty("appName", "Canteen Menu " + Calendar.getInstance().get(Calendar.YEAR));
+        configProps.setProperty(propUserName, "Dienos Pietūs");
+        configProps.setProperty(propFilesPath,
                 System.getProperty("user.home") + "\\Documents\\" + configProps.getProperty("userName"));
-        configProps.setProperty("fullScreen", "false");
-        configProps.setProperty("appWidth", "800");
-        configProps.setProperty("appHeight", "600");
+        configProps.setProperty(propFullScreen, "false");
+        configProps.setProperty(propAppWidth, "800");
+        configProps.setProperty(propAppHeight, "600");
+
     }
 
     private void loadConfigFile() {

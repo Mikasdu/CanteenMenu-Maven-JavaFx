@@ -17,6 +17,7 @@ lt\mikasdu\WeekMenu.class
 lt\mikasdu\ui\sqlConnection\SqlConnection.class
 lt\mikasdu\ui\controller\PurchaseController.class
 lt\mikasdu\AppNavigator.class
+lt\mikasdu\ui\controller\SettingsController.class
 lt\mikasdu\ui\controller\menu\MenuAddItemController.class
 lt\mikasdu\ui\alerts\AlertBox.class
 lt\mikasdu\ui\alerts\AlertMessage.class
