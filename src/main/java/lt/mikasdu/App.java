@@ -37,7 +37,7 @@ public class App extends Application {
         Pane mainPane = loader.load(getClass().getResourceAsStream(AppNavigator.MAIN));
         MainController mainController = loader.getController();
         AppNavigator.setMainController(mainController);
-        AppNavigator.loadApp(AppNavigator.PRODUKTAI);
+        AppNavigator.loadApp(AppNavigator.PRODUCTS);
         return mainPane;
     }
 

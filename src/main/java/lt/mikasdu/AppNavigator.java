@@ -16,15 +16,15 @@ import java.io.IOException;
 
 public class AppNavigator {
     public static final String MAIN = "main.fxml";
-    public static final String PRODUKTAI = "products.fxml";
+    public static final String PRODUCTS = "products.fxml";
     public static final String MENU = "menu.fxml";
     public static final String PURCHASE = "purchase.fxml";
-    public static final String RECEPTAI = "recipes.fxml";
-    public static final String PRODUCTCATEGORIES = "productcategories.fxml";
+    public static final String RECIPES = "recipes.fxml";
+    public static final String PRODUCT_CATEGORIES = "productcategories.fxml";
     public static final String APP_SETTINGS ="appSettings.fxml";
     public static final String ADD_MENU_ITEM = "sub/menuAddItem.fxml";
     public static final String ADD_MENU_RECIPE = "sub/menuAddRecipe.fxml";
-    public static final String GENERATE_MENIU = "sub/menuGenerateFile.fxml";
+    public static final String GENERATE_MENU = "sub/menuGenerateFile.fxml";
 
     private static MainController mainController;
 
