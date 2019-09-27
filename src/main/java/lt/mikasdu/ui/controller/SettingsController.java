@@ -3,6 +3,7 @@ package lt.mikasdu.ui.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
@@ -40,7 +41,7 @@ public class SettingsController implements Initializable {
         textFieldAppWidth.setText(settings.getAppWidth());
         textFieldAppWidth.setTextFormatter(Formatter.formatIntegerNumbers());
         checkBoxFullScreen.setSelected(settings.isFullScreen());
-
+        checkBoxFullScreenAction();
     }
 
     public void chooseDefaultFileFolder() {
@@ -55,6 +56,11 @@ public class SettingsController implements Initializable {
 
 
     public void buttonSave() {
+
+        if (!Validator.stringValid(textFieldAppUserName.getText(), 3, 40)) {
+            AlertBox.alertSimple(AlertMessage.ERROR_NAME);
+        }
+
         if (!Validator.directoryExists(defaultFolderTextField.getText())) {
             AlertBox.alertSimple(AlertMessage.ERROR_CUSTOM, "Katalogas neegzistuoja pasirinkite kitą");
         }
@@ -70,11 +76,7 @@ public class SettingsController implements Initializable {
             );
         }
 
-    }
 
-    public void buttonCancel() {
-        Stage stage = (Stage) cancelButton.getScene().getWindow();
-        stage.close();
     }
 
     private void disableWidthHeightInputs(boolean val) {
@@ -83,9 +85,11 @@ public class SettingsController implements Initializable {
     }
 
     public void checkBoxFullScreenAction() {
-        if (checkBoxFullScreen.isSelected()) {
-            disableWidthHeightInputs(true);
-        } else
-            disableWidthHeightInputs(false);
+        disableWidthHeightInputs(checkBoxFullScreen.isSelected());
+    }
+
+    public void buttonCancel() {
+        Stage stage = (Stage) cancelButton.getScene().getWindow();
+        stage.close();
     }
 }
