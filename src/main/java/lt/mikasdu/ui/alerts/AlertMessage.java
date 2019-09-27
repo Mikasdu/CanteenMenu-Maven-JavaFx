@@ -3,6 +3,7 @@ package lt.mikasdu.ui.alerts;
 import javafx.scene.control.Alert;
 
 public enum AlertMessage {
+    ERROR_CUSTOM(Alert.AlertType.ERROR, "Klaida", "Įvyko klaida."),
     ERROR_NAME(Alert.AlertType.ERROR, "Klaida", "Prašome įvesti pavadinimą. Ne mažiau 5 ženklų ir ne daugiau 50. "),
     ERROR_MEASUREUNTI(Alert.AlertType.ERROR, "Klaida", "Pasirinkite matavimo vienetus. "),
     ERROR_CATEGORY(Alert.AlertType.ERROR, "Klaida", "Pasirinkite kategoriją. "),
@@ -16,10 +17,11 @@ public enum AlertMessage {
     ERROR_CANTDELETE(Alert.AlertType.ERROR, "Klaida", "Negalima ištrinti įrašo kuris yra susietas su kitais įrašais. "),
     ERROR_PLEASECHOOSE(Alert.AlertType.ERROR, "Klaida", "Prieš atlikdami veiksmus pasirinkite įrašą iš sąrašo. "),
     CONFIRM_DELETE(Alert.AlertType.CONFIRMATION, "Patvirtinkite", "Ar tikrai norite ištrinti įrašą? "),
-    ERROR_UNKNOWN(Alert.AlertType.ERROR, "NENUMATYTA KLAIDA", "Nenumatyta klaida"),
     INFO_FILE_CREATED(Alert.AlertType.INFORMATION, "Failas sukurtas", "Failas sėkmingai sukurtas"),
     ABOUT(Alert.AlertType.INFORMATION, "About" ,"Dienos pietų meniu sudarymo programa. \n Autorius Mikas Du.");
 
+
+    private String err = "Klaida";
     private Alert.AlertType alertType;
     private String title;
     private String message;
@@ -29,12 +31,13 @@ public enum AlertMessage {
     AlertMessage(Alert.AlertType alertType, String title, String message) {
         this.alertType = alertType;
         this.title = title;
-        this.message = message;
+        setMessage(message);
     }
 
     public void setMessage(String message) {
         this.message = message;
     }
+
     public void setCustomMessage(String customMessage) {
         this.customMessage = "";
         this.customMessage = "\n" + customMessage;

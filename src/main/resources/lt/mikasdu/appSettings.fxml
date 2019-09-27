@@ -27,15 +27,15 @@
                 <HBox>
                     <VBox>
                         <Label text="Lango plotis (px)" />
-                        <TextField fx:id="textFieldAppUserName1"/>
+                        <TextField fx:id="textFieldAppWidth"/>
                     </VBox>
                     <VBox>
                         <Label text="Lango aukštis (px)" />
-                        <TextField fx:id="textFieldAppUserName2"/>
+                        <TextField fx:id="textFieldAppHeight"/>
                     </VBox>
                     <VBox>
                         <Label text="Per visą ekraną" />
-                        <CheckBox />
+                        <CheckBox fx:id="checkBoxFullScreen"/>
                     </VBox>
                 </HBox>
             </VBox>
