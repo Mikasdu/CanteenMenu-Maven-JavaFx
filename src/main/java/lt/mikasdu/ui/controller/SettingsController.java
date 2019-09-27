@@ -57,7 +57,7 @@ public class SettingsController implements Initializable {
 
     public void buttonSave() {
 
-        if (!Validator.stringValid(textFieldAppUserName.getText(), 3, 40)) {
+        if (!Validator.stringValid(textFieldAppUserName.getText(), 3, 50)) {
             AlertBox.alertSimple(AlertMessage.ERROR_NAME);
         }
 
@@ -76,7 +76,8 @@ public class SettingsController implements Initializable {
             );
         }
 
-
+        settings.setAppWidth("1000");
+        //TODO setteriu reikia Settings klasej
     }
 
     private void disableWidthHeightInputs(boolean val) {

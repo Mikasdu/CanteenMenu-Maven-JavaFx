@@ -49,6 +49,10 @@ public class Settings {
 
     }
 
+    public void setAppWidth(String newAppWidth) {
+        configProps.setProperty(propAppWidth, newAppWidth);
+    }
+
     public String getAppWidth() {
         return this.configProps.getProperty(propAppWidth);
     }
