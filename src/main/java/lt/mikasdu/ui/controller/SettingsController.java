@@ -1,5 +1,6 @@
 package lt.mikasdu.ui.controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -8,6 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
+import lt.mikasdu.Formatter;
 import lt.mikasdu.Validator;
 import lt.mikasdu.settings.Settings;
 import lt.mikasdu.ui.alerts.AlertBox;
@@ -34,15 +36,18 @@ public class SettingsController implements Initializable {
         textFieldAppUserName.setText(settings.getUserName());
         defaultFolderTextField.setText(settings.getFilesPath());
         textFieldAppHeight.setText(settings.getAppHeight());
+        textFieldAppWidth.setTextFormatter(Formatter.formatIntegerNumbers());
         textFieldAppWidth.setText(settings.getAppWidth());
+        textFieldAppWidth.setTextFormatter(Formatter.formatIntegerNumbers());
         checkBoxFullScreen.setSelected(settings.isFullScreen());
+
     }
 
     public void chooseDefaultFileFolder() {
         DirectoryChooser directoryChooser = new DirectoryChooser();
         directoryChooser.setInitialDirectory(new File(settings.getFilesPath()));
         File selectedDirectory = directoryChooser.showDialog(defaultFolderTextField.getScene().getWindow());
-        if(selectedDirectory != null){
+        if (selectedDirectory != null) {
             defaultFolderTextField.setText(selectedDirectory.getAbsolutePath());
             System.out.println("New Path: " + selectedDirectory.getAbsolutePath());
         }
@@ -55,12 +60,15 @@ public class SettingsController implements Initializable {
         }
 
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        double width = screenSize.getWidth();
-        double height = screenSize.getHeight();
-
-
-        System.out.println("W: " + width + " H: " + height);
-
+        int maxWidth = (int) screenSize.getWidth();
+        int maxHeight = (int) screenSize.getHeight();
+        int newWidth = Integer.parseInt(textFieldAppWidth.getText());
+        int newHeight = Integer.parseInt(textFieldAppHeight.getText());
+        if (newHeight > maxHeight || newWidth > maxWidth) {
+            System.out.println("Bandode nustatyti per didelį langą, maximalus leistinas: " +
+                    maxWidth + "x" + maxHeight
+            );
+        }
 
     }
 
@@ -69,5 +77,15 @@ public class SettingsController implements Initializable {
         stage.close();
     }
 
+    private void disableWidthHeightInputs(boolean val) {
+        textFieldAppWidth.setDisable(val);
+        textFieldAppHeight.setDisable(val);
+    }
 
+    public void checkBoxFullScreenAction() {
+        if (checkBoxFullScreen.isSelected()) {
+            disableWidthHeightInputs(true);
+        } else
+            disableWidthHeightInputs(false);
+    }
 }

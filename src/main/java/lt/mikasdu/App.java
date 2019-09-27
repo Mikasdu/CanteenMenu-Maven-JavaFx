@@ -20,7 +20,7 @@ public class App extends Application {
         Settings settings = new Settings();
         primaryStage.setTitle(settings.configProps.getProperty("appName"));
         primaryStage.setScene(createScene(loadMainPane()));
-        primaryStage.setMaximized(Boolean.parseBoolean(settings.configProps.getProperty("fullScreen")));
+        primaryStage.setMaximized(settings.isFullScreen());
         primaryStage.setWidth(Double.parseDouble(settings.configProps.getProperty("appWidth")));
         primaryStage.setHeight(Double.parseDouble(settings.configProps.getProperty("appHeight")));
         primaryStage.show();

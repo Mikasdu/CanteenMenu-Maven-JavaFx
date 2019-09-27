@@ -19,7 +19,6 @@ public class Settings {
     private String propAppWidth = "appWidth";
 
 
-
     public Settings() {
         this.loadSettings();
     }
@@ -40,12 +39,16 @@ public class Settings {
     public String getUserName() {
         return this.configProps.getProperty(propUserName);
     }
-    public String getFilesPath(){
+
+    public String getFilesPath() {
         return this.configProps.getProperty(propFilesPath);
     }
+
     public boolean isFullScreen() {
         return this.configProps.getProperty(propFullScreen).equals("true");
+
     }
+
     public String getAppWidth() {
         return this.configProps.getProperty(propAppWidth);
     }
@@ -79,6 +82,7 @@ public class Settings {
     private void checkRepairConfiguration() {
         //configProps.getProperty("name").isEmpty();
     }
+
     //todo return values by method
     private void saveConfigFile() {
         try {

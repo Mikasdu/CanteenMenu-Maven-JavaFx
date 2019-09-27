@@ -34,8 +34,11 @@
                         <TextField fx:id="textFieldAppHeight"/>
                     </VBox>
                     <VBox>
-                        <Label text="Per visą ekraną" />
-                        <CheckBox fx:id="checkBoxFullScreen"/>
+                        <Label></Label>
+                        <HBox>
+                            <CheckBox fx:id="checkBoxFullScreen" onAction="#checkBoxFullScreenAction"/>
+                            <Label text="Per visą ekraną" />
+                        </HBox>
                     </VBox>
                 </HBox>
             </VBox>
