@@ -13,6 +13,7 @@ import lt.mikasdu.settings.Settings;
 import lt.mikasdu.ui.alerts.AlertBox;
 import lt.mikasdu.ui.alerts.AlertMessage;
 
+import java.awt.*;
 import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -52,6 +53,15 @@ public class SettingsController implements Initializable {
         if (!Validator.directoryExists(defaultFolderTextField.getText())) {
             AlertBox.alertSimple(AlertMessage.ERROR_CUSTOM, "Katalogas neegzistuoja pasirinkite kitą");
         }
+
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        double width = screenSize.getWidth();
+        double height = screenSize.getHeight();
+
+
+        System.out.println("W: " + width + " H: " + height);
+
+
     }
 
     public void buttonCancel() {

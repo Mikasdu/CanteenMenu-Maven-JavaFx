@@ -46,18 +46,15 @@ public class RecipesController implements Initializable {
     private boolean isNew = true;
     private Recipes tempRecipe = new Recipes(0, "", "", new BigDecimal(0), true);
 
+
+    private Pattern pattern = Pattern.compile("\\d*|\\d+\\.\\d*");
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setDefaultSettings();
-        productQuantityInput.setTextFormatter(quantityFormatter);
-        recipePriceInput.setTextFormatter(priceFormatter);
+        productQuantityInput.setTextFormatter(Formatter.formatNumbers());
+        recipePriceInput.setTextFormatter(Formatter.formatNumbers());
     }
 
-    Pattern pattern = Pattern.compile("\\d*|\\d+\\.\\d*");
-    private TextFormatter quantityFormatter = new TextFormatter((UnaryOperator<TextFormatter.Change>) change ->
-            pattern.matcher(change.getControlNewText()).matches() ? change : null);
-    private TextFormatter priceFormatter = new TextFormatter((UnaryOperator<TextFormatter.Change>) change ->
-            pattern.matcher(change.getControlNewText()).matches() ? change : null);
 
     private void setDefaultSettings() {
         setProductCategories();
