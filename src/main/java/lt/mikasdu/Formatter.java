@@ -6,11 +6,11 @@ import java.util.regex.Pattern;
 
 public class Formatter {
 
-    private static Pattern pattern = Pattern.compile("\\d*|\\d+\\.\\d*");
+    private static Pattern doubleWithTwoDecimals = Pattern.compile("[0-9]{1,3}[.]*[0-9]{0,2}");
 
-    public static TextFormatter<Object> formatNumbers() {
+    public static TextFormatter<Object> formatDecimalNumbers() {
         return new TextFormatter<>(change ->
-                pattern.matcher(change.getControlNewText()).matches() ? change : null);
+                doubleWithTwoDecimals.matcher(change.getControlNewText()).matches() ? change : null);
     }
 
 }

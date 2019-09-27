@@ -16,7 +16,6 @@ import lt.mikasdu.ui.sqlConnection.SqlStatement;
 import java.math.BigDecimal;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.function.UnaryOperator;
 import java.util.regex.Pattern;
 
 public class RecipesController implements Initializable {
@@ -51,8 +50,8 @@ public class RecipesController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setDefaultSettings();
-        productQuantityInput.setTextFormatter(Formatter.formatNumbers());
-        recipePriceInput.setTextFormatter(Formatter.formatNumbers());
+        productQuantityInput.setTextFormatter(Formatter.formatDecimalNumbers());
+        recipePriceInput.setTextFormatter(Formatter.formatDecimalNumbers());
     }
 
 
