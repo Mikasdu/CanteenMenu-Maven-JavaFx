@@ -16,7 +16,6 @@ import java.util.ResourceBundle;
 public class SettingsController implements Initializable {
 
     @FXML private TextField defaultFolderTextField;
-    @FXML private HBox kontainer;
     @FXML private TextField textFieldAppUserName;
     @FXML private Button cancelButton;
     private Settings settings;
@@ -43,12 +42,11 @@ public class SettingsController implements Initializable {
     public void chooseDefaultFileFolder() {
         DirectoryChooser directoryChooser = new DirectoryChooser();
         directoryChooser.setInitialDirectory(new File(settings.getFilesPath()));
-        File selectedDirectory = directoryChooser.showDialog(cancelButton.getScene().getWindow());
+        File selectedDirectory = directoryChooser.showDialog(defaultFolderTextField.getScene().getWindow());
         //todo cancel button ?
-        if(selectedDirectory.isDirectory()){
-            System.out.println("Cancel paspaude");
-        } else {
-            System.out.println(selectedDirectory.getAbsolutePath());
+        if(selectedDirectory != null){
+            defaultFolderTextField.setText(selectedDirectory.getAbsolutePath());
+            System.out.println("New Path: " + selectedDirectory.getAbsolutePath());
         }
     }
 

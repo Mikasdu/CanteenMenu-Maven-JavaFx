@@ -15,7 +15,6 @@ public class MainController {
     public void setApp(Node node) {
         contentHolder.getChildren().setAll(node);
     }
-
     public void changeContentPurchaseList() { AppNavigator.loadApp(AppNavigator.PURCHASE); }
     public void changeContentMenu() { AppNavigator.loadApp(AppNavigator.MENU); }
     public void showSettingsWindow() {
