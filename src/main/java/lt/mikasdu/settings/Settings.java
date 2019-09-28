@@ -100,7 +100,7 @@ public class Settings {
 
 
     //todo return values by method
-    private void saveConfigFile() {
+    public void saveConfigFile() {
         try {
             OutputStream outputStream = new FileOutputStream(configFile);
             configProps.store(outputStream, "App settings");

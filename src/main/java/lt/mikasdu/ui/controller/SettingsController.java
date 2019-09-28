@@ -72,11 +72,14 @@ public class SettingsController implements Initializable {
             System.out.println("Bandode nustatyti per didelį langą, maximalus leistinas: " +
                     maxWidth + "x" + maxHeight
             );
+        } else {
+            settings.setAppWidth(textFieldAppWidth.getText());
+            settings.setAppHeight(textFieldAppHeight.getText());
+            settings.setFullScreen(checkBoxFullScreen.isSelected());
+
         }
 
-
-        //settings.setAppWidth("1000");
-        //TODO setteriu reikia Settings klasej
+        settings.saveConfigFile();
     }
 
     private void disableWidthHeightInputs(boolean val) {
