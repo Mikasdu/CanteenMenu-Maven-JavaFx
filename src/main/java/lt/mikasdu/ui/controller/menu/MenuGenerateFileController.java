@@ -11,6 +11,7 @@ import lt.mikasdu.WeekMenuRecipes;
 import lt.mikasdu.ui.alerts.AlertBox;
 import lt.mikasdu.ui.alerts.AlertMessage;
 import lt.mikasdu.ui.pdfCreator.PdfFile;
+
 import java.io.IOException;
 import java.net.URL;
 import java.time.DayOfWeek;
@@ -35,11 +36,6 @@ public class MenuGenerateFileController implements Initializable {
             if (dateFromValue.isBefore(dateToValue) || dateFromValue.isEqual(dateToValue)) {
                 if (dateFromValue.getDayOfWeek().getValue() <= dateToValue.getDayOfWeek().getValue()
                         && dateToValue.isBefore(dateFromValue.plusDays(7))) {
-//                    System.out.println("Saving PDF file, temp. comented/disabled");
-//                    for (LocalDate date = dateFromValue; date.isBefore(dateToValue.plusDays(1)); date = date.plusDays(1)) {
-//                        System.out.println(date.getDayOfWeek().getDisplayName(TextStyle.FULL, Locale.ENGLISH));
-//                    }
-                    //todo send days to generate
                     String dateFromTo = dateFromValue + " - " + dateToValue;
                     PdfFile.createMenuPdf(weekMenuRecipes, dateFromTo);
                     buttonCancel();
