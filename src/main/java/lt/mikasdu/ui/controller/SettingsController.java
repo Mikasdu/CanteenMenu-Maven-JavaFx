@@ -31,7 +31,6 @@ public class SettingsController implements Initializable {
     @FXML private TextField defaultFolderTextField;
     @FXML private TextField textFieldAppUserName;
     @FXML private Button closeButton;
-
     private Settings settings;
 
     @Override
@@ -57,7 +56,6 @@ public class SettingsController implements Initializable {
         }
     }
 
-
     public void buttonSave() {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         int maxWidth = (int) screenSize.getWidth();
@@ -76,6 +74,7 @@ public class SettingsController implements Initializable {
                     settings.setAppHeight(String.valueOf(newHeight));
                     settings.setFullScreen(checkBoxFullScreen.isSelected());
                     settings.saveConfigFile();
+                    AlertBox.alertSimple(AlertMessage.INFO, "Pakeitimai bus matomi kai perkrausite programą");
                     closeWindow();
                 } else {
                     String err = "Bandode nustatyti per didelį langą, maximalus leistinas: " + maxWidth + "x" + maxHeight;
@@ -100,7 +99,7 @@ public class SettingsController implements Initializable {
         closeWindow();
     }
 
-    private void closeWindow(){
+    private void closeWindow() {
         Stage stage = (Stage) closeButton.getScene().getWindow();
         stage.close();
     }
