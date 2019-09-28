@@ -90,11 +90,13 @@ public class ProductsController implements Initializable {
     public void deleteButtonClicked() {
         if (!tbData.getSelectionModel().isEmpty()) {
             boolean confirmedDelete = AlertBox.alertWithConformation(AlertMessage.CONFIRM_DELETE);
-            if (confirmedDelete) {
-                Products productSelected = tbData.getSelectionModel().getSelectedItem();
-                tbData.getItems().remove(productSelected);
-                productSelected.removeFromDatabase();
-            }
+
+            System.out.println("Paspaustas mygtukas: " + confirmedDelete);
+//            if (confirmedDelete) {
+//                Products productSelected = tbData.getSelectionModel().getSelectedItem();
+//                tbData.getItems().remove(productSelected);
+//                productSelected.removeFromDatabase();
+//            }
         } else
             AlertBox.alertSimple(AlertMessage.ERROR_PLEASECHOOSE);
     }

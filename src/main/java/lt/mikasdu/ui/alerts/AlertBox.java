@@ -1,21 +1,16 @@
 package lt.mikasdu.ui.alerts;
 
-
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import javafx.stage.StageStyle;
+import lt.mikasdu.Formatter;
 import lt.mikasdu.Validator;
 
 import java.util.Optional;
-import java.util.function.UnaryOperator;
-import java.util.regex.Pattern;
 
 
-/**
- * https://code.makery.ch/blog/javafx-dialogs-official/
- */
 public class AlertBox {
 
     public static String alertWithInput(String input) {
@@ -31,17 +26,11 @@ public class AlertBox {
         grid.add(new Label("Kiekis:"), 0, 0);
         grid.add(quantity, 1, 0);
         dialog.getDialogPane().setContent(grid);
-
-        Pattern pattern = Pattern.compile("\\d*|\\d+\\.\\d*");
-        TextFormatter quantityFormatter = new TextFormatter((UnaryOperator<TextFormatter.Change>) change ->
-                pattern.matcher(change.getControlNewText()).matches() ? change : null);
-        quantity.setTextFormatter(quantityFormatter);
-
+        quantity.setTextFormatter(Formatter.formatDecimalQuantityNumbers());
         dialog.getDialogPane().getButtonTypes().addAll(ButtonType.OK, ButtonType.CANCEL);
         Optional result = dialog.showAndWait();
-
         boolean nameValid = Validator.stringValid(quantity.getText(), 1, 10);
-        if (result.get() == ButtonType.OK && nameValid) {
+        if (result.isPresent() && result.get() == ButtonType.OK && nameValid) {
             input = quantity.getText();
         } else if (!nameValid) AlertBox.alertSimple(AlertMessage.ERROR_QUANTITY);
         return input;
@@ -56,7 +45,7 @@ public class AlertBox {
         Alert alert = alert(alertMessage);
         alert.setAlertType(Alert.AlertType.CONFIRMATION);
         Optional<ButtonType> result = alert.showAndWait();
-        return (result.get() == ButtonType.OK);
+        return (result.isPresent() && result.get() == ButtonType.OK);
     }
 
     public static void alertSimple(AlertMessage alertMessage) {

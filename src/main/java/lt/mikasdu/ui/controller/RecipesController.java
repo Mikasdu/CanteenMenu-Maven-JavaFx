@@ -46,12 +46,11 @@ public class RecipesController implements Initializable {
     private Recipes tempRecipe = new Recipes(0, "", "", new BigDecimal(0), true);
 
 
-    private Pattern pattern = Pattern.compile("\\d*|\\d+\\.\\d*");
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setDefaultSettings();
-        productQuantityInput.setTextFormatter(Formatter.formatDecimalNumbers());
-        recipePriceInput.setTextFormatter(Formatter.formatDecimalNumbers());
+        productQuantityInput.setTextFormatter(Formatter.formatDecimalQuantityNumbers());
+        recipePriceInput.setTextFormatter(Formatter.formatDecimalPriceNumbers());
     }
 
 
