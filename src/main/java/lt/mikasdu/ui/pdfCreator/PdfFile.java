@@ -55,29 +55,33 @@ private static Settings settings = new Settings();
         PdfDocument pdf = new PdfDocument(writer);
         return new Document(pdf);
     }
-
+    private static Paragraph newParagraphTittle(String name) throws IOException {
+        PdfFont font = PdfFontFactory.createFont(StandardFonts.TIMES_BOLD, PdfEncodings.CP1257);
+        return new Paragraph(name).setFont(font).setTextAlignment(TextAlignment.CENTER).setFontSize(10);
+    }
+    private static Paragraph newParagraph() throws IOException {
+        PdfFont font = PdfFontFactory.createFont(StandardFonts.TIMES_ROMAN, PdfEncodings.CP1257);
+        return new Paragraph().setFont(font).setTextAlignment(TextAlignment.CENTER).setFontSize(10);
+    }
     public static void createMenuPdf(ObservableList<WeekMenuRecipes> items) throws IOException {
-        //TODO padaryti kad failo direktorija is nustatymu paimtu
         Document document = createDocument("Savaites_meniu");
         document.setMargins(10, 50, 10, 100);
         PdfFont font = PdfFontFactory.createFont(StandardFonts.TIMES_BOLD, PdfEncodings.CP1257);
-        PdfFont font2 = PdfFontFactory.createFont(StandardFonts.TIMES_ROMAN, PdfEncodings.CP1257);
-        String text = "Dienos pietūs 2019-09-05 - 2019-09-10";
-        Paragraph para = new Paragraph(text).setFont(font).setTextAlignment(TextAlignment.CENTER).setFontSize(16);
-        Paragraph day1 = new Paragraph("Pirmadienis").setFont(font).setTextAlignment(TextAlignment.CENTER).setFontSize(10);
-        Paragraph day1Menu = new Paragraph().setFont(font2).setTextAlignment(TextAlignment.CENTER).setFontSize(10);
-        Paragraph day2 = new Paragraph("Antradienis").setFont(font).setTextAlignment(TextAlignment.CENTER).setFontSize(10);
-        Paragraph day2Menu = new Paragraph().setFont(font2).setTextAlignment(TextAlignment.CENTER).setFontSize(10);
-        Paragraph day3 = new Paragraph("Trečiadienis").setFont(font).setTextAlignment(TextAlignment.CENTER).setFontSize(10);
-        Paragraph day3Menu = new Paragraph().setFont(font2).setTextAlignment(TextAlignment.CENTER).setFontSize(10);
-        Paragraph day4 = new Paragraph("Ketvirtadienis").setFont(font).setTextAlignment(TextAlignment.CENTER).setFontSize(10);
-        Paragraph day4Menu = new Paragraph().setFont(font2).setTextAlignment(TextAlignment.CENTER).setFontSize(10);
-        Paragraph day5 = new Paragraph("Penktadienis").setFont(font).setTextAlignment(TextAlignment.CENTER).setFontSize(10);
-        Paragraph day5Menu = new Paragraph().setFont(font2).setTextAlignment(TextAlignment.CENTER).setFontSize(10);
-        Paragraph day6 = new Paragraph("Šeštadienis").setFont(font).setTextAlignment(TextAlignment.CENTER).setFontSize(10);
-        Paragraph day6Menu = new Paragraph().setFont(font2).setTextAlignment(TextAlignment.CENTER).setFontSize(10);
-        Paragraph day7 = new Paragraph("Sekmadienis").setFont(font).setTextAlignment(TextAlignment.CENTER).setFontSize(10);
-        Paragraph day7Menu = new Paragraph().setFont(font2).setTextAlignment(TextAlignment.CENTER).setFontSize(10);
+
+        Paragraph day1 = newParagraphTittle("Pirmadienis");
+        Paragraph day1Menu = newParagraph();
+        Paragraph day2 = newParagraphTittle("Antradienis");
+        Paragraph day2Menu = newParagraph();
+        Paragraph day3 = newParagraphTittle("Trečiadienis");
+        Paragraph day3Menu = newParagraph();
+        Paragraph day4 = newParagraphTittle("Ketvirtadienis");
+        Paragraph day4Menu = newParagraph();
+        Paragraph day5 = newParagraphTittle("Penktadienis");
+        Paragraph day5Menu = newParagraph();
+        Paragraph day6 = newParagraphTittle("Šeštadienis");
+        Paragraph day6Menu = newParagraph();
+        Paragraph day7 = newParagraphTittle("Sekmadienis");
+        Paragraph day7Menu = newParagraph();
 
         for (WeekMenuRecipes item : items) {
             String menuItem = item.getRecipe().getName() + " " + item.getRecipe().getPrice() + " € \n";
@@ -96,28 +100,24 @@ private static Settings settings = new Settings();
             else if(item.getWeekDayNumber() == 7)
                 day7Menu.add(menuItem);
         }
+
+        String text = "Dienos pietūs 2019-09-05 - 2019-09-10";
+        Paragraph para = new Paragraph(text).setFont(font).setTextAlignment(TextAlignment.CENTER).setFontSize(16);
         document.add(para);
-        if (!day1Menu.isEmpty()) {
+        if (!day1Menu.isEmpty())
             document.add(day1).add(day1Menu);
-        }
-        if (!day2Menu.isEmpty()) {
+        if (!day2Menu.isEmpty())
             document.add(day2).add(day2Menu);
-        }
-        if (!day3Menu.isEmpty()) {
+        if (!day3Menu.isEmpty())
             document.add(day3).add(day3Menu);
-        }
-        if (!day4Menu.isEmpty()) {
+        if (!day4Menu.isEmpty())
             document.add(day4).add(day4Menu);
-        }
-        if (!day5Menu.isEmpty()) {
+        if (!day5Menu.isEmpty())
             document.add(day5).add(day5Menu);
-        }
-        if (!day6Menu.isEmpty()) {
+        if (!day6Menu.isEmpty())
             document.add(day6).add(day6Menu);
-        }
-        if (!day7Menu.isEmpty()) {
+        if (!day7Menu.isEmpty())
             document.add(day7).add(day7Menu);
-        }
         document.close();
         AlertBox.alertSimple(AlertMessage.INFO_FILE_CREATED);
     }

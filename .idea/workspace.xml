@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68a7ebb9-642d-498c-a95e-2174f80e25e8" name="Default Changelist" comment="review">
+    <list default="true" id="68a7ebb9-642d-498c-a95e-2174f80e25e8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/PurchaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/PurchaseController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/pdfCreator/PdfFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/pdfCreator/PdfFile.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -362,7 +360,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569678303590</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="pdf files bug fix">
+      <created>1569682650575</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1569682650575</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -391,7 +396,8 @@
     <MESSAGE value="minor update" />
     <MESSAGE value="Formatter updated, some minor fixes" />
     <MESSAGE value="review" />
-    <option name="LAST_COMMIT_MESSAGE" value="review" />
+    <MESSAGE value="pdf files bug fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="pdf files bug fix" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
