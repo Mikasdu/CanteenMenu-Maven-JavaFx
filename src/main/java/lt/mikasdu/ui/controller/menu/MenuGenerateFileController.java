@@ -16,9 +16,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.time.format.TextStyle;
 import java.time.temporal.TemporalAdjusters;
-import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class MenuGenerateFileController implements Initializable {
