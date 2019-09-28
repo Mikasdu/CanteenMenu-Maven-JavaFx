@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="lt.mikasdu.ui.controller.SettingsController"
+           prefHeight="300" prefWidth="500">
+    <VBox>
+        <HBox alignment="CENTER">
+            <Label styleClass="headerLabel">Programos nustatymai</Label>
+        </HBox>
+        <VBox styleClass="box-borders">
+            <VBox>
+                <Label alignment="TOP_LEFT" text="Įmonės/vartotojo pavadinimas (rodomas meniu)" />
+                <TextField fx:id="textFieldAppUserName"/>
+            </VBox>
+        </VBox>
+
+        <HBox alignment="CENTER">
+            <Label styleClass="headerLabel">Lango nustatymai</Label>
+        </HBox>
+        <VBox styleClass="box-borders">
+            <VBox>
+                <HBox>
+                    <VBox>
+                        <Label text="Lango plotis (px)" />
+                        <TextField fx:id="textFieldAppWidth"/>
+                    </VBox>
+                    <VBox>
+                        <Label text="Lango aukštis (px)" />
+                        <TextField fx:id="textFieldAppHeight"/>
+                    </VBox>
+                    <VBox>
+                        <Label></Label>
+                        <HBox>
+                            <CheckBox fx:id="checkBoxFullScreen" onAction="#checkBoxFullScreenAction"/>
+                            <Label text="Per visą ekraną" />
+                        </HBox>
+                    </VBox>
+                </HBox>
+            </VBox>
+        </VBox>
+
+        <HBox alignment="CENTER">
+            <Label styleClass="headerLabel">Katalogas kuriame saugomi failai</Label>
+        </HBox>
+        <VBox styleClass="box-borders">
+            <VBox>
+                <Label text="Pasirinkite katalogą kuriame bus saugomi .pdf failai" />
+                <HBox spacing="10">
+                    <TextField prefWidth="350" fx:id="defaultFolderTextField"/>
+                    <Button text="Pasirinkti katalogą" onAction="#chooseDefaultFileFolder"/>
+                </HBox>
+
+            </VBox>
+        </VBox>
+        <HBox style="-fx-padding: 5;" spacing="15" alignment="CENTER">
+            <Button styleClass="button-edit" text="Išsaugoti" onAction="#buttonSave"/>
+            <Button fx:id="closeButton" styleClass="button-remove" text="Atšaukti" onAction="#buttonCancel"/>
+        </HBox>
+    </VBox>
+</StackPane>

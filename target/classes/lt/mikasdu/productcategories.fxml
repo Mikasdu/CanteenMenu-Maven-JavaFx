@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="lt.mikasdu.ui.controller.ProductCategoriesController">
+    <HBox alignment="CENTER">
+        <Label fx:id="editLabel" styleClass="headerLabel">Įveskite naują produktų kategoriją</Label>
+    </HBox>
+    <VBox styleClass="box-borders">
+        <HBox alignment="CENTER">
+            <VBox>
+                <Label>Pavadinimas</Label>
+                <TextField minWidth="250" fx:id="productCategoryName"/>
+            </VBox>
+            <VBox>
+                <Label/>
+                <Button fx:id="saveButton" text="Išsaugoti įrašą" onAction="#saveButtonClicked" />
+            </VBox>
+            <VBox>
+                <Label/>
+                <Button fx:id="cancelButton" text="Atšaukti" visible="false" onAction="#cancelButtonClicked"/>
+            </VBox>
+        </HBox>
+    </VBox>
+
+    <HBox alignment="CENTER">
+        <Label styleClass="headerLabel">Kategorijų sąrašas</Label>
+    </HBox>
+    <TableView fx:id="tbData">
+        <columns>
+            <TableColumn fx:id="categoryId" minWidth="30" maxWidth="300" text="ID"/>
+            <TableColumn fx:id="categoryName" text="Kategorijos pavadinimas"/>
+        </columns>
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+        </columnResizePolicy>
+        <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </VBox.margin>
+    </TableView>
+    <HBox style="-fx-padding: 5 5 5 5;" spacing="15">
+        <Button styleClass="button-remove" fx:id="removeCategoryButton" text="Ištrinti pažymėtą įrašą" onAction="#deleteButtonClicked"/>
+        <Button styleClass="button-edit" fx:id="editCategoryButton" text="Pataisyti pasirinktą įrašą" onAction="#editButtonClicked"/>
+    </HBox>
+</VBox>
