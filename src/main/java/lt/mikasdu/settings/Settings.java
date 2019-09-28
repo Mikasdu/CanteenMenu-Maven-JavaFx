@@ -13,6 +13,7 @@ public class Settings {
     private Properties configProps = new Properties();
     private String propAppName = "appName";
     private String propUserName = "userName";
+    private String propAppDescription = "appDescription";
     private String propFilesPath = "filePath";
     private String propFullScreen = "fullScreen";
     private String propAppHeight = "appHeight";
@@ -22,6 +23,7 @@ public class Settings {
     public Settings() {
         this.setAppName();
         this.setUserName("Dienos Pietūs");
+        this.setAppDescription("");
         this.setFilesPath(System.getProperty("user.home") + "\\Documents\\" + this.getAppName());
         this.setFullScreen(false);
         this.setAppWidth("800");
@@ -65,6 +67,15 @@ public class Settings {
     public void setUserName(String newUserName) {
         this.configProps.setProperty(propUserName, newUserName);
     }
+
+    public String getAppDescription() {
+        return this.configProps.getProperty(propAppDescription);
+    }
+
+    public void setAppDescription(String newAppDescription) {
+        this.configProps.setProperty(propAppDescription, newAppDescription);
+    }
+
 
     public String getAppName() {
         return this.configProps.getProperty(propAppName);

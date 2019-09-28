@@ -101,7 +101,7 @@ private static Settings settings = new Settings();
                 day7Menu.add(menuItem);
         }
 
-        String text = "Dienos pietūs " + dateFromTo;
+        String text = settings.getUserName() + dateFromTo + "\n" + settings.getAppDescription();
         Paragraph para = new Paragraph(text).setFont(font).setTextAlignment(TextAlignment.CENTER).setFontSize(16);
         document.add(para);
         if (!day1Menu.isEmpty())

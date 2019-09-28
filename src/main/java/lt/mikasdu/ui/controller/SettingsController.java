@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
@@ -20,6 +21,7 @@ import java.util.ResourceBundle;
 
 public class SettingsController implements Initializable {
 
+    @FXML private TextArea textAreaFieldAppDescription;
     @FXML private CheckBox checkBoxFullScreen;
     @FXML private TextField textFieldAppHeight;
     @FXML private TextField textFieldAppWidth;
@@ -32,6 +34,7 @@ public class SettingsController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         this.settings = new Settings();
         textFieldAppUserName.setText(settings.getUserName());
+        textAreaFieldAppDescription.setText(settings.getAppDescription());
         defaultFolderTextField.setText(settings.getFilesPath());
         textFieldAppHeight.setText(settings.getAppHeight());
         textFieldAppHeight.setTextFormatter(Formatter.formatIntegerNumbers());
@@ -58,12 +61,14 @@ public class SettingsController implements Initializable {
         int newWidth = Integer.parseInt(textFieldAppWidth.getText());
         int newHeight = Integer.parseInt(textFieldAppHeight.getText());
         String newUserName = textFieldAppUserName.getText();
+        String newAppDescription = textAreaFieldAppDescription.getText();
         String newFilesPath = defaultFolderTextField.getText();
 
         if (Validator.stringValid(newUserName, 3, 50)) {
             if (Validator.directoryExists(newFilesPath)) {
                 if (newHeight < maxHeight && newWidth < maxWidth) {
                     settings.setUserName(newUserName);
+                    settings.setAppDescription(newAppDescription);
                     settings.setFilesPath(newFilesPath);
                     settings.setAppWidth(String.valueOf(newWidth));
                     settings.setAppHeight(String.valueOf(newHeight));

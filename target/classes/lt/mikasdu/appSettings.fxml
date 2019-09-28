@@ -7,15 +7,17 @@
 <StackPane xmlns="http://javafx.com/javafx"
            xmlns:fx="http://javafx.com/fxml"
            fx:controller="lt.mikasdu.ui.controller.SettingsController"
-           prefHeight="300" prefWidth="500">
+           prefHeight="400" prefWidth="500">
     <VBox>
         <HBox alignment="CENTER">
             <Label styleClass="headerLabel">Programos nustatymai</Label>
         </HBox>
         <VBox styleClass="box-borders">
             <VBox>
-                <Label alignment="TOP_LEFT" text="Įmonės/vartotojo pavadinimas (rodomas meniu)" />
+                <Label text="Įmonės/vartotojo pavadinimas (rodomas meniu)" />
                 <TextField fx:id="textFieldAppUserName"/>
+                <Label text="Aprašymas matomas (rodomas meniu)" />
+                <TextArea prefHeight="200" fx:id="textAreaFieldAppDescription"/>
             </VBox>
         </VBox>
 
