@@ -22,7 +22,6 @@ public enum AlertMessage {
     ABOUT(Alert.AlertType.INFORMATION, "About" ,"Dienos pietų meniu sudarymo programa. \n Autorius Mikas Du.");
 
 
-    private String err = "Klaida";
     private Alert.AlertType alertType;
     private String title;
     private String message;

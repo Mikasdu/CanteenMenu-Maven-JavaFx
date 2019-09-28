@@ -63,7 +63,6 @@ public class PdfFile {
         PdfFont font2 = PdfFontFactory.createFont(StandardFonts.TIMES_ROMAN, PdfEncodings.CP1257);
         String text = "Dienos pietūs 2019-09-05 - 2019-09-10";
         Paragraph para = new Paragraph(text).setFont(font).setTextAlignment(TextAlignment.CENTER).setFontSize(16);
-
         Paragraph day1 = new Paragraph("Pirmadienis").setFont(font).setTextAlignment(TextAlignment.CENTER).setFontSize(10);
         Paragraph day1Menu = new Paragraph().setFont(font2).setTextAlignment(TextAlignment.CENTER).setFontSize(10);
         Paragraph day2 = new Paragraph("Antradienis").setFont(font).setTextAlignment(TextAlignment.CENTER).setFontSize(10);

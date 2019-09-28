@@ -9,6 +9,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import lt.mikasdu.*;
+import lt.mikasdu.settings.Settings;
 import lt.mikasdu.ui.alerts.AlertBox;
 import lt.mikasdu.ui.alerts.AlertMessage;
 import lt.mikasdu.ui.sqlConnection.SqlConnection;
@@ -37,6 +38,7 @@ public class MenuController implements Initializable {
     @FXML private Button buttonEditMenu;
     @FXML private Button buttonRemoveMenu;
 
+    private Settings settings = new Settings();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -143,9 +145,7 @@ public class MenuController implements Initializable {
     }
 
     public void openDocumentsFolder() throws IOException {
-        //todo is setings paimti
-        String myDocumentPath = System.getProperty("user.home") + "\\Documents";
-        Desktop.getDesktop().open(new File(myDocumentPath)); //was documents
+        Desktop.getDesktop().open(new File(settings.getFilesPath()));
     }
 
 
