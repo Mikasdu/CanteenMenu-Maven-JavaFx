@@ -6,3 +6,4 @@ Minor updates, added Settings
 
 1.0 Version
 Created empty Maven and JavaFx project
+jdk1.8.0_202
