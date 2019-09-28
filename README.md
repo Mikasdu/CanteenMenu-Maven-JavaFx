@@ -1,7 +1,7 @@
 # CanteenMenu-Maven-JavaFx
 Canteen Menu with Maven and JavaFx
 
-1.1 Version
+1.1 Version 
 Minor updates, added Settings
 
 1.0 Version

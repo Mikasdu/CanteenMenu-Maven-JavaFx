@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68a7ebb9-642d-498c-a95e-2174f80e25e8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/alerts/AlertMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/alerts/AlertMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/MenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/SettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/SettingsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/pdfCreator/PdfFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/pdfCreator/PdfFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/2019-09-28T15-20-10_580.dump" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/2019-09-28T15-21-16_143.dump" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/2019-09-28T15-55-20_249.dump" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -327,7 +326,21 @@
       <option name="project" value="LOCAL" />
       <updated>1569676883466</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="review">
+      <created>1569677249070</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1569677249070</updated>
+    </task>
+    <task id="LOCAL-00024" summary="review">
+      <created>1569677347003</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1569677347003</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -353,10 +366,10 @@
     <MESSAGE value="formatter class update" />
     <MESSAGE value="updated settings, other minor fixes" />
     <MESSAGE value="updated settings" />
-    <MESSAGE value="review" />
     <MESSAGE value="minor update" />
     <MESSAGE value="Formatter updated, some minor fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Formatter updated, some minor fixes" />
+    <MESSAGE value="review" />
+    <option name="LAST_COMMIT_MESSAGE" value="review" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
