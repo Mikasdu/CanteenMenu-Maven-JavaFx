@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68a7ebb9-642d-498c-a95e-2174f80e25e8" name="Default Changelist" comment="" />
+    <list default="true" id="68a7ebb9-642d-498c-a95e-2174f80e25e8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/PurchaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/PurchaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lt/mikasdu/purchase.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lt/mikasdu/purchase.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lt/mikasdu/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lt/mikasdu/main.fxml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -399,7 +404,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569685759614</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="update">
+      <created>1569688072949</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1569688072949</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -417,7 +429,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial merge with old project" />
-    <MESSAGE value="update" />
     <MESSAGE value="settings update" />
     <MESSAGE value="new tests, new validator" />
     <MESSAGE value="Settings controller updated" />
@@ -430,7 +441,8 @@
     <MESSAGE value="review" />
     <MESSAGE value="pdf files bug fix" />
     <MESSAGE value="pdf generator update" />
-    <option name="LAST_COMMIT_MESSAGE" value="pdf generator update" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

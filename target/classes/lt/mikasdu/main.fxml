@@ -13,7 +13,6 @@
             <Menu text="File">
                 <Menu text="Nustatymai...">
                     <MenuItem onAction="#showSettingsWindow" text="Programos nustatymai"/>
-                    <MenuItem onAction="#changeContentProductCategories" text="Produkų kategorijos" />
                 </Menu>
                 <MenuItem text="Išjungti" onAction="#closeProgram"/>
             </Menu>
@@ -22,6 +21,7 @@
                 <MenuItem onAction="#changeContentMenu" text="Sudaryti meniu"/>
                 <MenuItem onAction="#changeContentRecipes" text="Receptai"/>
                 <MenuItem onAction="#changeContentProducts" text="Produktai"/>
+                <MenuItem onAction="#changeContentProductCategories" text="Produkų kategorijos" />
             </Menu>
             <Menu text="Help">
                 <MenuItem text="About" onAction="#showAbout"/>

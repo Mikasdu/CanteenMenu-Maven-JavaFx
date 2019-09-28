@@ -3,6 +3,7 @@ package lt.mikasdu.ui.controller;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -23,7 +24,8 @@ import java.util.ResourceBundle;
 
 public class PurchaseController implements Initializable {
 
-    @FXML public TableView<Products> tbData;
+    @FXML private TableView<Products> tbData;
+    @FXML private Button printButton;
     @FXML private TableColumn<Products, Integer> productId;
     @FXML private TableColumn<Products, String> productName;
     @FXML private TableColumn<Products, BigDecimal> productQuantityTable;
@@ -37,6 +39,7 @@ public class PurchaseController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setWeekMenuComboBoxItems();
+        printButton.setDisable(true);
     }
 
     private void setTableData(){
@@ -57,6 +60,9 @@ public class PurchaseController implements Initializable {
     }
     public void weekMenuComboBoxChange() {
         setTableData();
+        if (weekMenuComboBox.getSelectionModel().isEmpty())
+            printButton.setDisable(true);
+        else printButton.setDisable(false);
     }
 
     public void printButtonClick() throws IOException {
