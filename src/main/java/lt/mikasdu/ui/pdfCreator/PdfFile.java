@@ -63,8 +63,8 @@ private static Settings settings = new Settings();
         PdfFont font = PdfFontFactory.createFont(StandardFonts.TIMES_ROMAN, PdfEncodings.CP1257);
         return new Paragraph().setFont(font).setTextAlignment(TextAlignment.CENTER).setFontSize(10);
     }
-    public static void createMenuPdf(ObservableList<WeekMenuRecipes> items) throws IOException {
-        Document document = createDocument("Savaites_meniu");
+    public static void createMenuPdf(ObservableList<WeekMenuRecipes> items, String dateFromTo) throws IOException {
+        Document document = createDocument("Savaites_meniu ");
         document.setMargins(10, 50, 10, 100);
         PdfFont font = PdfFontFactory.createFont(StandardFonts.TIMES_BOLD, PdfEncodings.CP1257);
 
@@ -101,7 +101,7 @@ private static Settings settings = new Settings();
                 day7Menu.add(menuItem);
         }
 
-        String text = "Dienos pietūs 2019-09-05 - 2019-09-10";
+        String text = "Dienos pietūs " + dateFromTo;
         Paragraph para = new Paragraph(text).setFont(font).setTextAlignment(TextAlignment.CENTER).setFontSize(16);
         document.add(para);
         if (!day1Menu.isEmpty())
@@ -121,5 +121,4 @@ private static Settings settings = new Settings();
         document.close();
         AlertBox.alertSimple(AlertMessage.INFO_FILE_CREATED);
     }
-
 }

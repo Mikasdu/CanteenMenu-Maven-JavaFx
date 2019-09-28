@@ -35,12 +35,13 @@ public class MenuGenerateFileController implements Initializable {
             if (dateFromValue.isBefore(dateToValue) || dateFromValue.isEqual(dateToValue)) {
                 if (dateFromValue.getDayOfWeek().getValue() <= dateToValue.getDayOfWeek().getValue()
                         && dateToValue.isBefore(dateFromValue.plusDays(7))) {
-                    System.out.println("Saving PDF file, temp. comented/disabled");
-                    for (LocalDate date = dateFromValue; date.isBefore(dateToValue.plusDays(1)); date = date.plusDays(1)) {
-                        System.out.println(date.getDayOfWeek().getDisplayName(TextStyle.FULL, Locale.ENGLISH));
-                    }
+//                    System.out.println("Saving PDF file, temp. comented/disabled");
+//                    for (LocalDate date = dateFromValue; date.isBefore(dateToValue.plusDays(1)); date = date.plusDays(1)) {
+//                        System.out.println(date.getDayOfWeek().getDisplayName(TextStyle.FULL, Locale.ENGLISH));
+//                    }
                     //todo send days to generate
-                    PdfFile.createMenuPdf(weekMenuRecipes);
+                    String dateFromTo = dateFromValue + " - " + dateToValue;
+                    PdfFile.createMenuPdf(weekMenuRecipes, dateFromTo);
                     buttonCancel();
                 } else
                     AlertBox.alertSimple(AlertMessage.ERROR_DATE,
