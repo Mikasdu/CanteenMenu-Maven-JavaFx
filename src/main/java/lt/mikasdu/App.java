@@ -18,11 +18,11 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Settings settings = new Settings();
-        primaryStage.setTitle(settings.configProps.getProperty("appName"));
+        primaryStage.setTitle(settings.getAppName()); //todo pataisyt pagal getteri
         primaryStage.setScene(createScene(loadMainPane()));
         primaryStage.setMaximized(settings.isFullScreen());
-        primaryStage.setWidth(Double.parseDouble(settings.configProps.getProperty("appWidth")));
-        primaryStage.setHeight(Double.parseDouble(settings.configProps.getProperty("appHeight")));
+        primaryStage.setWidth(Double.parseDouble(settings.getAppWidth()));
+        primaryStage.setHeight(Double.parseDouble(settings.getAppHeight()));
         primaryStage.show();
     }
 
