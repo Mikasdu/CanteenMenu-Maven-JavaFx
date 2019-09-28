@@ -59,7 +59,7 @@
         </VBox>
         <HBox style="-fx-padding: 5;" spacing="15" alignment="CENTER">
             <Button styleClass="button-edit" text="Išsaugoti" onAction="#buttonSave"/>
-            <Button fx:id="cancelButton" styleClass="button-remove" text="Atšaukti" onAction="#buttonCancel"/>
+            <Button fx:id="closeButton" styleClass="button-remove" text="Atšaukti" onAction="#buttonCancel"/>
         </HBox>
     </VBox>
 </StackPane>

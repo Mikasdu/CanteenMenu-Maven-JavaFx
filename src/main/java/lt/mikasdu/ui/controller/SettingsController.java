@@ -1,12 +1,17 @@
 package lt.mikasdu.ui.controller;
 
+import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 import lt.mikasdu.Formatter;
 import lt.mikasdu.Validator;
 import lt.mikasdu.settings.Settings;
@@ -25,7 +30,7 @@ public class SettingsController implements Initializable {
     @FXML private TextField textFieldAppWidth;
     @FXML private TextField defaultFolderTextField;
     @FXML private TextField textFieldAppUserName;
-    @FXML private Button cancelButton;
+    @FXML private Button closeButton;
 
     private Settings settings;
 
@@ -35,7 +40,7 @@ public class SettingsController implements Initializable {
         textFieldAppUserName.setText(settings.getUserName());
         defaultFolderTextField.setText(settings.getFilesPath());
         textFieldAppHeight.setText(settings.getAppHeight());
-        textFieldAppWidth.setTextFormatter(Formatter.formatIntegerNumbers());
+        textFieldAppHeight.setTextFormatter(Formatter.formatIntegerNumbers());
         textFieldAppWidth.setText(settings.getAppWidth());
         textFieldAppWidth.setTextFormatter(Formatter.formatIntegerNumbers());
         checkBoxFullScreen.setSelected(settings.isFullScreen());
@@ -54,32 +59,32 @@ public class SettingsController implements Initializable {
 
 
     public void buttonSave() {
-
-        if (!Validator.stringValid(textFieldAppUserName.getText(), 3, 50)) {
-            AlertBox.alertSimple(AlertMessage.ERROR_NAME);
-        }
-
-        if (!Validator.directoryExists(defaultFolderTextField.getText())) {
-            AlertBox.alertSimple(AlertMessage.ERROR_CUSTOM, "Katalogas neegzistuoja pasirinkite kitą");
-        }
-
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         int maxWidth = (int) screenSize.getWidth();
         int maxHeight = (int) screenSize.getHeight();
         int newWidth = Integer.parseInt(textFieldAppWidth.getText());
         int newHeight = Integer.parseInt(textFieldAppHeight.getText());
-        if (newHeight > maxHeight || newWidth > maxWidth) {
-            System.out.println("Bandode nustatyti per didelį langą, maximalus leistinas: " +
-                    maxWidth + "x" + maxHeight
-            );
-        } else {
-            settings.setAppWidth(textFieldAppWidth.getText());
-            settings.setAppHeight(textFieldAppHeight.getText());
-            settings.setFullScreen(checkBoxFullScreen.isSelected());
+        String newUserName = textFieldAppUserName.getText();
+        String newFilesPath = defaultFolderTextField.getText();
 
-        }
-
-        settings.saveConfigFile();
+        if (Validator.stringValid(newUserName, 3, 50)) {
+            if (Validator.directoryExists(newFilesPath)) {
+                if (newHeight < maxHeight && newWidth < maxWidth) {
+                    settings.setUserName(newUserName);
+                    settings.setFilesPath(newFilesPath);
+                    settings.setAppWidth(String.valueOf(newWidth));
+                    settings.setAppHeight(String.valueOf(newHeight));
+                    settings.setFullScreen(checkBoxFullScreen.isSelected());
+                    settings.saveConfigFile();
+                    closeWindow();
+                } else {
+                    String err = "Bandode nustatyti per didelį langą, maximalus leistinas: " + maxWidth + "x" + maxHeight;
+                    AlertBox.alertSimple(AlertMessage.ERROR_CUSTOM, err);
+                }
+            } else
+                AlertBox.alertSimple(AlertMessage.ERROR_CUSTOM, "Katalogas neegzistuoja pasirinkite kitą");
+        } else
+            AlertBox.alertSimple(AlertMessage.ERROR_NAME);
     }
 
     private void disableWidthHeightInputs(boolean val) {
@@ -92,7 +97,12 @@ public class SettingsController implements Initializable {
     }
 
     public void buttonCancel() {
-        Stage stage = (Stage) cancelButton.getScene().getWindow();
+        closeWindow();
+    }
+
+    private void closeWindow(){
+        Stage stage = (Stage) closeButton.getScene().getWindow();
         stage.close();
     }
+
 }
