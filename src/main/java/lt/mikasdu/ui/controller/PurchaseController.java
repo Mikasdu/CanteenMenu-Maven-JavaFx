@@ -9,6 +9,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import lt.mikasdu.Products;
 import lt.mikasdu.WeekMenu;
+import lt.mikasdu.settings.Settings;
 import lt.mikasdu.ui.pdfCreator.PdfFile;
 import lt.mikasdu.ui.sqlConnection.*;
 
@@ -30,7 +31,7 @@ public class PurchaseController implements Initializable {
     @FXML private TableColumn<Products, String> productDescription;
     @FXML private TableColumn<Products, String> productCategory;
     @FXML private ComboBox<WeekMenu> weekMenuComboBox;
-
+    private Settings settings = new Settings();
     //todo print buton disabled while not selected list
 
     @Override
@@ -64,7 +65,7 @@ public class PurchaseController implements Initializable {
     }
 
     public void openDocumentsFolder() throws IOException {
-        Desktop.getDesktop().open(new File("documents"));
+        Desktop.getDesktop().open(new File(settings.getFilesPath()));
     }
 
 }

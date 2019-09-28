@@ -98,5 +98,5 @@ public class SettingsController implements Initializable {
         Stage stage = (Stage) closeButton.getScene().getWindow();
         stage.close();
     }
-
+//todo prideti vartotojo ivairia informacija kontaktai
 }

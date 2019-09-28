@@ -13,6 +13,7 @@ import com.itextpdf.layout.property.TextAlignment;
 import javafx.collections.ObservableList;
 import lt.mikasdu.Products;
 import lt.mikasdu.WeekMenuRecipes;
+import lt.mikasdu.settings.Settings;
 import lt.mikasdu.ui.alerts.AlertBox;
 import lt.mikasdu.ui.alerts.AlertMessage;
 
@@ -24,7 +25,7 @@ import java.util.Calendar;
 public class PdfFile {
 
 
-
+private static Settings settings = new Settings();
 
     public static void createFile(ObservableList<Products> items) throws IOException {
         //todo jeigu atidarytas failas errora ismeta
@@ -49,7 +50,7 @@ public class PdfFile {
     private static Document createDocument(String fileName) throws FileNotFoundException {
         Calendar cal = Calendar.getInstance();
         SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-DD HHmmss");
-        String dest = "documents\\"+ fileName + sdf.format(cal.getTime()) +".pdf";
+        String dest = settings.getFilesPath() + "\\" + fileName + sdf.format(cal.getTime()) +".pdf";
         PdfWriter writer = new PdfWriter(dest);
         PdfDocument pdf = new PdfDocument(writer);
         return new Document(pdf);
