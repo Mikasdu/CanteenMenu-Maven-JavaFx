@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68a7ebb9-642d-498c-a95e-2174f80e25e8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/alerts/AlertMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/alerts/AlertMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/SettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/SettingsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/App.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -290,7 +289,21 @@
       <option name="project" value="LOCAL" />
       <updated>1569672434015</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="updated settings">
+      <created>1569673040355</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1569673040355</updated>
+    </task>
+    <task id="LOCAL-00019" summary="review">
+      <created>1569673147191</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1569673147191</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -317,7 +330,8 @@
     <MESSAGE value="formatter class update" />
     <MESSAGE value="updated settings, other minor fixes" />
     <MESSAGE value="updated settings" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated settings" />
+    <MESSAGE value="review" />
+    <option name="LAST_COMMIT_MESSAGE" value="review" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

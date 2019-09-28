@@ -10,10 +10,7 @@ import lt.mikasdu.ui.controller.MainController;
 
 import java.io.IOException;
 
-
 public class App extends Application {
-
-    private static Scene scene;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -27,7 +24,7 @@ public class App extends Application {
     }
 
     private Scene createScene(Pane mainPane) {
-        scene = new Scene(mainPane);
+        Scene scene = new Scene(mainPane);
         scene.getStylesheets().setAll(getClass().getResource("main.css").toExternalForm());
         return scene;
     }
@@ -40,5 +37,4 @@ public class App extends Application {
         AppNavigator.loadApp(AppNavigator.PRODUCTS);
         return mainPane;
     }
-
 }
