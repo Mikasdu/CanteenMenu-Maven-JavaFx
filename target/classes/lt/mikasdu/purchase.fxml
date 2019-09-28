@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
-
-<?import javafx.collections.FXCollections?>
 <?import javafx.geometry.Insets?>
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
@@ -43,7 +37,7 @@
         </VBox.margin>
     </TableView>
     <HBox style="-fx-padding: 5 5 5 5;" spacing="15">
-        <Button onAction="#printButtonClick" text="Sukurti PDF"/>
+        <Button fx:id="printButton" onAction="#printButtonClick" text="Sukurti PDF"/>
         <Button styleClass="button" text="Atidaryti dokumentų katalogą" onAction="#openDocumentsFolder"/>
     </HBox>
 </VBox>
