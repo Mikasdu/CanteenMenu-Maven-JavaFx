@@ -6,17 +6,15 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.stage.Stage;
-import javafx.util.StringConverter;
+import lt.mikasdu.Formatter;
 import lt.mikasdu.WeekMenuRecipes;
 import lt.mikasdu.ui.alerts.AlertBox;
 import lt.mikasdu.ui.alerts.AlertMessage;
 import lt.mikasdu.ui.pdfCreator.PdfFile;
-
 import java.io.IOException;
 import java.net.URL;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.time.format.TextStyle;
 import java.time.temporal.TemporalAdjusters;
 import java.util.Locale;
@@ -74,27 +72,7 @@ public class MenuGenerateFileController implements Initializable {
     private void dateFormat(DatePicker date) {
         String pattern = "yyyy-MM-dd";
         date.setPromptText(pattern.toLowerCase());
-//        date.setConverter(new StringConverter<>() {
-//            DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern(pattern);
-//
-//            @Override
-//            public String toString(LocalDate date) {
-//                if (date != null) {
-//                    return dateFormatter.format(date);
-//                } else {
-//                    return "";
-//                }
-//            }
-//
-//            @Override
-//            public LocalDate fromString(String string) {
-//                if (string != null && !string.isEmpty()) {
-//                    return LocalDate.parse(string, dateFormatter);
-//                } else {
-//                    return null;
-//                }
-//            }
-//        });
+        date.setConverter(Formatter.formatDate());
     }
 
     public void initData(ObservableList<WeekMenuRecipes> weekMenuRecipes) {

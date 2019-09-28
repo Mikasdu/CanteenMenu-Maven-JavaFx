@@ -12,11 +12,10 @@ import lt.mikasdu.ui.alerts.AlertBox;
 import lt.mikasdu.ui.alerts.AlertMessage;
 import lt.mikasdu.ui.sqlConnection.SqlConnection;
 import lt.mikasdu.ui.sqlConnection.SqlStatement;
-
 import java.math.BigDecimal;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.regex.Pattern;
+
 
 public class RecipesController implements Initializable {
     @FXML private Label quantityLabel;
@@ -52,7 +51,6 @@ public class RecipesController implements Initializable {
         productQuantityInput.setTextFormatter(Formatter.formatDecimalQuantityNumbers());
         recipePriceInput.setTextFormatter(Formatter.formatDecimalPriceNumbers());
     }
-
 
     private void setDefaultSettings() {
         setProductCategories();

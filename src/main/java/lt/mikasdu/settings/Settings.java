@@ -98,8 +98,6 @@ public class Settings {
         return this.configProps.getProperty(propAppHeight);
     }
 
-
-    //todo return values by method
     public void saveConfigFile() {
         try {
             OutputStream outputStream = new FileOutputStream(configFile);
