@@ -18,7 +18,7 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Settings settings = new Settings();
-        primaryStage.setTitle(settings.getAppName()); //todo pataisyt pagal getteri
+        primaryStage.setTitle(settings.getAppName());
         primaryStage.setScene(createScene(loadMainPane()));
         primaryStage.setMaximized(settings.isFullScreen());
         primaryStage.setWidth(Double.parseDouble(settings.getAppWidth()));
