@@ -130,6 +130,6 @@ public class ProductCategoriesController implements Initializable {
     }
 
     public void buttonAddProductCategory() {
-        addProductCategory(new ProductCategories(1, ""));
+        addProductCategory(new ProductCategories(0, ""));
     }
 }

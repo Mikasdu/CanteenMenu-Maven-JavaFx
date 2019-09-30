@@ -15,6 +15,7 @@
             <VBox>
                 <Label text="Kategorijos pavadinimas"/>
                 <TextField fx:id="productCategoryName"/>
+                <Label/>
                 <HBox>
                     <CheckBox fx:id="checkBoxProductCategoryStatus"/>
                     <Label text="Nebenaudojamas"/>

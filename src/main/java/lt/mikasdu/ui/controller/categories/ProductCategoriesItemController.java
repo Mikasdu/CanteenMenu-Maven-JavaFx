@@ -32,6 +32,7 @@ public class ProductCategoriesItemController {
             AlertBox.alertSimple(AlertMessage.ERROR_NAME);
         }
     }
+
     public void initData(ProductCategories productCategory) {
         isNew = productCategory.getId() == 0;
         if (isNew) {
@@ -42,6 +43,7 @@ public class ProductCategoriesItemController {
             checkBoxProductCategoryStatus.setSelected(!productCategory.getStatus());
         }
     }
+
     public void buttonCancel() {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();

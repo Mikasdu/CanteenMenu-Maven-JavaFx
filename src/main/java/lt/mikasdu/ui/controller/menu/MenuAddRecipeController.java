@@ -26,6 +26,7 @@ public class MenuAddRecipeController implements Initializable {
     private WeekMenuRecipes weekMenuRecipes;
     private boolean isNew;
 
+    //todo paternas perkelt i atskira klase
     private Pattern pattern = Pattern.compile("^[1-9][0-9]*$");
     private TextFormatter quantityFormatter = new TextFormatter<>(change ->
             pattern.matcher(change.getControlNewText()).matches() ? change : null);
