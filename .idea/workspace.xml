@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68a7ebb9-642d-498c-a95e-2174f80e25e8" name="Default Changelist" comment="" />
+    <list default="true" id="68a7ebb9-642d-498c-a95e-2174f80e25e8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/categories/ProductCategoriesItemController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/lt/mikasdu/sub/productCategoriesItem.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/lt/mikasdu/TestTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/AppNavigator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/AppNavigator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/Formatter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/Formatter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/Products.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/Products.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/WeekMenuRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/WeekMenuRecipes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/settings/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/settings/Settings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/ProductCategoriesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/ProductCategoriesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/SettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/SettingsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/menu/MenuAddRecipeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/menu/MenuAddRecipeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/pdfCreator/PdfFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/pdfCreator/PdfFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/sqlConnection/SqlConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/sqlConnection/SqlConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lt/mikasdu/productcategories.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lt/mikasdu/productcategories.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lt/mikasdu/sub/menuGenerateFile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lt/mikasdu/sub/menuGenerateFile.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lt/mikasdu/productcategories.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lt/mikasdu/productcategories.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lt/mikasdu/sub/menuGenerateFile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lt/mikasdu/sub/menuGenerateFile.fxml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +56,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/lt/mikasdu" />
+    <property name="last_opened_file_path" value="D:/Darbinis/archyvas/1.1/Darbinis/DienosPietus" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15527344" />
     <property name="project.structure.side.proportion" value="0.36763006" />
@@ -42,6 +64,15 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="lt.mikasdu" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Mikas\IdeaProjects\CanteenMenu\src\main\resources\lt\mikasdu" />
+      <recent name="C:\Users\Mikas\IdeaProjects\CanteenMenu\src\main\resources\lt.mikasdu" />
+      <recent name="C:\Users\Mikas\IdeaProjects\CanteenMenu\src\main\java\lt\mikasdu" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="lt.mikasdu.ui.controller" />
       <recent name="lt.mikasdu" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -54,15 +85,6 @@
       <recent name="D:\GitHub\CanteenMenu-Maven-JavaFx\src\main\java\lt\mikasdu" />
       <recent name="D:\GitHub\CanteenMenu-Maven-JavaFx\src\main" />
       <recent name="D:\GitHub\CanteenMenu-Maven-JavaFx\src\main\resources\lt\mikasdu\sub" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="lt.mikasdu.ui.controller" />
-      <recent name="lt.mikasdu" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Mikas\IdeaProjects\CanteenMenu\src\main\resources\lt\mikasdu" />
-      <recent name="C:\Users\Mikas\IdeaProjects\CanteenMenu\src\main\resources\lt.mikasdu" />
-      <recent name="C:\Users\Mikas\IdeaProjects\CanteenMenu\src\main\java\lt\mikasdu" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -91,7 +113,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ValidatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="canteen-menu" />
       <extension name="coverage">
         <pattern>
@@ -100,8 +122,9 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="lt.mikasdu" />
-      <option name="MAIN_CLASS_NAME" value="lt.mikasdu.ValidatorTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="lt.mikasdu.TestTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -157,10 +180,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.App" />
+        <item itemvalue="JUnit.TestTest.test" />
         <item itemvalue="JUnit.ValidatorTest.validatorExistingFileNotAsDirectory" />
         <item itemvalue="JUnit.ValidatorTest.validatorNotExistingDirectory" />
         <item itemvalue="JUnit.ValidatorTest.validatorExistingDirectory" />
-        <item itemvalue="JUnit.ValidatorTest" />
       </list>
     </recent_temporary>
   </component>
@@ -447,6 +470,25 @@
     <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/lt/mikasdu/Formatter.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/SettingsController.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/lt/mikasdu/Formatter.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="directoryChooser.initialDirectory" />

@@ -24,11 +24,15 @@ public class SqlConnection {
 
     public static void updateDatabase(SqlStatement sqlStatement, Object... arg) {
         try (Connection conn = getConnection()) {
-            assert conn != null;
-            PreparedStatement pstmt = conn.prepareStatement(sqlStatement.getStatement());
-            for (int i = 0; i < arg.length; i++)
-                pstmt.setObject(i + 1, arg[i]);
-            pstmt.executeUpdate();
+            if (conn != null) {
+                PreparedStatement pstmt = conn.prepareStatement(sqlStatement.getStatement());
+                for (int i = 0; i < arg.length; i++)
+                    pstmt.setObject(i + 1, arg[i]);
+                pstmt.executeUpdate();
+            } else {
+                // TODO
+            }
+
         } catch (SQLException e) {
             AlertBox.exceptionAlert(e);
         }

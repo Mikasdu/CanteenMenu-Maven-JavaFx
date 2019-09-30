@@ -17,8 +17,6 @@ public class Products implements Database {
     private BigDecimal quantity;
     private boolean status;
 
-
-
     public Products() {
         this.setName("New");
     }

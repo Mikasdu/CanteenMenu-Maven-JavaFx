@@ -105,7 +105,11 @@ public class Settings {
         this.configProps.setProperty(propAppHeight, newAppHeight);
     }
 
-    public String getAppHeight() {
+    public Double getAppHeight() {
+        return Double.parseDouble(this.configProps.getProperty(propAppHeight));
+    }
+
+    public String getAppHeightString() {
         return this.configProps.getProperty(propAppHeight);
     }
 

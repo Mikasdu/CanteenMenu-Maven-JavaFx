@@ -18,8 +18,8 @@ public class App extends Application {
         primaryStage.setTitle(settings.getAppName());
         primaryStage.setScene(createScene(loadMainPane()));
         primaryStage.setMaximized(settings.isFullScreen());
-        primaryStage.setWidth(Double.parseDouble(settings.getAppWidth()));
-        primaryStage.setHeight(Double.parseDouble(settings.getAppHeight()));
+        primaryStage.setWidth(Double.parseDouble(settings.getAppWidth())); // TODO
+        primaryStage.setHeight(settings.getAppHeight());
         primaryStage.show();
     }
 

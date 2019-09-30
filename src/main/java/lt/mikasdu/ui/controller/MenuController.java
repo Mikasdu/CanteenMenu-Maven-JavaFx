@@ -129,7 +129,7 @@ public class MenuController implements Initializable {
     }
     public void choseDate() {
         ObservableList<WeekMenuRecipes> weekMenuRecipes = tbData.getItems();
-        AppNavigator.generateMenuWindow(AppNavigator.GENERATE_MENU, weekMenuRecipes);
+        AppNavigator.generateMenuWindow(weekMenuRecipes);
     }
 
     public void removeRecipeButton() {

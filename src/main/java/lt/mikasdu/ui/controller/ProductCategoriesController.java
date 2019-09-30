@@ -3,10 +3,12 @@ package lt.mikasdu.ui.controller;
 import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import lt.mikasdu.AppNavigator;
 import lt.mikasdu.ProductCategories;
 import lt.mikasdu.Validator;
 import lt.mikasdu.ui.alerts.AlertBox;
@@ -120,5 +122,14 @@ public class ProductCategoriesController implements Initializable {
 
     public void cancelButtonClicked() {
         defaultSettings();
+    }
+
+
+    public void addProductCategory(ProductCategories productCategory) {
+        AppNavigator.addProductCategory(productCategory);
+    }
+
+    public void buttonAddProductCategory() {
+        addProductCategory(new ProductCategories(1, ""));
     }
 }

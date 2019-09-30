@@ -28,6 +28,7 @@
                 <Label/>
                 <Button fx:id="cancelButton" text="Atšaukti" visible="false" onAction="#cancelButtonClicked"/>
             </VBox>
+            <Button onAction="#buttonAddProductCategory"/>
         </HBox>
     </VBox>
 

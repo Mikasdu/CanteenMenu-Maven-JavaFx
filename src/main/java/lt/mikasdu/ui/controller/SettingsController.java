@@ -36,7 +36,7 @@ public class SettingsController implements Initializable {
         textFieldAppUserName.setText(settings.getUserName());
         textAreaFieldAppDescription.setText(settings.getAppDescription());
         defaultFolderTextField.setText(settings.getFilesPath());
-        textFieldAppHeight.setText(settings.getAppHeight());
+        textFieldAppHeight.setText(settings.getAppHeightString());
         textFieldAppHeight.setTextFormatter(Formatter.formatIntegerNumbers());
         textFieldAppWidth.setText(settings.getAppWidth());
         textFieldAppWidth.setTextFormatter(Formatter.formatIntegerNumbers());
@@ -103,5 +103,4 @@ public class SettingsController implements Initializable {
         Stage stage = (Stage) closeButton.getScene().getWindow();
         stage.close();
     }
-//todo prideti vartotojo ivairia informacija kontaktai
 }

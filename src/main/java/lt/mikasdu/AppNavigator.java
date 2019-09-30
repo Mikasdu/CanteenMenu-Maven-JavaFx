@@ -8,6 +8,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import lt.mikasdu.ui.alerts.AlertBox;
 import lt.mikasdu.ui.controller.MainController;
+import lt.mikasdu.ui.controller.categories.ProductCategoriesItemController;
 import lt.mikasdu.ui.controller.menu.MenuAddItemController;
 import lt.mikasdu.ui.controller.menu.MenuAddRecipeController;
 import lt.mikasdu.ui.controller.menu.MenuGenerateFileController;
@@ -25,6 +26,7 @@ public class AppNavigator {
     public static final String ADD_MENU_ITEM = "sub/menuAddItem.fxml";
     public static final String ADD_MENU_RECIPE = "sub/menuAddRecipe.fxml";
     public static final String GENERATE_MENU = "sub/menuGenerateFile.fxml";
+    public static final String ADD_PRODUCT_CATEGORY = "sub/productCategoriesItem.fxml";
 
     private static MainController mainController;
 
@@ -41,6 +43,17 @@ public class AppNavigator {
         }
     }
 
+    public static void addProductCategory(ProductCategories productCategory) {
+        Stage window = new Stage();
+        window.setTitle("Pridėti produktų kategoriją");
+        FXMLLoader loader = new FXMLLoader();
+        Scene scene = getScene(AppNavigator.ADD_PRODUCT_CATEGORY, new StackPane(), loader);
+        ProductCategoriesItemController productCategoriesItemController = loader.getController();
+        productCategoriesItemController.initData(productCategory);
+        showWindow(window, scene);
+    }
+
+
     public static void openAppSettingsWindow() {
         Stage window = new Stage();
         window.setTitle("Programos nustatymai");
@@ -49,11 +62,11 @@ public class AppNavigator {
         showWindow(window, scene);
     }
 
-    public static void generateMenuWindow(String fxml, ObservableList<WeekMenuRecipes> weekMenuRecipes) {
+    public static void generateMenuWindow(ObservableList<WeekMenuRecipes> weekMenuRecipes) {
         Stage window = new Stage();
         window.setTitle("Generuoti savaitės meniu PDF");
         FXMLLoader loader = new FXMLLoader();
-        Scene scene = getScene(fxml, new StackPane(), loader);
+        Scene scene = getScene(GENERATE_MENU, new StackPane(), loader);
         MenuGenerateFileController menuGenerateFileController = loader.getController();
         menuGenerateFileController.initData(weekMenuRecipes);
         showWindow(window, scene);

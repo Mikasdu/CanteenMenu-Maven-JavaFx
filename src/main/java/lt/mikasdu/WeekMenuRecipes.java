@@ -1,5 +1,6 @@
 package lt.mikasdu;
 
+import com.itextpdf.layout.element.Paragraph;
 import lt.mikasdu.ui.sqlConnection.Database;
 import lt.mikasdu.ui.sqlConnection.SqlConnection;
 import lt.mikasdu.ui.sqlConnection.SqlStatement;
@@ -8,6 +9,7 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.HashMap;
 
 public class WeekMenuRecipes implements Database {
 
@@ -106,6 +108,11 @@ public class WeekMenuRecipes implements Database {
         setRecipePrice(recipe.getPrice());
     }
 
+    public void setParagraph(HashMap<Integer, Paragraph> hashMap) {
+        String menuItem = getRecipe().getName() + " " + getRecipe().getPrice() + " € \n";
+        hashMap.get(getWeekDayNumber()).add(menuItem);
+    }
+
     @Override
     public void saveToDatabase() {
         SqlConnection.updateDatabase(
@@ -138,7 +145,6 @@ public class WeekMenuRecipes implements Database {
 
     @Override
     public void setParam(ResultSet resultSet) throws SQLException {
-
     }
 
     @Override

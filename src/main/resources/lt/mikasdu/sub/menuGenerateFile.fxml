@@ -9,7 +9,7 @@
            prefHeight="130" prefWidth="300">
     <VBox>
         <HBox alignment="CENTER">
-            <Label fx:id="editLabel" styleClass="headerLabel">Pasirinkite meniu datą</Label>
+            <Label styleClass="headerLabel">Pasirinkite meniu datą</Label>
         </HBox>
         <VBox styleClass="box-borders">
             <VBox alignment="CENTER">
@@ -25,5 +25,4 @@
             <Button fx:id="cancelButton" styleClass="button-remove" text="Atšaukti" onAction="#buttonCancel"/>
         </HBox>
     </VBox>
-
 </StackPane>

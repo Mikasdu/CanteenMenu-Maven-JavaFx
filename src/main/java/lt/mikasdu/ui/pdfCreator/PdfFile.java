@@ -12,6 +12,7 @@ import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.property.TextAlignment;
 import javafx.collections.ObservableList;
 import lt.mikasdu.Products;
+import lt.mikasdu.WeekDaysLt;
 import lt.mikasdu.WeekMenuRecipes;
 import lt.mikasdu.settings.Settings;
 import lt.mikasdu.ui.alerts.AlertBox;
@@ -21,11 +22,12 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.HashMap;
 
 public class PdfFile {
 
 
-private static Settings settings = new Settings();
+    private static Settings settings = new Settings();
 
     public static void createFile(ObservableList<Products> items) throws IOException {
         //todo jeigu atidarytas failas errora ismeta
@@ -39,7 +41,7 @@ private static Settings settings = new Settings();
         items.forEach(product -> {
             String productLine = product.getName() + " " + product.getQuantity() + " " + product.getMeasure();
             list.add(productLine);
-        } );
+        });
         document.add(para);
         document.add(list);
         document.close();
@@ -50,74 +52,47 @@ private static Settings settings = new Settings();
     private static Document createDocument(String fileName) throws FileNotFoundException {
         Calendar cal = Calendar.getInstance();
         SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-DD HHmmss");
-        String dest = settings.getFilesPath() + "\\" + fileName + sdf.format(cal.getTime()) +".pdf";
+        String dest = settings.getFilesPath() + "\\" + fileName + sdf.format(cal.getTime()) + ".pdf";
         PdfWriter writer = new PdfWriter(dest);
         PdfDocument pdf = new PdfDocument(writer);
         return new Document(pdf);
     }
+
     private static Paragraph newParagraphTittle(String name) throws IOException {
         PdfFont font = PdfFontFactory.createFont(StandardFonts.TIMES_BOLD, PdfEncodings.CP1257);
         return new Paragraph(name).setFont(font).setTextAlignment(TextAlignment.CENTER).setFontSize(10);
     }
+
     private static Paragraph newParagraph() throws IOException {
         PdfFont font = PdfFontFactory.createFont(StandardFonts.TIMES_ROMAN, PdfEncodings.CP1257);
         return new Paragraph().setFont(font).setTextAlignment(TextAlignment.CENTER).setFontSize(10);
     }
+
     public static void createMenuPdf(ObservableList<WeekMenuRecipes> items, String dateFromTo) throws IOException {
         Document document = createDocument("Savaites_meniu ");
         document.setMargins(10, 50, 10, 100);
         PdfFont font = PdfFontFactory.createFont(StandardFonts.TIMES_BOLD, PdfEncodings.CP1257);
-
-        Paragraph day1 = newParagraphTittle("Pirmadienis");
-        Paragraph day1Menu = newParagraph();
-        Paragraph day2 = newParagraphTittle("Antradienis");
-        Paragraph day2Menu = newParagraph();
-        Paragraph day3 = newParagraphTittle("Trečiadienis");
-        Paragraph day3Menu = newParagraph();
-        Paragraph day4 = newParagraphTittle("Ketvirtadienis");
-        Paragraph day4Menu = newParagraph();
-        Paragraph day5 = newParagraphTittle("Penktadienis");
-        Paragraph day5Menu = newParagraph();
-        Paragraph day6 = newParagraphTittle("Šeštadienis");
-        Paragraph day6Menu = newParagraph();
-        Paragraph day7 = newParagraphTittle("Sekmadienis");
-        Paragraph day7Menu = newParagraph();
-
-        for (WeekMenuRecipes item : items) {
-            String menuItem = item.getRecipe().getName() + " " + item.getRecipe().getPrice() + " € \n";
-            if(item.getWeekDayNumber() == 1)
-                day1Menu.add(menuItem);
-            else if(item.getWeekDayNumber() == 2)
-                day2Menu.add(menuItem);
-            else if(item.getWeekDayNumber() == 3)
-                day3Menu.add(menuItem);
-            else if(item.getWeekDayNumber() == 4)
-                day4Menu.add(menuItem);
-            else if(item.getWeekDayNumber() == 5)
-                day5Menu.add(menuItem);
-            else if(item.getWeekDayNumber() == 6)
-                day6Menu.add(menuItem);
-            else if(item.getWeekDayNumber() == 7)
-                day7Menu.add(menuItem);
+        HashMap<Integer, Paragraph> paragraphHashMap = new HashMap<>();
+        for (int i = 1; i < 8; i++) {
+            paragraphHashMap.put(i, newParagraph());
         }
-
+        for (WeekMenuRecipes item : items) {
+            item.setParagraph(paragraphHashMap);
+        }
         String text = settings.getUserName() + dateFromTo + "\n" + settings.getAppDescription();
         Paragraph para = new Paragraph(text).setFont(font).setTextAlignment(TextAlignment.CENTER).setFontSize(16);
         document.add(para);
-        if (!day1Menu.isEmpty())
-            document.add(day1).add(day1Menu);
-        if (!day2Menu.isEmpty())
-            document.add(day2).add(day2Menu);
-        if (!day3Menu.isEmpty())
-            document.add(day3).add(day3Menu);
-        if (!day4Menu.isEmpty())
-            document.add(day4).add(day4Menu);
-        if (!day5Menu.isEmpty())
-            document.add(day5).add(day5Menu);
-        if (!day6Menu.isEmpty())
-            document.add(day6).add(day6Menu);
-        if (!day7Menu.isEmpty())
-            document.add(day7).add(day7Menu);
+
+        paragraphHashMap.forEach((key, value) -> {
+            if (!value.isEmpty()) {
+                try {
+                    Paragraph tittleParagraph = newParagraphTittle(WeekDaysLt.getById(key).getName());
+                    document.add(tittleParagraph).add(value);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
         document.close();
         AlertBox.alertSimple(AlertMessage.INFO_FILE_CREATED);
     }

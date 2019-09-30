@@ -5,21 +5,22 @@
 
 <StackPane xmlns="http://javafx.com/javafx"
            xmlns:fx="http://javafx.com/fxml"
-           fx:controller="lt.mikasdu.ui.controller.menu.MenuGenerateFileController"
-           prefHeight="130" prefWidth="300">
+           fx:controller="lt.mikasdu.ui.controller.categories.ProductCategoriesItemController"
+           prefWidth="300">
     <VBox>
         <HBox alignment="CENTER">
-            <Label styleClass="headerLabel">Pasirinkite meniu datą</Label>
+            <Label styleClass="headerLabel" fx:id="headerLabelCategory" text="Nauja kategorija"/>
         </HBox>
         <VBox styleClass="box-borders">
-            <VBox alignment="CENTER">
-                <Label>Data nuo</Label>
-                <DatePicker fx:id="dateFrom"/>
-                <Label>Data iki</Label>
-                <DatePicker fx:id="dateTo"/>
+            <VBox>
+                <Label text="Kategorijos pavadinimas"/>
+                <TextField fx:id="productCategoryName"/>
+                <HBox>
+                    <CheckBox fx:id="checkBoxProductCategoryStatus"/>
+                    <Label text="Nebenaudojamas"/>
+                </HBox>
             </VBox>
         </VBox>
-
         <HBox style="-fx-padding: 5;" spacing="15" alignment="CENTER">
             <Button styleClass="button-edit" text="Išsaugoti" onAction="#buttonSave"/>
             <Button fx:id="cancelButton" styleClass="button-remove" text="Atšaukti" onAction="#buttonCancel"/>

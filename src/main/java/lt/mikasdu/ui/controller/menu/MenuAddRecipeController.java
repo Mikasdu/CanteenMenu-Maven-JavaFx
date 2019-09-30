@@ -45,12 +45,10 @@ public class MenuAddRecipeController implements Initializable {
                     int newRecipeId = recipesListComboBox.getSelectionModel().getSelectedItem().getId();
                     int newWeekDay = weekDays.getSelectionModel().getSelectedItem().getDayNumber();
                     BigInteger newQuantity = new BigInteger(quantityInput.getText());
-
                     weekMenuRecipes.getRecipe().setId(newRecipeId);
                     weekMenuRecipes.setWeekDay(newWeekDay);
                     weekMenuRecipes.setQuantity(newQuantity);
                     weekMenuRecipes.setStatus(true);
-
                     if (isNew) weekMenuRecipes.saveToDatabase();
                     else weekMenuRecipes.updateDatabase();
 
@@ -72,7 +70,6 @@ public class MenuAddRecipeController implements Initializable {
 
     public void initData(WeekMenuRecipes weekMenuRecipes) {
         this.weekMenuRecipes = weekMenuRecipes;
-
         if (weekMenuRecipes.getId() == 0) {
             isNew = true;
             editLabel.setText("Naujas meniu įrašas");
@@ -83,12 +80,10 @@ public class MenuAddRecipeController implements Initializable {
                 if (recipe.getId() == weekMenuRecipes.getRecipe().getId())
                     recipesListComboBox.getSelectionModel().select(recipe);
             });
-
             weekDays.getItems().forEach(day -> {
                 if (day.getDayNumber() == weekMenuRecipes.getWeekDayNumber())
                     weekDays.getSelectionModel().select(day);
             });
-
             quantityInput.setText(weekMenuRecipes.getQuantity().toString());
         }
     }
