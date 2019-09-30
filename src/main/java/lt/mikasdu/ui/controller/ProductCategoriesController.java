@@ -3,14 +3,12 @@ package lt.mikasdu.ui.controller;
 import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import lt.mikasdu.AppNavigator;
 import lt.mikasdu.ProductCategories;
-import lt.mikasdu.Validator;
 import lt.mikasdu.ui.alerts.AlertBox;
 import lt.mikasdu.ui.alerts.AlertMessage;
 import lt.mikasdu.ui.sqlConnection.SqlConnection;
@@ -25,17 +23,12 @@ import java.util.ResourceBundle;
 public class ProductCategoriesController implements Initializable {
 
     @FXML private Button editCategoryButton;
-    @FXML private TextField productCategoryName;
     @FXML private TableView<ProductCategories> tbData;
     @FXML private TableColumn<ProductCategories, Integer> categoryId;
     @FXML private TableColumn<ProductCategories, String> categoryName;
-    @FXML private Label editLabel;
-    @FXML private Button saveButton;
-    @FXML private Button cancelButton;
     @FXML private Button removeCategoryButton;
 
     private ObservableList<ProductCategories> productCategoriesList = FXCollections.observableArrayList();
-    private boolean isNew = true;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -43,10 +36,10 @@ public class ProductCategoriesController implements Initializable {
         defaultSettings();
     }
 
+    //TODO sarasa iskarto gauti
     private void setTableData() {
         productCategoriesList.clear();
         tbData.getItems().clear();
-        //TODO sarasa iskarto gauti
         try {
             Connection con = SqlConnection.getConnection();
             ResultSet rs = con.createStatement().executeQuery(SqlStatement.ACTIVE_CATEGORY.getStatement());
@@ -66,32 +59,10 @@ public class ProductCategoriesController implements Initializable {
     }
 
     private void defaultSettings() {
-        saveButton.disableProperty().bind(Bindings.isEmpty(productCategoryName.textProperty()));
         editCategoryButton.disableProperty().bind(Bindings.isEmpty(tbData.getSelectionModel().getSelectedItems()));
         removeCategoryButton.disableProperty().bind(Bindings.isEmpty(tbData.getSelectionModel().getSelectedItems()));
-        productCategoryName.clear();
-        cancelButton.setVisible(false);
-        isNew = true;
-        saveButton.setText("Išsaugoti įrašą");
-        editLabel.setText("Įveskite naują produktų kategoriją");
     }
 
-    public void saveButtonClicked() {
-        String productCategoryName = this.productCategoryName.getText();
-        if (!Validator.stringValid(productCategoryName, 5, 50)) {
-            AlertBox.alertSimple(AlertMessage.ERROR_NAME);
-        } else {
-            if (isNew)
-                new ProductCategories(productCategoryName).saveToDatabase();
-            else {
-                ProductCategories productCategories = tbData.getSelectionModel().getSelectedItem();
-                productCategories.setName(productCategoryName);
-                productCategories.updateDatabase();
-            }
-            setTableData();
-            defaultSettings();
-        }
-    }
 
     public void deleteButtonClicked() {
         if (!tbData.getSelectionModel().isEmpty()) {
@@ -110,26 +81,17 @@ public class ProductCategoriesController implements Initializable {
 
     public void editButtonClicked() {
         if (!tbData.getSelectionModel().isEmpty()) {
-            ProductCategories productCategoriesSelected = tbData.getSelectionModel().getSelectedItem();
-            editLabel.setText("Redaguojate įrašą kurio Id: " + productCategoriesSelected.getId() +
-                    " Pavadinimas: " + productCategoriesSelected.getName());
-            saveButton.setText("Redaguoti įrašą");
-            cancelButton.setVisible(true);
-            isNew = false;
-            productCategoryName.setText(productCategoriesSelected.getName());
+            ProductCategoryWindow(tbData.getSelectionModel().getSelectedItem());
         } else AlertBox.alertSimple(AlertMessage.ERROR_PLEASECHOOSE);
     }
 
-    public void cancelButtonClicked() {
-        defaultSettings();
-    }
-
-
-    public void addProductCategory(ProductCategories productCategory) {
-        AppNavigator.addProductCategory(productCategory);
-    }
-
     public void buttonAddProductCategory() {
-        addProductCategory(new ProductCategories(0, ""));
+        ProductCategoryWindow(new ProductCategories(0, ""));
+    }
+
+    private void ProductCategoryWindow(ProductCategories productCategory) {
+        AppNavigator.addProductCategory(productCategory);
+        setTableData();
+        defaultSettings();
     }
 }

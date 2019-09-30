@@ -9,16 +9,16 @@
            prefWidth="300">
     <VBox>
         <HBox alignment="CENTER">
-            <Label styleClass="headerLabel" fx:id="headerLabelCategory" text="Nauja kategorija"/>
+            <Label styleClass="headerLabel" fx:id="headerLabelCategory"/>
         </HBox>
         <VBox styleClass="box-borders">
             <VBox>
                 <Label text="Kategorijos pavadinimas"/>
                 <TextField fx:id="productCategoryName"/>
                 <Label/>
-                <HBox>
+                <HBox fx:id="statusFieldsBox">
                     <CheckBox fx:id="checkBoxProductCategoryStatus"/>
-                    <Label text="Nebenaudojamas"/>
+                    <Label fx:id="statusLabel" text="Nebenaudojamas"/>
                 </HBox>
             </VBox>
         </VBox>
