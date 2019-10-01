@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import lt.mikasdu.*;
 import lt.mikasdu.ui.alerts.AlertBox;
+import lt.mikasdu.ui.alerts.AlertMessage;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -52,13 +53,12 @@ public class SqlConnection {
         return dbObj;
     }
 
-    // Total quantity kazkaip nustatyti reikia
-    public static ObservableList<Products> getActiveProducts(SqlStatement sqlStatement, int id) {
+    public static ObservableList<Products> getProductsList(SqlStatement sqlStatement, int arg) {
         ObservableList<Products> productList = FXCollections.observableArrayList();
         try (Connection conn = getConnection()) {
             assert conn != null;
             PreparedStatement pstmt = conn.prepareStatement(sqlStatement.getStatement());
-            pstmt.setInt(1, id);
+            pstmt.setInt(1, arg);
             ResultSet resultSet = pstmt.executeQuery();
             while (resultSet.next()) {
                 Products product = new Products();
@@ -130,31 +130,35 @@ public class SqlConnection {
             pstmt.setInt(1, id);
             ResultSet resultSet = pstmt.executeQuery();
             resultSet.next();
-            productCategoryName = resultSet.getString("name");
+            productCategoryName = resultSet.getString("name"); //todo perdaryti i sql pagal id
         } catch (SQLException e) {
             AlertBox.exceptionAlert(e);
         }
         return productCategoryName;
     }
 
-
-    public static ObservableList<ProductCategories> returnActiveProductCategoriesList() {
+    public static ObservableList<ProductCategories> returnProductCategoriesList(boolean status) {
         ObservableList<ProductCategories> productCategories = FXCollections.observableArrayList();
-        String sql = SqlStatement.ACTIVE_CATEGORY.getStatement();
-        try (Connection conn = getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            ResultSet resultSet = pstmt.executeQuery();
-            while (resultSet.next()) {
-                productCategories.add(new ProductCategories(
-                        resultSet.getInt("id"),
-                        resultSet.getString("name")
-                ));
+        String sql = SqlStatement.PRODUCT_CATEGORIES.getStatement();
+        try (Connection conn = getConnection()) {
+            if (conn != null) {
+                PreparedStatement pstmt = conn.prepareStatement(sql);
+                pstmt.setBoolean(1, status);
+                ResultSet resultSet = pstmt.executeQuery();
+                while (resultSet.next()) {
+                    ProductCategories productCategory = new ProductCategories();
+                    getObjectById(resultSet.getInt("id"), productCategory);
+                    productCategories.add(productCategory);
+                }
+            } else {
+               AlertBox.alertSimple(AlertMessage.ERROR_CONNECTION);
             }
         } catch (Exception e) {
             AlertBox.exceptionAlert(e);
         }
         return productCategories;
     }
+
 
     public static ObservableList<WeekMenu> returnActiveWeekMenuList() {
         ObservableList<WeekMenu> weekMenus = FXCollections.observableArrayList();
@@ -197,7 +201,6 @@ public class SqlConnection {
         return recipesList;
     }
 
-
     public static boolean productsWithCategoryId(ProductCategories productCategories) {
         String sql = SqlStatement.PRODUCT_ID_WHERE_CATEGORY.getStatement();
         boolean answer = true;
@@ -210,76 +213,4 @@ public class SqlConnection {
         }
         return answer;
     }
-
-
-//    public static ObservableList<Products> returnActiveProductsByCategory(int categoryId) {
-//        ObservableList<Products> products = FXCollections.observableArrayList();
-//        String sql = SqlStatement.ACTIVE_PRODUCT_WHERE_CATEGORY.getStatement();
-//        try (Connection conn = getConnection();
-//             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-//            pstmt.setInt(1, categoryId);
-//            ResultSet resultSet = pstmt.executeQuery();
-//            while (resultSet.next()) {
-//                Products product = new Products();
-//                getObjectById(resultSet.getInt("id"), product);
-//                products.add(product);
-//            }
-//        } catch (Exception e) {
-//            AlertBox.exceptionAlert(e);
-//        }
-//        return products;
-//    }
-//    public static ObservableList getObservableDatabaseList(SqlStatement sqlStatement) {
-//
-//        ObservableList observableList = FXCollections.observableArrayList();
-//        String sql = sqlStatement.getStatement();
-//        try (Connection conn = getConnection();
-//             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-//            ResultSet resultSet = pstmt.executeQuery();
-//            while (resultSet.next()) {
-//                observableList.add(new ProductCategories(resultSet.getInt("id"), resultSet.getString("name")));
-//            }
-//        } catch (Exception e) {
-//            AlertBox.exceptionAlert(e);
-//        }
-//        return observableList;
-//    }
-//    public static Products getProductById(int productId) {
-//        Products product = new Products(0, "Nenustatyta", "Vienetas", "", 4);
-//        String sql = SqlStatement.PRODUCT_BY_ID.getStatement();
-//        try (Connection conn = getConnection();
-//             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-//            pstmt.setInt(1, productId);
-//            ResultSet resultSet = pstmt.executeQuery();
-//            resultSet.next();
-//            product.setId(resultSet.getInt("id"));
-//            product.setName(resultSet.getString("name"));
-//            product.setMeasure(resultSet.getString("measure"));
-//            product.setDescription(resultSet.getString("description"));
-//            product.setCategories(resultSet.getInt("category"));
-//        } catch (SQLException e) {
-//            AlertBox.exceptionAlert(e);
-//        }
-//        return product;
-//    }
-
-
-//    public static Recipes getRecipeById(int recipeId) {
-//        Recipes recipe = new Recipes(0, "", "", new BigDecimal(0), false);
-//        String sql = SqlStatement.RECIPE_BY_ID.getStatement();
-//        try (Connection conn = getConnection();
-//             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-//            pstmt.setInt(1, recipeId);
-//            ResultSet resultSet = pstmt.executeQuery();
-//            resultSet.next();
-//            recipe.setId(resultSet.getInt("Id"));
-//            recipe.setName(resultSet.getString("Name"));
-//            recipe.setDescription(resultSet.getString("Description"));
-//            recipe.setPrice(new BigDecimal(resultSet.getString("Price")));
-//            recipe.setStatus(resultSet.getBoolean("Status"));
-//        } catch (SQLException e) {
-//            AlertBox.exceptionAlert(e);
-//        }
-//        return recipe;
-//    }
 }

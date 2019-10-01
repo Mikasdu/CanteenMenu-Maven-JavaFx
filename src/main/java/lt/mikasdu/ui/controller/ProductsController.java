@@ -40,7 +40,7 @@ public class ProductsController implements Initializable {
     }
 
     private void setProductCategories() {
-        ObservableList<ProductCategories> categoriesList = SqlConnection.returnActiveProductCategoriesList();
+        ObservableList<ProductCategories> categoriesList = SqlConnection.returnProductCategoriesList(true);
         productCategoryBox.setItems(categoriesList);
     }
 
@@ -91,7 +91,7 @@ public class ProductsController implements Initializable {
         if (!tbData.getSelectionModel().isEmpty()) {
             boolean confirmedDelete = AlertBox.alertWithConformation(AlertMessage.CONFIRM_DELETE);
 
-            System.out.println("Paspaustas mygtukas: " + confirmedDelete);
+            System.out.println("Paspaustas mygtukas: " + confirmedDelete); //todo uzkomentuota kazkodel
 //            if (confirmedDelete) {
 //                Products productSelected = tbData.getSelectionModel().getSelectedItem();
 //                tbData.getItems().remove(productSelected);
@@ -118,7 +118,7 @@ public class ProductsController implements Initializable {
     private void setTableData() {
         produktuDuomenys.clear();
         tbData.getItems().clear();
-        produktuDuomenys = SqlConnection.getActiveProducts(SqlStatement.ACTIVE_PRODUCT, 1);
+        produktuDuomenys = SqlConnection.getProductsList(SqlStatement.ACTIVE_PRODUCT, 1);
         productId.setCellValueFactory(new PropertyValueFactory<>("id"));
         productName.setCellValueFactory(new PropertyValueFactory<>("name"));
         productMesure.setCellValueFactory(new PropertyValueFactory<>("measure"));

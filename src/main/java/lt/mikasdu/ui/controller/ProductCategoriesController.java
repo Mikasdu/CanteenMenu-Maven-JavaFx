@@ -12,16 +12,12 @@ import lt.mikasdu.ProductCategories;
 import lt.mikasdu.ui.alerts.AlertBox;
 import lt.mikasdu.ui.alerts.AlertMessage;
 import lt.mikasdu.ui.sqlConnection.SqlConnection;
-import lt.mikasdu.ui.sqlConnection.SqlStatement;
-
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class ProductCategoriesController implements Initializable {
 
+    @FXML private CheckBox showDeleted;
     @FXML private Button editCategoryButton;
     @FXML private TableView<ProductCategories> tbData;
     @FXML private TableColumn<ProductCategories, Integer> categoryId;
@@ -32,37 +28,27 @@ public class ProductCategoriesController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        setTableData();
+        setTableData(true);
         defaultSettings();
+        showDeleted.setOnAction(event ->
+            setTableData(!showDeleted.isSelected())
+        );
     }
 
-    //TODO sarasa iskarto gauti
-    private void setTableData() {
+    private void setTableData(boolean status) {
         productCategoriesList.clear();
         tbData.getItems().clear();
-        try {
-            Connection con = SqlConnection.getConnection();
-            ResultSet rs = con.createStatement().executeQuery(SqlStatement.ACTIVE_CATEGORY.getStatement());
-            while (rs.next()) {
-                productCategoriesList.add(new ProductCategories(
-                        rs.getInt("id"),
-                        rs.getString("name")
-                ));
-            }
-            categoryId.setCellValueFactory(new PropertyValueFactory<>("id"));
-            categoryName.setCellValueFactory(new PropertyValueFactory<>("name"));
-            tbData.setItems(productCategoriesList);
-            con.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        productCategoriesList = SqlConnection.returnProductCategoriesList(status);
+        categoryId.setCellValueFactory(new PropertyValueFactory<>("id"));
+        categoryName.setCellValueFactory(new PropertyValueFactory<>("name"));
+        tbData.setItems(productCategoriesList);
     }
 
     private void defaultSettings() {
         editCategoryButton.disableProperty().bind(Bindings.isEmpty(tbData.getSelectionModel().getSelectedItems()));
         removeCategoryButton.disableProperty().bind(Bindings.isEmpty(tbData.getSelectionModel().getSelectedItems()));
+        showDeleted.setSelected(false);
     }
-
 
     public void deleteButtonClicked() {
         if (!tbData.getSelectionModel().isEmpty()) {
@@ -86,12 +72,12 @@ public class ProductCategoriesController implements Initializable {
     }
 
     public void buttonAddProductCategory() {
-        ProductCategoryWindow(new ProductCategories(0, ""));
+        ProductCategoryWindow(new ProductCategories());
     }
 
     private void ProductCategoryWindow(ProductCategories productCategory) {
         AppNavigator.addProductCategory(productCategory);
-        setTableData();
+        setTableData(true);
         defaultSettings();
     }
 }

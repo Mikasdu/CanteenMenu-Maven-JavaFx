@@ -1,7 +1,7 @@
 package lt.mikasdu.ui.sqlConnection;
 
 public enum SqlStatement {
-    ACTIVE_CATEGORY("SELECT * FROM ProductCategory WHERE status = 1;"),
+    PRODUCT_CATEGORIES("SELECT * FROM ProductCategory WHERE status = ?;"),
     ACTIVE_RECIPES_BY_MENU("SELECT * FROM WeekMenuRecipes WHERE WeekMenuId = ? AND Status = 1;"),
     ACTIVE_PRODUCT("SELECT * FROM Product WHERE status = ?;"),
     ACTIVE_RECIPES("SELECT * FROM Recipe WHERE status = 1;"),

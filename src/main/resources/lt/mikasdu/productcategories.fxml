@@ -8,6 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
       fx:controller="lt.mikasdu.ui.controller.ProductCategoriesController">
     <HBox alignment="CENTER">
@@ -36,4 +37,9 @@
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
         </VBox.margin>
     </TableView>
+    <HBox>
+        <Label text="      "/>
+        <CheckBox fx:id="showDeleted"/>
+        <Label text="Rodyti ištrintus (nebenaudojamus)"/>
+    </HBox>
 </VBox>

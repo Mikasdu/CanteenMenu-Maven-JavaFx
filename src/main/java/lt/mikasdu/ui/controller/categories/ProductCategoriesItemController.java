@@ -34,28 +34,41 @@ public class ProductCategoriesItemController {
         } else {
             AlertBox.alertSimple(AlertMessage.ERROR_NAME);
         }
-        closeCurentWindow();
+        closeCurrentWindow();
     }
-    //todo patikrinti ar po initData visur naudojamas naujas productCategory objektas
+
     public void initData(ProductCategories productCategory) {
+        this.productCategory = productCategory;
+        setDefaultSettings();
+    }
+
+    private void setDefaultSettings() {
         isNew = productCategory.getId() == 0;
         if (isNew) {
             headerLabelCategory.setText("Įveskite naujos kategorijos pavadinimą");
-            statusFieldsBox.setDisable(true); //todo active tik jei status 0
         } else {
             headerLabelCategory.setText("Redaguojama kategorija Id: " + productCategory.getId());
             productCategoryName.setText(productCategory.getName());
             checkBoxProductCategoryStatus.setSelected(!productCategory.getStatus());
         }
-        this.productCategory = productCategory;
+        if (!productCategory.getStatus()) {
+            productCategoryName.setDisable(true);
+        }
+        statusFieldsBox.setDisable(productCategory.getStatus());
     }
 
-    private void closeCurentWindow() {
+    private void closeCurrentWindow() {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
     }
 
     public void buttonCancel() {
-        closeCurentWindow();
+        closeCurrentWindow();
+    }
+
+    public void removeDeletedTag() {
+        productCategory.setStatus(!checkBoxProductCategoryStatus.isSelected());
+        productCategoryName.setText(productCategory.getName());
+        productCategoryName.setDisable(checkBoxProductCategoryStatus.isSelected());
     }
 }

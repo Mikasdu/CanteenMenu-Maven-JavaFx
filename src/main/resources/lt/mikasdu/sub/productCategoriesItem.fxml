@@ -17,8 +17,8 @@
                 <TextField fx:id="productCategoryName"/>
                 <Label/>
                 <HBox fx:id="statusFieldsBox">
-                    <CheckBox fx:id="checkBoxProductCategoryStatus"/>
-                    <Label fx:id="statusLabel" text="Nebenaudojamas"/>
+                    <CheckBox fx:id="checkBoxProductCategoryStatus" onAction="#removeDeletedTag"/>
+                    <Label text="Nebenaudojamas"/>
                 </HBox>
             </VBox>
         </VBox>

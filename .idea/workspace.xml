@@ -2,10 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68a7ebb9-642d-498c-a95e-2174f80e25e8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/lt/mikasdu/ProductCategoriesTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ProductCategories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ProductCategories.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/alerts/AlertMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/alerts/AlertMessage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/ProductCategoriesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/ProductCategoriesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/ProductsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/PurchaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/PurchaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/RecipesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/RecipesController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/categories/ProductCategoriesItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/categories/ProductCategoriesItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/sqlConnection/SqlConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/sqlConnection/SqlConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/sqlConnection/SqlStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/sqlConnection/SqlStatement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/lt/mikasdu/productcategories.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lt/mikasdu/productcategories.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/lt/mikasdu/sub/productCategoriesItem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lt/mikasdu/sub/productCategoriesItem.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/lt/mikasdu/productcategories.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lt/mikasdu/productcategories.fxml" afterDir="false" />
@@ -19,8 +27,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit4 Test Class" />
         <option value="Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -52,15 +60,6 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="lt.mikasdu" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Mikas\IdeaProjects\CanteenMenu\src\main\resources\lt\mikasdu" />
-      <recent name="C:\Users\Mikas\IdeaProjects\CanteenMenu\src\main\resources\lt.mikasdu" />
-      <recent name="C:\Users\Mikas\IdeaProjects\CanteenMenu\src\main\java\lt\mikasdu" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="lt.mikasdu.ui.controller" />
-      <recent name="lt.mikasdu" />
-    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
       <recent name="groovy.util.GroovyTestCase" />
@@ -71,6 +70,15 @@
       <recent name="D:\GitHub\CanteenMenu-Maven-JavaFx\src\main\java\lt\mikasdu" />
       <recent name="D:\GitHub\CanteenMenu-Maven-JavaFx\src\main" />
       <recent name="D:\GitHub\CanteenMenu-Maven-JavaFx\src\main\resources\lt\mikasdu\sub" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="lt.mikasdu.ui.controller" />
+      <recent name="lt.mikasdu" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Mikas\IdeaProjects\CanteenMenu\src\main\resources\lt\mikasdu" />
+      <recent name="C:\Users\Mikas\IdeaProjects\CanteenMenu\src\main\resources\lt.mikasdu" />
+      <recent name="C:\Users\Mikas\IdeaProjects\CanteenMenu\src\main\java\lt\mikasdu" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -85,7 +93,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.App">
+  <component name="RunManager" selected="JUnit.All in canteen-menu">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="lt.mikasdu.App" />
       <module name="canteen-menu" />
@@ -95,6 +103,30 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in canteen-menu" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="canteen-menu" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductCategoriesTest.createEmptyProductCategory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="canteen-menu" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lt.mikasdu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="lt.mikasdu" />
+      <option name="MAIN_CLASS_NAME" value="lt.mikasdu.ProductCategoriesTest" />
+      <option name="METHOD_NAME" value="createEmptyProductCategory" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -110,22 +142,6 @@
       <option name="PACKAGE_NAME" value="lt.mikasdu" />
       <option name="MAIN_CLASS_NAME" value="lt.mikasdu.TestTest" />
       <option name="METHOD_NAME" value="test" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ValidatorTest.validatorExistingDirectory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="canteen-menu" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="lt.mikasdu.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="lt.mikasdu" />
-      <option name="MAIN_CLASS_NAME" value="lt.mikasdu.ValidatorTest" />
-      <option name="METHOD_NAME" value="validatorExistingDirectory" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -147,29 +163,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ValidatorTest.validatorNotExistingDirectory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="canteen-menu" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="lt.mikasdu.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="lt.mikasdu" />
-      <option name="MAIN_CLASS_NAME" value="lt.mikasdu.ValidatorTest" />
-      <option name="METHOD_NAME" value="validatorNotExistingDirectory" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in canteen-menu" />
         <item itemvalue="Application.App" />
+        <item itemvalue="JUnit.ProductCategoriesTest.createEmptyProductCategory" />
         <item itemvalue="JUnit.TestTest.test" />
         <item itemvalue="JUnit.ValidatorTest.validatorExistingFileNotAsDirectory" />
-        <item itemvalue="JUnit.ValidatorTest.validatorNotExistingDirectory" />
-        <item itemvalue="JUnit.ValidatorTest.validatorExistingDirectory" />
       </list>
     </recent_temporary>
   </component>
@@ -436,7 +436,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569877339875</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="productCategory remake">
+      <created>1569879149433</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1569879149433</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -469,7 +476,8 @@
     <MESSAGE value="update" />
     <MESSAGE value="updated pdf creator" />
     <MESSAGE value="bug fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug fix" />
+    <MESSAGE value="productCategory remake" />
+    <option name="LAST_COMMIT_MESSAGE" value="productCategory remake" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

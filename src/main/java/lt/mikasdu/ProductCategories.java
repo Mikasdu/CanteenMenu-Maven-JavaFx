@@ -9,15 +9,18 @@ import java.sql.SQLException;
 public class ProductCategories implements Database {
     private int id;
     private String name;
-    private Boolean status;
+    private boolean status;
+
+    public ProductCategories() {
+        this.id = 0;
+        this.name = "";
+        this.status = true;
+    }
 
     public ProductCategories(int id, String name) {
         setId(id);
         setName(name);
         setStatus(true);
-    }
-    public ProductCategories(String name) {
-         setName(name);
     }
 
     @Override
@@ -41,38 +44,47 @@ public class ProductCategories implements Database {
         this.name = name;
     }
 
-    public Boolean getStatus() {
+    public boolean getStatus() {
         return status;
     }
 
-    public void setStatus(Boolean status) {
+    public void setStatus(boolean status) {
         this.status = status;
+        setNameOnStatusChange();
+    }
+    private void setNameOnStatusChange(){
+        if (!status && !name.contains("(nenaudojamas)")) {
+            setName(getName() + "(nenaudojamas)");
+        } else if (status) {
+            setName(getName().replaceAll("\\(nenaudojamas\\)",""));
+        }
     }
 
     @Override
     public void saveToDatabase() {
         SqlStatement sql = SqlStatement.INSERT_PRODUCT_CATEGORY;
-        SqlConnection.updateDatabase(sql, this.getName());
+        SqlConnection.updateDatabase(sql, getName());
     }
     @Override
     public void updateDatabase() {
         SqlStatement sql = SqlStatement.UPDATE_PRODUCT_CATEGORY;
-        SqlConnection.updateDatabase(sql, this.getName(), this.getStatus(), this.getId());
+        SqlConnection.updateDatabase(sql, getName(), getStatus(), getId());
     }
     public void removeFromDatabase() {
-        this.setName(this.getName() + "(nebenaudojamas)");
-        this.setStatus(false);
+        setStatus(false);
         updateDatabase();
     }
 
     @Override
     public void setParam(ResultSet resultSet) throws SQLException {
-
+        setId(resultSet.getInt("Id"));
+        setName(resultSet.getString("Name"));
+        setStatus(resultSet.getBoolean("Status"));
     }
 
     @Override
     public String getObjectSqlStatement() {
-        return null;
+        return SqlStatement.PRODUCT_CATEGORY_BY_ID.getStatement();
     }
 
 
