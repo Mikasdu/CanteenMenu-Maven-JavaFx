@@ -40,9 +40,11 @@ public class ProductCategoriesController implements Initializable {
         showDeleted.setOnAction(event ->
                 setTableData(!showDeleted.isSelected())
         );
-        tbData.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+
+        tbData.getSelectionModel().selectedItemProperty().addListener(
+                e -> {
             removeCategoryButton.setDisable(true);
-            if (newSelection != null) {
+            if (!tbData.getSelectionModel().isEmpty()) {
                 if (tbData.getSelectionModel().getSelectedItem().getActive()) {
                     removeCategoryButton.setDisable(false);
                 }

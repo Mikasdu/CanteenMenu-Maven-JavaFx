@@ -15,7 +15,7 @@ public class ValidatorTest {
 
     @Test
     public void validatorStringValidEmpty() {
-        assertFalse(Validator.stringValid("", 0, 0));
+        assertTrue(Validator.stringValid("", 0, 0));
     }
 
     @Test

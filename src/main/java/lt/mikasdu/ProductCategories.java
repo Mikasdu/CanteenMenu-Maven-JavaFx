@@ -12,7 +12,7 @@ public class ProductCategories implements Database {
     private boolean isActive = true;
 
     public ProductCategories() {
-        this.id = 0;
+        // this.id = 0;
         this.name = "";
     }
 
