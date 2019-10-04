@@ -1,22 +1,29 @@
 package lt.mikasdu.ui.controller;
 
+import javafx.beans.InvalidationListener;
 import javafx.beans.binding.Bindings;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableBooleanValue;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import jdk.nashorn.internal.runtime.ListAdapter;
 import lt.mikasdu.AppNavigator;
 import lt.mikasdu.ProductCategories;
 import lt.mikasdu.ui.alerts.AlertBox;
 import lt.mikasdu.ui.alerts.AlertMessage;
 import lt.mikasdu.ui.sqlConnection.SqlConnection;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ProductCategoriesController implements Initializable {
 
+    @FXML private Button testButtonThis;
     @FXML private CheckBox showDeleted;
     @FXML private Button editCategoryButton;
     @FXML private TableView<ProductCategories> tbData;
@@ -31,8 +38,16 @@ public class ProductCategoriesController implements Initializable {
         setTableData(true);
         defaultSettings();
         showDeleted.setOnAction(event ->
-            setTableData(!showDeleted.isSelected())
+                setTableData(!showDeleted.isSelected())
         );
+        tbData.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+            removeCategoryButton.setDisable(true);
+            if (newSelection != null) {
+                if (tbData.getSelectionModel().getSelectedItem().getActive()) {
+                    removeCategoryButton.setDisable(false);
+                }
+            }
+        });
     }
 
     private void setTableData(boolean status) {
@@ -45,8 +60,8 @@ public class ProductCategoriesController implements Initializable {
     }
 
     private void defaultSettings() {
-        editCategoryButton.disableProperty().bind(Bindings.isEmpty(tbData.getSelectionModel().getSelectedItems()));
-        removeCategoryButton.disableProperty().bind(Bindings.isEmpty(tbData.getSelectionModel().getSelectedItems()));
+        editCategoryButton.setDisable(true);
+        removeCategoryButton.setDisable(true);
         showDeleted.setSelected(false);
     }
 

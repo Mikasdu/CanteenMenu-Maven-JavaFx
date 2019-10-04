@@ -9,18 +9,16 @@ import java.sql.SQLException;
 public class ProductCategories implements Database {
     private int id;
     private String name;
-    private boolean status;
+    private boolean isActive = true;
 
     public ProductCategories() {
         this.id = 0;
         this.name = "";
-        this.status = true;
     }
 
-    public ProductCategories(int id, String name) {
-        setId(id);
-        setName(name);
-        setStatus(true);
+    ProductCategories(int id, String name) {
+        this.id = id;
+        this.name = name;
     }
 
     @Override
@@ -44,20 +42,17 @@ public class ProductCategories implements Database {
         this.name = name;
     }
 
-    public boolean getStatus() {
-        return status;
+    public boolean getActive() {
+        return isActive;
     }
 
-    public void setStatus(boolean status) {
-        this.status = status;
-        setNameOnStatusChange();
-    }
-    private void setNameOnStatusChange(){
-        if (!status && !name.contains("(nenaudojamas)")) {
-            setName(getName() + "(nenaudojamas)");
-        } else if (status) {
-            setName(getName().replaceAll("\\(nenaudojamas\\)",""));
+    public void setActive(boolean isActive) {
+        if(isActive){
+            this.name = this.name.replaceAll("\\(nenaudojamas\\)","");
+        } else if (!name.contains("(nenaudojamas)")){
+            this.name += "(nenaudojamas)";
         }
+        this.isActive = isActive;
     }
 
     @Override
@@ -68,10 +63,10 @@ public class ProductCategories implements Database {
     @Override
     public void updateDatabase() {
         SqlStatement sql = SqlStatement.UPDATE_PRODUCT_CATEGORY;
-        SqlConnection.updateDatabase(sql, getName(), getStatus(), getId());
+        SqlConnection.updateDatabase(sql, getName(), getActive(), getId());
     }
     public void removeFromDatabase() {
-        setStatus(false);
+        setActive(false);
         updateDatabase();
     }
 
@@ -79,7 +74,7 @@ public class ProductCategories implements Database {
     public void setParam(ResultSet resultSet) throws SQLException {
         setId(resultSet.getInt("Id"));
         setName(resultSet.getString("Name"));
-        setStatus(resultSet.getBoolean("Status"));
+        setActive(resultSet.getBoolean("Status"));
     }
 
     @Override

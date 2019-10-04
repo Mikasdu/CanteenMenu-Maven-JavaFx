@@ -49,12 +49,12 @@ public class ProductCategoriesItemController {
         } else {
             headerLabelCategory.setText("Redaguojama kategorija Id: " + productCategory.getId());
             productCategoryName.setText(productCategory.getName());
-            checkBoxProductCategoryStatus.setSelected(!productCategory.getStatus());
+            checkBoxProductCategoryStatus.setSelected(!productCategory.getActive());
         }
-        if (!productCategory.getStatus()) {
+        if (!productCategory.getActive()) {
             productCategoryName.setDisable(true);
         }
-        statusFieldsBox.setDisable(productCategory.getStatus());
+        statusFieldsBox.setDisable(productCategory.getActive());
     }
 
     private void closeCurrentWindow() {
@@ -67,7 +67,7 @@ public class ProductCategoriesItemController {
     }
 
     public void removeDeletedTag() {
-        productCategory.setStatus(!checkBoxProductCategoryStatus.isSelected());
+        productCategory.setActive(!checkBoxProductCategoryStatus.isSelected());
         productCategoryName.setText(productCategory.getName());
         productCategoryName.setDisable(checkBoxProductCategoryStatus.isSelected());
     }
