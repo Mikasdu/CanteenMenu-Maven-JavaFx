@@ -2,6 +2,7 @@ package lt.mikasdu.ui.controller;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -36,18 +37,18 @@ public class ProductsController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setTableData();
-        setProductCategories();
+       // setProductCategories();
     }
 
-    private void setProductCategories() {
-        ObservableList<ProductCategories> categoriesList = SqlConnection.returnProductCategoriesList(true);
-        productCategoryBox.setItems(categoriesList);
-    }
+//    private void setProductCategories() {
+//        ObservableList<ProductCategories> categoriesList = SqlConnection.returnProductCategoriesList(true);
+//        productCategoryBox.setItems(categoriesList);
+//    }
 
-
-    public void buttonCancelProduct() {
-        defaultSettings();
-    }
+//
+//    public void buttonCancelProduct() {
+//        defaultSettings();
+//    }
 
     private void defaultSettings() {
         productNameInput.clear();
@@ -58,34 +59,34 @@ public class ProductsController implements Initializable {
         editLabel.setText("Įveskite naują produktą");
     }
 
-    public void buttonSaveProduct() {
-        String productName = productNameInput.getText();
-        String productMeasure = productMesureChoice.getValue();
-        String description = productDescriptionInput.getText();
-        boolean nameValid = Validator.stringValid(productName, 5, 50);
-        if (!nameValid)
-            AlertBox.alertSimple(AlertMessage.ERROR_NAME);
-        else if (productMesureChoice.getSelectionModel().isEmpty())
-            AlertBox.alertSimple(AlertMessage.ERROR_MEASUREUNTI);
-        else if (productCategoryBox.getSelectionModel().isEmpty())
-            AlertBox.alertSimple(AlertMessage.ERROR_CATEGORY);
-        else {
-            int productCategory = productCategoryBox.getSelectionModel().getSelectedItem().getId();
-            if (isNew) {
-                Products newProduct = new Products(0, productName, productMeasure, description, productCategory);
-                newProduct.saveToDatabase();
-            } else {
-                Products editProduct = tbData.getSelectionModel().getSelectedItem();
-                editProduct.setName(productName);
-                editProduct.setMeasure(productMeasure);
-                editProduct.setDescription(description);
-                editProduct.setCategories(productCategory);
-                editProduct.updateDatabase();
-            }
-            defaultSettings();
-            setTableData();
-        }
-    }
+//    public void buttonSaveProduct() {
+//        String productName = productNameInput.getText();
+//        String productMeasure = productMesureChoice.getValue();
+//        String description = productDescriptionInput.getText();
+//        boolean nameValid = Validator.stringValid(productName, 5, 50);
+//        if (!nameValid)
+//            AlertBox.alertSimple(AlertMessage.ERROR_NAME);
+//        else if (productMesureChoice.getSelectionModel().isEmpty())
+//            AlertBox.alertSimple(AlertMessage.ERROR_MEASUREUNTI);
+//        else if (productCategoryBox.getSelectionModel().isEmpty())
+//            AlertBox.alertSimple(AlertMessage.ERROR_CATEGORY);
+//        else {
+//            int productCategory = productCategoryBox.getSelectionModel().getSelectedItem().getId();
+//            if (isNew) {
+//                Products newProduct = new Products(0, productName, productMeasure, description, productCategory);
+//                newProduct.saveToDatabase();
+//            } else {
+//                Products editProduct = tbData.getSelectionModel().getSelectedItem();
+//                editProduct.setName(productName);
+//                editProduct.setMeasure(productMeasure);
+//                editProduct.setDescription(description);
+//                editProduct.setCategories(productCategory);
+//                editProduct.updateDatabase();
+//            }
+//            defaultSettings();
+//            setTableData();
+//        }
+//    }
 
     public void deleteButtonClicked() {
         if (!tbData.getSelectionModel().isEmpty()) {
@@ -101,19 +102,19 @@ public class ProductsController implements Initializable {
             AlertBox.alertSimple(AlertMessage.ERROR_PLEASECHOOSE);
     }
 
-    public void editButtonClicked() {
-        if (!tbData.getSelectionModel().isEmpty()) {
-            Products productSelected = tbData.getSelectionModel().getSelectedItem();
-            productNameInput.setText(productSelected.getName());
-            productDescriptionInput.setText(productSelected.getDescription());
-            productMesureChoice.getSelectionModel().select(productSelected.getMeasure());
-            productCategoryBox.getItems().forEach(productCategory -> {
-                if (productCategory.getId() == productSelected.getCategoriesId())
-                    productCategoryBox.getSelectionModel().select(productCategory);
-            });
-            isNew = false;
-        } else AlertBox.alertSimple(AlertMessage.ERROR_PLEASECHOOSE);
-    }
+//    public void editButtonClicked() {
+//        if (!tbData.getSelectionModel().isEmpty()) {
+//            Products productSelected = tbData.getSelectionModel().getSelectedItem();
+//            productNameInput.setText(productSelected.getName());
+//            productDescriptionInput.setText(productSelected.getDescription());
+//            productMesureChoice.getSelectionModel().select(productSelected.getMeasure());
+//            productCategoryBox.getItems().forEach(productCategory -> {
+//                if (productCategory.getId() == productSelected.getCategoriesId())
+//                    productCategoryBox.getSelectionModel().select(productCategory);
+//            });
+//            isNew = false;
+//        } else AlertBox.alertSimple(AlertMessage.ERROR_PLEASECHOOSE);
+//    }
 
     private void setTableData() {
         produktuDuomenys.clear();
@@ -125,5 +126,15 @@ public class ProductsController implements Initializable {
         productCategory.setCellValueFactory(new PropertyValueFactory<>("categories"));
         productDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
         tbData.setItems(produktuDuomenys);
+    }
+
+    public void addNewProductButton() {
+        AppNavigator.addProduct(new Products());
+    }
+
+    public void editSelectedProductButton() {
+        if (!tbData.getSelectionModel().isEmpty()) {
+            AppNavigator.addProduct(tbData.getSelectionModel().getSelectedItem());
+        }
     }
 }

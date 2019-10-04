@@ -3,6 +3,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
 <StackPane xmlns="http://javafx.com/javafx"
            xmlns:fx="http://javafx.com/fxml"
            fx:controller="lt.mikasdu.ui.controller.products.ProductItemController"
@@ -13,13 +15,24 @@
         </HBox>
         <VBox styleClass="box-borders">
             <VBox>
-                <Label text="Kategorijos pavadinimas"/>
-                <TextField fx:id="productCategoryName"/>
-                <Label/>
-                <HBox fx:id="statusFieldsBox">
-                    <CheckBox fx:id="checkBoxProductCategoryStatus" onAction="#removeDeletedTag"/>
-                    <Label text="Nebenaudojamas"/>
-                </HBox>
+                <Label text="Pavadinimas"/>
+                <TextField fx:id="productNameInput"/>
+                <Label text="Mato vienetai"/>
+                <ChoiceBox prefWidth="300" fx:id="productMeasureChoice">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="Kilogramai"/>
+                            <String fx:value="Litrai"/>
+                            <String fx:value="Vienetai"/>
+                        </FXCollections>
+                    </items>
+                </ChoiceBox>
+
+                <Label text="Kategorija"/>
+                <ComboBox prefWidth="300" fx:id="productCategoryBox"/>
+
+                <Label text="Aprašymas"/>
+                <TextArea fx:id="productDescriptionInput" prefHeight="110.0" prefWidth="260.0"/>
             </VBox>
         </VBox>
         <HBox style="-fx-padding: 5;" spacing="15" alignment="CENTER">

@@ -36,13 +36,11 @@ public class ProductCategoriesController implements Initializable {
                 setTableData(!showDeleted.isSelected())
         );
 
-        tbData.getSelectionModel().selectedItemProperty().addListener(
-                e -> {
+        tbData.getSelectionModel().selectedItemProperty().addListener(e -> {
             removeCategoryButton.setDisable(true);
             if (!tbData.getSelectionModel().isEmpty()) {
-                if (tbData.getSelectionModel().getSelectedItem().getActive()) {
+                if (tbData.getSelectionModel().getSelectedItem().getActive())
                     removeCategoryButton.setDisable(false);
-                }
             }
         });
     }

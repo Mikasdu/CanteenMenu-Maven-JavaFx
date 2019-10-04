@@ -11,14 +11,14 @@ import java.sql.SQLException;
 public class Products implements Database {
     private int id;
     private String name;
-    private String measure;
+    private String measure; //todo from enums
     private String description;
     private ProductCategories categories;
     private BigDecimal quantity;
     private boolean status;
 
     public Products() {
-        this.setName("New");
+        this.name = "";
     }
 
     public Products(int id, String name, String measure, String description, int productCategoryId) {
