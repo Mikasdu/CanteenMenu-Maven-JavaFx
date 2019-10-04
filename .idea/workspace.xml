@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68a7ebb9-642d-498c-a95e-2174f80e25e8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ProductCategories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ProductCategories.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/Validator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/ProductCategoriesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/ProductCategoriesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lt/mikasdu/TestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lt/mikasdu/TestTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lt/mikasdu/ValidatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lt/mikasdu/ValidatorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-lt.mikasdu.AppNavigatorTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-lt.mikasdu.AppNavigatorTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-lt.mikasdu.ValidatorTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-lt.mikasdu.ValidatorTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/lt.mikasdu.AppNavigatorTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/lt.mikasdu.AppNavigatorTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/lt.mikasdu.ValidatorTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/lt.mikasdu.ValidatorTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -452,7 +444,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570204167427</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="update">
+      <created>1570205949785</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1570205949785</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -482,11 +481,11 @@
     <MESSAGE value="review" />
     <MESSAGE value="pdf files bug fix" />
     <MESSAGE value="pdf generator update" />
-    <MESSAGE value="update" />
     <MESSAGE value="updated pdf creator" />
     <MESSAGE value="bug fix" />
     <MESSAGE value="productCategory remake" />
-    <option name="LAST_COMMIT_MESSAGE" value="productCategory remake" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
