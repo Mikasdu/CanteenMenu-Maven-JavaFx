@@ -46,6 +46,7 @@ public class ProductCategoriesItemController {
         isNew = productCategory.getId() == 0;
         if (isNew) {
             headerLabelCategory.setText("Įveskite naujos kategorijos pavadinimą");
+
         } else {
             headerLabelCategory.setText("Redaguojama kategorija Id: " + productCategory.getId());
             productCategoryName.setText(productCategory.getName());

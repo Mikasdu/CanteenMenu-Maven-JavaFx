@@ -8,9 +8,9 @@ public enum MeasureUnit {
     int id;
     String name;
 
-    MeasureUnit(int i, String name) {
-        setId(i);
-        setName(name);
+    MeasureUnit(int id, String name) {
+        this.id = id;
+        this.name = name;
     }
 
     public int getId() {
@@ -28,4 +28,7 @@ public enum MeasureUnit {
     public void setName(String name) {
         this.name = name;
     }
+
+
+
 }

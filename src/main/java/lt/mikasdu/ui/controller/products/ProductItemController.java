@@ -3,6 +3,7 @@ package lt.mikasdu.ui.controller.products;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import lt.mikasdu.ProductCategories;
 import lt.mikasdu.Products;
@@ -12,6 +13,7 @@ import lt.mikasdu.ui.alerts.AlertMessage;
 import lt.mikasdu.ui.sqlConnection.SqlConnection;
 
 public class ProductItemController {
+    @FXML private HBox isDeletedBox;
     @FXML private TextField productNameInput;
     @FXML private ChoiceBox<String> productMeasureChoice;
     @FXML private ComboBox<ProductCategories> productCategoryBox;
@@ -62,6 +64,7 @@ public class ProductItemController {
     private void setDefaultSettings() {
         if (isNew) {
             headerLabelCategory.setText("Įveskite naują produktą");
+            isDeletedBox.setDisable(true);
         } else {
             headerLabelCategory.setText("Redaguojamas produktas Id: " + this.product.getId());
             productNameInput.setText(this.product.getName());

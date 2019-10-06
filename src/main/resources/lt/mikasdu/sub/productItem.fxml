@@ -33,6 +33,10 @@
 
                 <Label text="Aprašymas"/>
                 <TextArea fx:id="productDescriptionInput" prefHeight="110.0" prefWidth="260.0"/>
+                <Label/>
+                <HBox fx:id="isDeletedBox">
+                    <CheckBox /> <Label text="Ištrintas (nenaudojamas)"/>
+                </HBox>
             </VBox>
         </VBox>
         <HBox style="-fx-padding: 5;" spacing="15" alignment="CENTER">
