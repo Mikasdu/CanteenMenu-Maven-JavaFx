@@ -47,7 +47,6 @@ public class WeekMenuRecipes implements Database {
         this.id = id;
     }
 
-
     public int getWeekMenuId() {
         return weekMenuId;
     }

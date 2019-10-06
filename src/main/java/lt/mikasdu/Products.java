@@ -11,7 +11,7 @@ import java.sql.SQLException;
 public class Products implements Database {
     private int id;
     private String name;
-    private String measure; //todo from enums
+    private MeasureUnit measure;
     private String description;
     private ProductCategories categories;
     private BigDecimal quantity;
@@ -21,10 +21,10 @@ public class Products implements Database {
         this.name = "";
     }
 
-    public Products(int id, String name, String measure, String description, int productCategoryId) {
+    public Products(int id, String name, int measure, String description, int productCategoryId) {
         this.id = id;
         this.name = name;
-        this.measure = measure;
+        setMeasure(measure);
         this.description = description;
         setCategories(productCategoryId);
         setActive(true);
@@ -52,11 +52,15 @@ public class Products implements Database {
     }
 
     public String getMeasure() {
-        return measure;
+        return this.measure.getName();
     }
 
-    public void setMeasure(String measure) {
-        this.measure = measure;
+    public MeasureUnit getMeasureObj() {
+        return this.measure;
+    }
+
+    public void setMeasure(int measure) {
+        this.measure = MeasureUnit.getById(measure);
     }
 
     public String getDescription() {
@@ -104,7 +108,7 @@ public class Products implements Database {
     @Override
     public void saveToDatabase() {
         SqlStatement sql = SqlStatement.INSERT_PRODUCT;
-        SqlConnection.updateDatabase(sql, getName(), getMeasure(), getDescription(), getCategoriesId());
+        SqlConnection.updateDatabase(sql, getName(), this.measure.getId(), getDescription(), getCategoriesId());
     }
 
     @Override
@@ -112,7 +116,7 @@ public class Products implements Database {
         SqlStatement sql = SqlStatement.UPDATE_PRODUCT;
         SqlConnection.updateDatabase(sql,
                 getName(),
-                getMeasure(),
+                this.measure.getId(),
                 getDescription(),
                 getCategoriesId(),
                 isActive(),
@@ -130,7 +134,7 @@ public class Products implements Database {
     public void setParam(ResultSet resultSet) throws SQLException {
         setId(resultSet.getInt("Id"));
         setName(resultSet.getString("Name"));
-        setMeasure(resultSet.getString("Measure"));
+        setMeasure(resultSet.getInt("Measure"));
         setDescription(resultSet.getString("Description"));
         setCategories(resultSet.getInt("Category"));
         setActive(resultSet.getBoolean("Status"));

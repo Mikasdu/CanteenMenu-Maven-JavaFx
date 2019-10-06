@@ -18,15 +18,8 @@
                 <Label text="Pavadinimas"/>
                 <TextField fx:id="productNameInput"/>
                 <Label text="Mato vienetai"/>
-                <ChoiceBox prefWidth="300" fx:id="productMeasureChoice">
-                    <items>
-                        <FXCollections fx:factory="observableArrayList">
-                            <String fx:value="Kilogramai"/>
-                            <String fx:value="Litrai"/>
-                            <String fx:value="Vienetai"/>
-                        </FXCollections>
-                    </items>
-                </ChoiceBox>
+                <ComboBox prefWidth="300" fx:id="productMeasureChoice">
+                </ComboBox>
 
                 <Label text="Kategorija"/>
                 <ComboBox prefWidth="300" fx:id="productCategoryBox"/>
