@@ -12,7 +12,6 @@ public class ProductCategories implements Database {
     private boolean isActive = true;
 
     public ProductCategories() {
-        // this.id = 0;
         this.name = "";
     }
 
@@ -42,7 +41,7 @@ public class ProductCategories implements Database {
         this.name = name;
     }
 
-    public boolean getActive() {
+    public boolean isActive() {
         return isActive;
     }
 
@@ -63,7 +62,7 @@ public class ProductCategories implements Database {
     @Override
     public void updateDatabase() {
         SqlStatement sql = SqlStatement.UPDATE_PRODUCT_CATEGORY;
-        SqlConnection.updateDatabase(sql, getName(), getActive(), getId());
+        SqlConnection.updateDatabase(sql, getName(), isActive(), getId());
     }
     public void removeFromDatabase() {
         setActive(false);

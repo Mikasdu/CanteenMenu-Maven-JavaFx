@@ -44,7 +44,7 @@ public class PurchaseController implements Initializable {
 
     private void setTableData(){
         int id = weekMenuComboBox.getSelectionModel().getSelectedItem().getId();
-        ObservableList<Products> productsItems = SqlConnection.getProductsList(SqlStatement.PRODUCT_PURCHASE_LIST, id);
+        ObservableList<Products> productsItems = SqlConnection.getProductsList(SqlStatement.PRODUCT_PURCHASE_LIST, id, true);
         productId.setCellValueFactory(new PropertyValueFactory<>("id"));
         productName.setCellValueFactory(new PropertyValueFactory<>("name"));
         productQuantityTable.setCellValueFactory(new PropertyValueFactory<>("quantity"));

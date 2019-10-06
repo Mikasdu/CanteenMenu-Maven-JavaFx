@@ -88,7 +88,7 @@ public class RecipesController implements Initializable {
     }
 
     private void setProductCategories() {
-        ObservableList<ProductCategories> categoriesList = SqlConnection.returnProductCategoriesList(true);
+        ObservableList<ProductCategories> categoriesList = SqlConnection.getProductCategoriesList(true);
         productCategoryBox.setItems(categoriesList);
         productBox.setDisable(true);
     }
@@ -97,7 +97,7 @@ public class RecipesController implements Initializable {
         if (!productCategoryBox.getSelectionModel().isEmpty()) {
             productBox.setDisable(false);
             int catId = productCategoryBox.getSelectionModel().getSelectedItem().getId();
-            ObservableList<Products> productsList = SqlConnection.getProductsList(SqlStatement.ACTIVE_PRODUCT_WHERE_CATEGORY, catId);
+            ObservableList<Products> productsList = SqlConnection.getProductsList(SqlStatement.PRODUCT_WHERE_CATEGORY, catId, true);
             productBox.setItems(productsList);
         } else
             productBox.setDisable(true);

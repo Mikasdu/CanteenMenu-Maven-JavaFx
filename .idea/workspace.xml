@@ -4,13 +4,18 @@
     <list default="true" id="68a7ebb9-642d-498c-a95e-2174f80e25e8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/AppNavigator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/AppNavigator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ProductCategories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ProductCategories.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/Products.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/Products.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/ProductCategoriesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/ProductCategoriesController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/ProductsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/PurchaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/PurchaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/RecipesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/RecipesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/categories/ProductCategoriesItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/categories/ProductCategoriesItemController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/products/ProductItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/products/ProductItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/sqlConnection/SqlConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/sqlConnection/SqlConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/sqlConnection/SqlStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/sqlConnection/SqlStatement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/lt/mikasdu/products.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lt/mikasdu/products.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/lt/mikasdu/sub/productItem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lt/mikasdu/sub/productItem.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lt/mikasdu/products.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lt/mikasdu/products.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -465,7 +470,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570206126229</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="update">
+      <created>1570215602745</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1570215602745</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

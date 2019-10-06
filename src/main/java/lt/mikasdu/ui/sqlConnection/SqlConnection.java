@@ -53,12 +53,13 @@ public class SqlConnection {
         return dbObj;
     }
 
-    public static ObservableList<Products> getProductsList(SqlStatement sqlStatement, int arg) {
+    public static ObservableList<Products> getProductsList(SqlStatement sqlStatement, int arg, boolean isActive) {
         ObservableList<Products> productList = FXCollections.observableArrayList();
         try (Connection conn = getConnection()) {
             assert conn != null;
             PreparedStatement pstmt = conn.prepareStatement(sqlStatement.getStatement());
             pstmt.setInt(1, arg);
+            pstmt.setBoolean(2, isActive);
             ResultSet resultSet = pstmt.executeQuery();
             while (resultSet.next()) {
                 Products product = new Products();
@@ -137,7 +138,7 @@ public class SqlConnection {
         return productCategoryName;
     }
 
-    public static ObservableList<ProductCategories> returnProductCategoriesList(boolean status) {
+    public static ObservableList<ProductCategories> getProductCategoriesList(boolean status) {
         ObservableList<ProductCategories> productCategories = FXCollections.observableArrayList();
         String sql = SqlStatement.PRODUCT_CATEGORIES.getStatement();
         try (Connection conn = getConnection()) {

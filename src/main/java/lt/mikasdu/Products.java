@@ -15,19 +15,19 @@ public class Products implements Database {
     private String description;
     private ProductCategories categories;
     private BigDecimal quantity;
-    private boolean status;
+    private boolean isActive;
 
     public Products() {
         this.name = "";
     }
 
     public Products(int id, String name, String measure, String description, int productCategoryId) {
-        setId(id);
-        setName(name);
-        setMeasure(measure);
-        setDescription(description);
+        this.id = id;
+        this.name = name;
+        this.measure = measure;
+        this.description = description;
         setCategories(productCategoryId);
-        setStatus(true);
+        setActive(true);
     }
 
     @Override
@@ -88,48 +88,52 @@ public class Products implements Database {
         this.quantity = new BigDecimal(quantity);
     }
 
-    public boolean getStatus() {
-        return status;
+    public boolean isActive() {
+        return isActive;
     }
 
-    public void setStatus(boolean status) {
-        this.status = status;
+    private void setActive(boolean isActive) {
+        if(isActive){
+            this.name = this.name.replaceAll("\\(nenaudojamas\\)","");
+        } else if (!name.contains("(nenaudojamas)")){
+            this.name += "(nenaudojamas)";
+        }
+        this.isActive = isActive;
     }
-
 
     @Override
     public void saveToDatabase() {
         SqlStatement sql = SqlStatement.INSERT_PRODUCT;
-        SqlConnection.updateDatabase(sql, this.getName(), this.getMeasure(), this.getDescription(), this.getCategoriesId());
+        SqlConnection.updateDatabase(sql, getName(), getMeasure(), getDescription(), getCategoriesId());
     }
 
     @Override
     public void updateDatabase() {
         SqlStatement sql = SqlStatement.UPDATE_PRODUCT;
         SqlConnection.updateDatabase(sql,
-                this.getName(),
-                this.getMeasure(),
-                this.getDescription(),
-                this.getCategoriesId(),
-                this.getStatus(),
-                this.getId()
+                getName(),
+                getMeasure(),
+                getDescription(),
+                getCategoriesId(),
+                isActive(),
+                getId()
         );
     }
+
     @Override
     public void removeFromDatabase() {
-        this.setName(this.getName() + "(nebenaudojamas)");
-        this.setStatus(false);
+        setActive(false);
         updateDatabase();
     }
 
     @Override
     public void setParam(ResultSet resultSet) throws SQLException {
-        this.setId(resultSet.getInt("Id"));
-        this.setName(resultSet.getString("Name"));
-        this.setMeasure(resultSet.getString("Measure"));
-        this.setDescription(resultSet.getString("Description"));
-        this.setCategories(resultSet.getInt("Category"));
-        this.setStatus(resultSet.getBoolean("Status"));
+        setId(resultSet.getInt("Id"));
+        setName(resultSet.getString("Name"));
+        setMeasure(resultSet.getString("Measure"));
+        setDescription(resultSet.getString("Description"));
+        setCategories(resultSet.getInt("Category"));
+        setActive(resultSet.getBoolean("Status"));
     }
 
     @Override

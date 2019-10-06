@@ -3,10 +3,10 @@ package lt.mikasdu.ui.sqlConnection;
 public enum SqlStatement {
     PRODUCT_CATEGORIES("SELECT * FROM ProductCategory WHERE status = ?;"),
     ACTIVE_RECIPES_BY_MENU("SELECT * FROM WeekMenuRecipes WHERE WeekMenuId = ? AND Status = 1;"),
-    ACTIVE_PRODUCT("SELECT * FROM Product WHERE status = ?;"),
+    PRODUCTS("SELECT * FROM Product WHERE 1 = ? AND status = ?;"),
     ACTIVE_RECIPES("SELECT * FROM Recipe WHERE status = 1;"),
     ACTIVE_WEEK_MENU("SELECT * FROM WeekMenu WHERE status = 1;"),
-    ACTIVE_PRODUCT_WHERE_CATEGORY("SELECT * FROM Product WHERE status = 1 AND category = ?;"),
+    PRODUCT_WHERE_CATEGORY("SELECT * FROM Product WHERE category = ? and status = ?;"),
     ACTIVE_PRODUCT_IN_RECIPE("SELECT * FROM RecipeProduct WHERE recipeId = ? AND status = 1;"),
     PRODUCT_CATEGORY_BY_ID("SELECT * FROM ProductCategory WHERE id = ?;"),
     PRODUCT_BY_ID("SELECT * FROM Product WHERE Id = ?;"),
@@ -32,7 +32,7 @@ public enum SqlStatement {
             "FROM WeekMenuRecipes     \n" +
             "INNER JOIN RecipeProduct ON WeekMenuRecipes.RecipeId=RecipeProduct.recipeId\n" +
             "INNER JOIN Product ON RecipeProduct.productId=Product.Id\n" +
-            "Where WeekMenuRecipes.WeekMenuId = ? AND RecipeProduct.status = 1 AND WeekMenuRecipes.Status = 1 AND Product.Status = 1\n" +
+            "Where WeekMenuRecipes.WeekMenuId = ? AND RecipeProduct.status = ? AND WeekMenuRecipes.Status = 1 AND Product.Status = 1\n" +
             "GROUP BY Product.Id\n" +
             "ORDER BY Product.Category ASC");
 

@@ -1,7 +1,6 @@
 package lt.mikasdu.ui.controller.products;
 
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
@@ -56,7 +55,7 @@ public class ProductItemController {
     }
 
     private void setProductCategories() {
-        ObservableList<ProductCategories> categoriesList = SqlConnection.returnProductCategoriesList(true);
+        ObservableList<ProductCategories> categoriesList = SqlConnection.getProductCategoriesList(true);
         productCategoryBox.setItems(categoriesList);
     }
 

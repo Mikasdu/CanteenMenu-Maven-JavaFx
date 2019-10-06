@@ -49,12 +49,12 @@ public class ProductCategoriesItemController {
         } else {
             headerLabelCategory.setText("Redaguojama kategorija Id: " + productCategory.getId());
             productCategoryName.setText(productCategory.getName());
-            checkBoxProductCategoryStatus.setSelected(!productCategory.getActive());
+            checkBoxProductCategoryStatus.setSelected(!productCategory.isActive());
         }
-        if (!productCategory.getActive()) {
+        if (!productCategory.isActive()) {
             productCategoryName.setDisable(true);
         }
-        statusFieldsBox.setDisable(productCategory.getActive());
+        statusFieldsBox.setDisable(productCategory.isActive());
     }
 
     private void closeCurrentWindow() {

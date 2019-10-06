@@ -21,10 +21,10 @@ public class ProductCategoriesController implements Initializable {
 
     @FXML private CheckBox showDeleted;
     @FXML private Button editCategoryButton;
+    @FXML private Button removeCategoryButton;
     @FXML private TableView<ProductCategories> tbData;
     @FXML private TableColumn<ProductCategories, Integer> categoryId;
     @FXML private TableColumn<ProductCategories, String> categoryName;
-    @FXML private Button removeCategoryButton;
 
     private ObservableList<ProductCategories> productCategoriesList = FXCollections.observableArrayList();
 
@@ -35,11 +35,10 @@ public class ProductCategoriesController implements Initializable {
         showDeleted.setOnAction(event ->
                 setTableData(!showDeleted.isSelected())
         );
-
         tbData.getSelectionModel().selectedItemProperty().addListener(e -> {
             removeCategoryButton.setDisable(true);
             if (!tbData.getSelectionModel().isEmpty()) {
-                if (tbData.getSelectionModel().getSelectedItem().getActive())
+                if (tbData.getSelectionModel().getSelectedItem().isActive())
                     removeCategoryButton.setDisable(false);
             }
         });
@@ -48,7 +47,7 @@ public class ProductCategoriesController implements Initializable {
     private void setTableData(boolean status) {
         productCategoriesList.clear();
         tbData.getItems().clear();
-        productCategoriesList = SqlConnection.returnProductCategoriesList(status);
+        productCategoriesList = SqlConnection.getProductCategoriesList(status);
         categoryId.setCellValueFactory(new PropertyValueFactory<>("id"));
         categoryName.setCellValueFactory(new PropertyValueFactory<>("name"));
         tbData.setItems(productCategoriesList);
