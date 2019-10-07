@@ -2,6 +2,7 @@ package lt.mikasdu.ui.controller;
 
 
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -201,7 +202,7 @@ public class RecipesController implements Initializable {
         if (!tbData.getSelectionModel().isEmpty()) {
             RecipeProduct product = tbData.getSelectionModel().getSelectedItem();
             String quantity = product.getQuantity().toString();
-            product.setQuantity(new BigDecimal(AlertBox.alertWithInput(quantity)));
+            product.setQuantity(new BigDecimal(AlertBox.alertWithInput(quantity))); //todo jei cancel paspaudi praso kiekio
             product.updateDatabase();
             showRecipeTable();
         } else AlertBox.alertSimple(AlertMessage.ERROR_PLEASECHOOSE);
@@ -221,5 +222,18 @@ public class RecipesController implements Initializable {
         if (!productBox.getSelectionModel().isEmpty())
             quantityLabel.setText("Kiekis: " + productBox.getSelectionModel().getSelectedItem().getMeasure());
         else quantityLabel.setText("Kiekis");
+    }
+
+    public void addNewRecipe() {
+        recipeWindow(new Recipes());
+    }
+
+    private void recipeWindow(Recipes recipe) {
+        AppNavigator.addRecipe(recipe);
+        //todo atnaujint kai uzsidaro
+    }
+
+    public void editSelectedRecipe() {
+        recipeWindow(recipeComboBox.getSelectionModel().getSelectedItem()); //todo patikrint ar ne tuscia
     }
 }

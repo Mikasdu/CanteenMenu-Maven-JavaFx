@@ -13,14 +13,17 @@ public class Recipes implements Database {
     private String name;
     private String description;
     private BigDecimal price;
-    private boolean status;
+    private boolean isActive;
 
-    public Recipes(int id, String name, String description, BigDecimal price, boolean status) {
+    public Recipes() {
+        this.isActive = true;
+    }
+    public Recipes(int id, String name, String description, BigDecimal price, boolean isActive) {
         setId(id);
         setName(name);
         setDescription(description);
         setPrice(price);
-        setStatus(status);
+        setActive(isActive);
     }
 
     @Override
@@ -57,12 +60,12 @@ public class Recipes implements Database {
         this.price = val;
     }
 
-    public boolean getStatus() {
-        return status;
+    public boolean isActive() {
+        return isActive;
     }
 
-    public void setStatus(boolean status) {
-        this.status = status;
+    public void setActive(boolean active) {
+        this.isActive = active;
     }
 
 
@@ -80,7 +83,7 @@ public class Recipes implements Database {
                 this.getName(),
                 this.getDescription(),
                 this.getPrice(),
-                this.getStatus(),
+                this.isActive(),
                 this.getId()
         );
     }
@@ -88,7 +91,7 @@ public class Recipes implements Database {
     @Override
     public void removeFromDatabase() {
         setName(this.name + "(nebenaudojamas)");
-        setStatus(false);
+        setActive(false);
         updateDatabase();
     }
 
@@ -98,7 +101,7 @@ public class Recipes implements Database {
         this.setName(resultSet.getString("Name"));
         this.setDescription(resultSet.getString("Description"));
         this.setPrice(new BigDecimal(resultSet.getString("Price")));
-        this.setStatus(resultSet.getBoolean("Status"));
+        this.setActive(resultSet.getBoolean("Status"));
     }
 
     @Override

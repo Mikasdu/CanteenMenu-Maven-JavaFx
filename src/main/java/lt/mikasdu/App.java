@@ -38,3 +38,5 @@ public class App extends Application {
         return mainPane;
     }
 }
+
+//TODO jei istrini produkta jis yra rodomas recepte ? uztrausti tokiu trinima ?

@@ -76,15 +76,15 @@ public class ProductCategoriesController implements Initializable {
 
     public void editButtonClicked() {
         if (!tbData.getSelectionModel().isEmpty()) {
-            ProductCategoryWindow(tbData.getSelectionModel().getSelectedItem());
+            productCategoryWindow(tbData.getSelectionModel().getSelectedItem());
         } else AlertBox.alertSimple(AlertMessage.ERROR_PLEASECHOOSE);
     }
 
     public void buttonAddProductCategory() {
-        ProductCategoryWindow(new ProductCategories());
+        productCategoryWindow(new ProductCategories());
     }
 
-    private void ProductCategoryWindow(ProductCategories productCategory) {
+    private void productCategoryWindow(ProductCategories productCategory) {
         AppNavigator.addProductCategory(productCategory);
         setTableData(true);
         defaultSettings();

@@ -65,6 +65,7 @@ public class ProductsController implements Initializable {
     }
 
     public void deleteButtonClicked() {
+        //todo negalima istrinti jeigu yra susijusiu yrasu
         if (!tbData.getSelectionModel().isEmpty()) {
             Products selectedProduct = tbData.getSelectionModel().getSelectedItem();
             boolean confirmedDelete = AlertBox.alertWithConformation(AlertMessage.CONFIRM_DELETE,

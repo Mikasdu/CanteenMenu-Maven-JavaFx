@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="lt.mikasdu.ui.controller.recipes.RecipeItemController"
+           prefWidth="300">
+    <VBox>
+        <HBox alignment="CENTER">
+            <Label styleClass="headerLabel" fx:id="headerLabelCategory"/>
+        </HBox>
+        <VBox styleClass="box-borders">
+            <VBox>
+                <Label text="Recepto pavadinimas"/>
+                <TextField fx:id="recipeNameInput"/>
+                <Label text="Recepto aprašymas"/>
+                <TextArea prefHeight="80" fx:id="recipeDescriptionInput"/>
+
+                <Label text="Kaina €"/>
+                <TextField fx:id="recipePriceInput"/>
+
+                <Label/>
+                <HBox fx:id="statusFieldsBox">
+                    <CheckBox fx:id="checkBoxRecipeStatus" onAction="#removeDeletedTag"/>
+                    <Label text="Nebenaudojamas"/>
+                </HBox>
+            </VBox>
+        </VBox>
+        <HBox style="-fx-padding: 5;" spacing="15" alignment="CENTER">
+            <Button styleClass="button-edit" text="Išsaugoti" onAction="#buttonSave"/>
+            <Button fx:id="cancelButton" styleClass="button-remove" text="Atšaukti" onAction="#buttonCancel"/>
+        </HBox>
+    </VBox>
+</StackPane>

@@ -5,7 +5,9 @@ import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.kernel.pdf.PdfPage;
 import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.List;
 import com.itextpdf.layout.element.Paragraph;
@@ -30,7 +32,6 @@ public class PdfFile {
     private static Settings settings = new Settings();
 
     public static void createFile(ObservableList<Products> items) throws IOException {
-        //todo jeigu atidarytas failas errora ismeta
         Document document = createDocument("Pirkiniu_Sarasas");
         PdfFont font = PdfFontFactory.createFont(StandardFonts.TIMES_BOLD, PdfEncodings.CP1257);
         PdfFont font2 = PdfFontFactory.createFont(StandardFonts.TIMES_ROMAN, PdfEncodings.CP1257);
@@ -79,9 +80,12 @@ public class PdfFile {
         for (WeekMenuRecipes item : items) {
             item.setParagraph(paragraphHashMap);
         }
-        String text = settings.getUserName() + dateFromTo + "\n" + settings.getAppDescription();
-        Paragraph para = new Paragraph(text).setFont(font).setTextAlignment(TextAlignment.CENTER).setFontSize(16);
+        String headerText = settings.getUserName() + " " + dateFromTo + "\n" + settings.getAppDescription();
+        //headerText += "\n new line \n";
+        Paragraph para = new Paragraph(headerText).setFont(font).setTextAlignment(TextAlignment.CENTER).setFontSize(16);
         document.add(para);
+
+
 
         paragraphHashMap.forEach((key, value) -> {
             if (!value.isEmpty()) {

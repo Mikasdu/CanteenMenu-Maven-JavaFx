@@ -34,7 +34,6 @@ public class PurchaseController implements Initializable {
     @FXML private TableColumn<Products, String> productCategory;
     @FXML private ComboBox<WeekMenu> weekMenuComboBox;
     private Settings settings = new Settings();
-    //todo print buton disabled while not selected list
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

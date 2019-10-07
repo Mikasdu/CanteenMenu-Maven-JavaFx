@@ -3,8 +3,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<?import javafx.collections.FXCollections?>
-<?import java.lang.String?>
 <StackPane xmlns="http://javafx.com/javafx"
            xmlns:fx="http://javafx.com/fxml"
            fx:controller="lt.mikasdu.ui.controller.products.ProductItemController"
@@ -14,7 +12,7 @@
             <Label styleClass="headerLabel" fx:id="headerLabelCategory"/>
         </HBox>
         <VBox styleClass="box-borders">
-            <VBox>
+            <VBox fx:id="productInputsBox">
                 <Label text="Pavadinimas"/>
                 <TextField fx:id="productNameInput"/>
                 <Label text="Mato vienetai"/>
@@ -27,10 +25,13 @@
                 <Label text="Aprašymas"/>
                 <TextArea fx:id="productDescriptionInput" prefHeight="110.0" prefWidth="260.0"/>
                 <Label/>
-                <HBox fx:id="isDeletedBox">
-                    <CheckBox /> <Label text="Ištrintas (nenaudojamas)"/>
-                </HBox>
+
+
             </VBox>
+            <HBox fx:id="isDeletedBox">
+                <CheckBox fx:id="checkBoxProductStatus" onAction="#removeDeletedTag"/>
+                <Label text="Nebenaudojamas"/>
+            </HBox>
         </VBox>
         <HBox style="-fx-padding: 5;" spacing="15" alignment="CENTER">
             <Button styleClass="button-edit" text="Išsaugoti" onAction="#buttonSave"/>

@@ -19,6 +19,7 @@ public class Products implements Database {
 
     public Products() {
         this.name = "";
+        isActive = true;
     }
 
     public Products(int id, String name, int measure, String description, int productCategoryId) {
@@ -96,7 +97,7 @@ public class Products implements Database {
         return isActive;
     }
 
-    private void setActive(boolean isActive) {
+    public void setActive(boolean isActive) {
         if(isActive){
             this.name = this.name.replaceAll("\\(nenaudojamas\\)","");
         } else if (!name.contains("(nenaudojamas)")){

@@ -14,6 +14,7 @@ import lt.mikasdu.ui.controller.menu.MenuAddItemController;
 import lt.mikasdu.ui.controller.menu.MenuAddRecipeController;
 import lt.mikasdu.ui.controller.menu.MenuGenerateFileController;
 import lt.mikasdu.ui.controller.products.ProductItemController;
+import lt.mikasdu.ui.controller.recipes.RecipeItemController;
 
 import java.io.IOException;
 
@@ -30,6 +31,7 @@ public class AppNavigator {
     public static final String GENERATE_MENU = "sub/menuGenerateFile.fxml";
     public static final String ADD_PRODUCT_CATEGORY = "sub/productCategoriesItem.fxml";
     public static final String ADD_PRODUCT = "sub/productItem.fxml";
+    public static final String ADD_RECIPE = "sub/recipeItem.fxml";
 
     private static MainController mainController;
 
@@ -63,6 +65,16 @@ public class AppNavigator {
         Scene scene = getScene(AppNavigator.ADD_PRODUCT, new StackPane(), loader);
         ProductItemController productItemController = loader.getController();
         productItemController.initData(product);
+        showWindow(window, scene);
+    }
+
+    public static void addRecipe(Recipes recipe) {
+        Stage window = new Stage();
+        window.setTitle("Pridėti receptą");
+        FXMLLoader loader = new FXMLLoader();
+        Scene scene = getScene(AppNavigator.ADD_RECIPE, new StackPane(), loader);
+        RecipeItemController recipeItemController = loader.getController();
+        recipeItemController.initData(recipe);
         showWindow(window, scene);
     }
 

@@ -16,6 +16,8 @@
 
     <HBox alignment="CENTER">
         <Label styleClass="headerLabel">Pasirinkite receptą</Label>
+        <Button onAction="#addNewRecipe"> test </Button>
+        <Button onAction="#editSelectedRecipe"> test </Button>
     </HBox>
     <VBox styleClass="box-borders" style="-fx-padding: 5 5 5 5;">
         <HBox spacing="15" alignment="CENTER">

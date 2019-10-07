@@ -4,15 +4,18 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import lt.mikasdu.*;
 import lt.mikasdu.ui.alerts.AlertBox;
 import lt.mikasdu.ui.alerts.AlertMessage;
 import lt.mikasdu.ui.sqlConnection.SqlConnection;
 
-import java.util.Arrays;
 
 public class ProductItemController {
+
+    @FXML private VBox productInputsBox;
+    @FXML private CheckBox checkBoxProductStatus;
     @FXML private HBox isDeletedBox;
     @FXML private TextField productNameInput;
     @FXML private ComboBox<MeasureUnit> productMeasureChoice;
@@ -67,9 +70,11 @@ public class ProductItemController {
     }
 
     private void setDefaultSettings() {
+        checkBoxProductStatus.setSelected(!product.isActive());
+        isDeletedBox.setDisable(product.isActive());
+        productInputsBox.setDisable(!product.isActive());
         if (isNew) {
             headerLabelCategory.setText("Įveskite naują produktą");
-            isDeletedBox.setDisable(true);
         } else {
             headerLabelCategory.setText("Redaguojamas produktas Id: " + this.product.getId());
             productNameInput.setText(this.product.getName());
@@ -79,17 +84,17 @@ public class ProductItemController {
                     productCategoryBox.getSelectionModel().select(productCategory);
             });
             productDescriptionInput.setText(this.product.getDescription());
-
-            //checkBoxProductCategoryStatus.setSelected(!productCategory.getActive());
         }
-//        if (!productCategory.getActive()) {
-//            productCategoryName.setDisable(true);
-//        }
-//        statusFieldsBox.setDisable(productCategory.getActive());
     }
 
     private void closeCurrentWindow() {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
+    }
+
+    public void removeDeletedTag() {
+        productInputsBox.setDisable(checkBoxProductStatus.isSelected());
+        product.setActive(!checkBoxProductStatus.isSelected());
+        productNameInput.setText(product.getName());
     }
 }

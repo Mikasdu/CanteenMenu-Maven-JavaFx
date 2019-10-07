@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import lt.mikasdu.Formatter;
 import lt.mikasdu.Recipes;
 import lt.mikasdu.WeekDaysLt;
 import lt.mikasdu.WeekMenuRecipes;
@@ -14,7 +15,6 @@ import lt.mikasdu.ui.sqlConnection.SqlConnection;
 import java.math.BigInteger;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.regex.Pattern;
 
 public class MenuAddRecipeController implements Initializable {
     @FXML private Label editLabel;
@@ -26,17 +26,13 @@ public class MenuAddRecipeController implements Initializable {
     private WeekMenuRecipes weekMenuRecipes;
     private boolean isNew;
 
-    //todo paternas perkelt i atskira klase
-    private Pattern pattern = Pattern.compile("^[1-9][0-9]*$");
-    private TextFormatter quantityFormatter = new TextFormatter<>(change ->
-            pattern.matcher(change.getControlNewText()).matches() ? change : null);
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         ObservableList<Recipes> recipesList = SqlConnection.returnActiveRecipeList();
         recipesListComboBox.setItems(recipesList);
-        quantityInput.setTextFormatter(quantityFormatter);
+        quantityInput.setTextFormatter(Formatter.formatIntegerNumbers());
         weekDays.getItems().setAll(WeekDaysLt.values());
+
     }
 
     public void buttonSave() {
