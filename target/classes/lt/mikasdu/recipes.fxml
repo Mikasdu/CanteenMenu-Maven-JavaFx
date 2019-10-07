@@ -16,47 +16,22 @@
 
     <HBox alignment="CENTER">
         <Label styleClass="headerLabel">Pasirinkite receptą</Label>
-        <Button onAction="#addNewRecipe"> test </Button>
-        <Button onAction="#editSelectedRecipe"> test </Button>
     </HBox>
     <VBox styleClass="box-borders" style="-fx-padding: 5 5 5 5;">
         <HBox spacing="15" alignment="CENTER">
-        <ComboBox minWidth="300.0" fx:id="recipeComboBox" onAction="#recipeComboBoxChange"/>
-        <Button styleClass="button" text="Naujas receptas" onAction="#newRecipeButton"/>
-        <Button styleClass="button-edit" text="Taisyti pasirinktą" fx:id="editRecipeButton"
-                onAction="#editRecipeButton"/>
-        <Button styleClass="button-remove" fx:id="deleteRecipeButton" text="Ištrinti pasirinktą"
-                onAction="#deleteRecipeButton"/>
+            <ComboBox minWidth="300.0" fx:id="recipeComboBox" onAction="#recipeComboBoxChange"/>
+            <Button text="Naujas receptas" onAction="#addNewRecipe"/>
+            <Button styleClass="button-edit" text="Taisyti pasirinktą" onAction="#editSelectedRecipe"/>
+            <Button styleClass="button-remove" fx:id="deleteRecipeButton" text="Ištrinti pasirinktą"
+                    onAction="#deleteRecipeButton"/>
         </HBox>
         <HBox style="-fx-padding: 5 5 5 5;">
-            <Label text="Recepto aprašymas: " /><Label fx:id="recipeDescriptionLabel"/>
+            <Label text="Recepto aprašymas: "/>
+            <Label fx:id="recipeDescriptionLabel"/>
         </HBox>
     </VBox>
 
-    <VBox fx:id="recipesVbox" minHeight="0" prefHeight="0" visible="false">
-        <HBox alignment="CENTER">
-            <Label styleClass="headerLabel" fx:id="recipeBoxName" text="Įveskite naują receptą"/>
-        </HBox>
-        <HBox styleClass="box-borders" style="-fx-padding: 5 5 5 5;" spacing="15" alignment="CENTER">
-            <VBox>
-                <Label text="Pavadinimas"/>
-                <TextField fx:id="recipeNameInput"/>
-                <Label text="Aprašymas"/>
-                <TextArea fx:id="recipeDescriptionInput" minHeight="100" prefHeight="250.0" prefWidth="260.0"/>
-                <HBox styleClass="priceInput" spacing="5">
-                    <Label text="Kaina"/>
-                    <TextField fx:id="recipePriceInput"/>
-                    <Label text="€"/>
-                </HBox>
-                <HBox style="-fx-padding: 20 5 5 5;" spacing="15">
-                    <Button styleClass="button-edit" text="Įvesti naują" fx:id="saveRecipeButton" onAction="#saveRecipeButton"/>
-                    <Button styleClass="button-remove" text="Atšaukti" onAction="#cancelRecipeButton"/>
-                </HBox>
-            </VBox>
-        </HBox>
-    </VBox>
-
-    <VBox fx:id="productsVbox" visible="false">
+    <VBox>
         <HBox alignment="CENTER">
             <Label styleClass="headerLabel">Produktai</Label>
         </HBox>

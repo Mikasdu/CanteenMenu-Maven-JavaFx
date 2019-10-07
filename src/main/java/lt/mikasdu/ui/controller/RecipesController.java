@@ -30,28 +30,28 @@ public class RecipesController implements Initializable {
     @FXML private Label recipeDescriptionLabel;
     @FXML private TableView<RecipeProduct> tbData;
     @FXML private TextField productQuantityInput;
-    @FXML private Label recipeBoxName;
-    @FXML private TextField recipePriceInput;
-    @FXML private TextArea recipeDescriptionInput;
-    @FXML private TextField recipeNameInput;
-    @FXML private Button saveRecipeButton;
-    @FXML private VBox productsVbox;
-    @FXML private VBox recipesVbox;
+//    @FXML private VBox productsVbox;
     @FXML private ComboBox<Recipes> recipeComboBox;
-    @FXML private Button editRecipeButton;
     @FXML private Button deleteRecipeButton;
     @FXML private ComboBox<ProductCategories> productCategoryBox;
     @FXML private ComboBox<Products> productBox;
 
-    private boolean isNew = true;
-    private Recipes tempRecipe = new Recipes(0, "", "", new BigDecimal(0), true);
+//    private boolean isNew = true;
+//    @FXML private Label recipeBoxName;
+//    @FXML private TextField recipePriceInput;
+//    @FXML private TextArea recipeDescriptionInput;
+//    @FXML private TextField recipeNameInput;
+//    @FXML private Button saveRecipeButton;
+//    @FXML private VBox recipesVbox;
+//    @FXML private Button editRecipeButton;
+//    private Recipes tempRecipe = new Recipes(0, "", "", new BigDecimal(0), true);
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setDefaultSettings();
         productQuantityInput.setTextFormatter(Formatter.formatDecimalQuantityNumbers());
-        recipePriceInput.setTextFormatter(Formatter.formatDecimalPriceNumbers());
+//        recipePriceInput.setTextFormatter(Formatter.formatDecimalPriceNumbers());
     }
 
     private void setDefaultSettings() {
@@ -59,17 +59,17 @@ public class RecipesController implements Initializable {
         setRecipes();
         recipeComboBox.getSelectionModel().clearSelection();
         recipeComboBox.setDisable(false);
-        editRecipeButton.setDisable(true);
+//        editRecipeButton.setDisable(true);
         deleteRecipeButton.setDisable(true);
-        productsVbox.setVisible(false);
+//        productsVbox.setVisible(false);
         productQuantityInput.clear();
         productBox.getSelectionModel().clearSelection();
-        recipesVbox.setVisible(false);
-        recipeNameInput.clear();
-        recipePriceInput.clear();
-        recipeDescriptionInput.clear();
-        saveRecipeButton.setText("Išsaugoti");
-        recipeBoxName.setText("Įveskite naują receptą");
+//        recipesVbox.setVisible(false);
+//        recipeNameInput.clear();
+//        recipePriceInput.clear();
+//        recipeDescriptionInput.clear();
+//        saveRecipeButton.setText("Išsaugoti");
+//        recipeBoxName.setText("Įveskite naują receptą");
     }
 
     private void showRecipeTable() {
@@ -132,9 +132,9 @@ public class RecipesController implements Initializable {
     public void recipeComboBoxChange() {
         if (!recipeComboBox.getSelectionModel().isEmpty()) {
             showRecipeTable();
-            productsVbox.setVisible(true);
+//            productsVbox.setVisible(true);
             deleteRecipeButton.setDisable(false);
-            editRecipeButton.setDisable(false);
+//            editRecipeButton.setDisable(false);
             recipeDescriptionLabel.setText(recipeComboBox.getSelectionModel().getSelectedItem().getDescription());
         }
     }
@@ -149,30 +149,30 @@ public class RecipesController implements Initializable {
         }
     }
 
-    public void cancelRecipeButton() {
-        setDefaultSettings();
-    }
-
-    public void saveRecipeButton() {
-        String nameInput = recipeNameInput.getText();
-        String recPriceInput = recipePriceInput.getText();
-        if (!Validator.stringValid(nameInput, 5, 100))
-            AlertBox.alertSimple(AlertMessage.ERROR_NAME);
-        else if (recPriceInput.isEmpty())
-            AlertBox.alertSimple(AlertMessage.ERROR_PRICE);
-        else {
-            BigDecimal priceInput = new BigDecimal(recPriceInput);
-            tempRecipe.setName(nameInput);
-            tempRecipe.setDescription(recipeDescriptionInput.getText());
-            tempRecipe.setPrice(priceInput);
-            if (isNew)
-                tempRecipe.saveToDatabase();
-            else
-                tempRecipe.updateDatabase();
-            isNew = true;
-            setDefaultSettings();
-        }
-    }
+//    public void cancelRecipeButton() {
+//        setDefaultSettings();
+//    }
+//
+//    public void saveRecipeButton() {
+//        String nameInput = recipeNameInput.getText();
+//        String recPriceInput = recipePriceInput.getText();
+//        if (!Validator.stringValid(nameInput, 5, 100))
+//            AlertBox.alertSimple(AlertMessage.ERROR_NAME);
+//        else if (recPriceInput.isEmpty())
+//            AlertBox.alertSimple(AlertMessage.ERROR_PRICE);
+//        else {
+//            BigDecimal priceInput = new BigDecimal(recPriceInput);
+//            tempRecipe.setName(nameInput);
+//            tempRecipe.setDescription(recipeDescriptionInput.getText());
+//            tempRecipe.setPrice(priceInput);
+//            if (isNew)
+//                tempRecipe.saveToDatabase();
+//            else
+//                tempRecipe.updateDatabase();
+//            isNew = true;
+//            setDefaultSettings();
+//        }
+//    }
 
 
     public void addProductButton() {
