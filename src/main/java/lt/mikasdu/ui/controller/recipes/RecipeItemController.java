@@ -1,6 +1,5 @@
 package lt.mikasdu.ui.controller.recipes;
 
-import javafx.event.ActionEvent;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -16,13 +15,14 @@ import java.math.BigDecimal;
 
 public class RecipeItemController {
 
+    @FXML private Label headerLabelCategory;
     @FXML private TextField recipeNameInput;
     @FXML private TextArea recipeDescriptionInput;
     @FXML private TextField recipePriceInput;
     @FXML private HBox statusFieldsBox;
     @FXML private CheckBox checkBoxRecipeStatus;
-    @FXML private Label headerLabelCategory;
     @FXML private Button cancelButton;
+
     private Recipes recipe;
     private boolean isNew;
 
@@ -58,23 +58,18 @@ public class RecipeItemController {
                 closeCurrentWindow();
             } else AlertBox.alertSimple(AlertMessage.ERROR_PRICE);
         } else AlertBox.alertSimple(AlertMessage.ERROR_NAME);
-
-
-
-
     }
 
     public void removeDeletedTag() {
-    }
 
-
-    private void closeCurrentWindow() {
-        Stage stage = (Stage) cancelButton.getScene().getWindow();
-        stage.close();
     }
 
     public void buttonCancel() {
         closeCurrentWindow();
     }
 
+    private void closeCurrentWindow() {
+        Stage stage = (Stage) cancelButton.getScene().getWindow();
+        stage.close();
+    }
 }

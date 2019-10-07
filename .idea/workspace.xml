@@ -2,29 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68a7ebb9-642d-498c-a95e-2174f80e25e8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/recipes/RecipeItemController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/lt/mikasdu/sub/recipeItem.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/AppNavigator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/AppNavigator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/Formatter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/Formatter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/Products.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/Products.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/Recipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/Recipes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/ProductCategoriesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/ProductCategoriesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/ProductsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/PurchaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/PurchaseController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/RecipesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/RecipesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/menu/MenuAddRecipeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/menu/MenuAddRecipeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/products/ProductItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/products/ProductItemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/pdfCreator/PdfFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/pdfCreator/PdfFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/recipes/RecipeItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/recipes/RecipeItemController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/lt/mikasdu/recipes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lt/mikasdu/recipes.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/lt/mikasdu/sub/productItem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lt/mikasdu/sub/productItem.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lt/mikasdu/recipes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lt/mikasdu/recipes.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-lt.mikasdu.AppNavigatorTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-lt.mikasdu.AppNavigatorTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-lt.mikasdu.ValidatorTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-lt.mikasdu.ValidatorTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/lt.mikasdu.AppNavigatorTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/lt.mikasdu.AppNavigatorTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/lt.mikasdu.ValidatorTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/lt.mikasdu.ValidatorTest.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -512,7 +494,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570373826373</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="update">
+      <created>1570466446667</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1570466446667</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -545,9 +534,9 @@
     <MESSAGE value="updated pdf creator" />
     <MESSAGE value="bug fix" />
     <MESSAGE value="productCategory remake" />
-    <MESSAGE value="update" />
     <MESSAGE value="enums for measure units" />
-    <option name="LAST_COMMIT_MESSAGE" value="enums for measure units" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

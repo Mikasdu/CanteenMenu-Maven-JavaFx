@@ -13,6 +13,7 @@ import lt.mikasdu.ui.alerts.AlertBox;
 import lt.mikasdu.ui.alerts.AlertMessage;
 import lt.mikasdu.ui.sqlConnection.SqlConnection;
 import lt.mikasdu.ui.sqlConnection.SqlStatement;
+
 import java.math.BigDecimal;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -104,29 +105,29 @@ public class RecipesController implements Initializable {
             productBox.setDisable(true);
     }
 
-    private void showRecipeInputBox() {
-        setDefaultSettings();
-        recipeComboBox.setDisable(true);
-        recipesVbox.minHeight(5);
-        recipesVbox.prefHeight(5);
-        recipesVbox.setVisible(true);
-    }
+//    private void showRecipeInputBox() {
+//        setDefaultSettings();
+//        recipeComboBox.setDisable(true);
+//        recipesVbox.minHeight(5);
+//        recipesVbox.prefHeight(5);
+//        recipesVbox.setVisible(true);
+//    }
 
-    public void newRecipeButton() {
-        showRecipeInputBox();
-    }
-
-    public void editRecipeButton() {
-        isNew = false;
-        Recipes recipe = recipeComboBox.getSelectionModel().getSelectedItem();
-        showRecipeInputBox();
-        saveRecipeButton.setText("Pataisyti įrašą");
-        tempRecipe.setId(recipe.getId());
-        recipeNameInput.setText(recipe.getName());
-        recipeDescriptionInput.setText(recipe.getDescription());
-        recipePriceInput.setText(new BigDecimal(recipe.getPrice().toString()).toString());
-        recipeBoxName.setText("Redaguojamas įrašas Id:" + recipe.getId() + " Pavadinimas: " + recipe.getName());
-    }
+//    public void newRecipeButton() {
+//        showRecipeInputBox();
+//    }
+//
+//    public void editRecipeButton() {
+//        isNew = false;
+//        Recipes recipe = recipeComboBox.getSelectionModel().getSelectedItem();
+//        showRecipeInputBox();
+//        saveRecipeButton.setText("Pataisyti įrašą");
+//        tempRecipe.setId(recipe.getId());
+//        recipeNameInput.setText(recipe.getName());
+//        recipeDescriptionInput.setText(recipe.getDescription());
+//        recipePriceInput.setText(new BigDecimal(recipe.getPrice().toString()).toString());
+//        recipeBoxName.setText("Redaguojamas įrašas Id:" + recipe.getId() + " Pavadinimas: " + recipe.getName());
+//    }
 
     public void recipeComboBoxChange() {
         if (!recipeComboBox.getSelectionModel().isEmpty()) {
