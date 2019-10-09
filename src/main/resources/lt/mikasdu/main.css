@@ -1,24 +1,3 @@
-#headerLabel {
-    -fx-background-color: steelblue;
-    -fx-text-fill: white;
-    -fx-padding: 5px;
-}
-
-#vistaHolder {
-    -fx-graphic: url("fork.png");
-}
-#tophbox {
--fx-background-color: red;
-}
-
-#produktai {
-    -fx-background-color: aqua;
-}
-
-#receptai {
-    -fx-background-color: coral;
-}
-
 .button {
     -fx-base: lightblue;
     -fx-font-size: 12px;
@@ -46,7 +25,6 @@
 -fx-padding: 15 0 0 0;
 -fx-font-weight: bold;
 }
-
 
 .priceInput {
 -fx-padding: 8 5 5 0;

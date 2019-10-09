@@ -32,7 +32,7 @@ public class AlertBox {
         boolean nameValid = Validator.stringValid(quantity.getText(), 1, 10);
         if (result.isPresent() && result.get() == ButtonType.OK && nameValid) {
             input = quantity.getText();
-        } else if (!nameValid) AlertBox.alertSimple(AlertMessage.ERROR_QUANTITY);
+        } else if (!nameValid && result.get() == ButtonType.OK) AlertBox.alertSimple(AlertMessage.ERROR_QUANTITY);
         return input;
     }
 
