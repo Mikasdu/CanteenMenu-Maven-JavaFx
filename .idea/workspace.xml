@@ -4,12 +4,12 @@
     <list default="true" id="68a7ebb9-642d-498c-a95e-2174f80e25e8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/alerts/AlertBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/alerts/AlertBox.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/RecipesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/RecipesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/lt/mikasdu/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lt/mikasdu/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/menu/MenuAddRecipeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/menu/MenuAddRecipeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/sqlConnection/SqlConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/sqlConnection/SqlConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/sqlConnection/SqlStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/sqlConnection/SqlStatement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/lt/mikasdu/recipes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lt/mikasdu/recipes.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/settings/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/settings/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lt/mikasdu/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lt/mikasdu/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/lt/mikasdu/recipes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lt/mikasdu/recipes.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -183,13 +183,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1569522625077</updated>
-    </task>
-    <task id="LOCAL-00003" summary="update">
-      <created>1569606710400</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1569606710400</updated>
     </task>
     <task id="LOCAL-00004" summary="update">
       <created>1569606773391</created>
@@ -527,7 +520,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570560112939</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="update">
+      <created>1570648894966</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1570648894967</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -4,7 +4,7 @@ public enum SqlStatement {
     PRODUCT_CATEGORIES("SELECT * FROM ProductCategory WHERE status = ?;"),
     ACTIVE_RECIPES_BY_MENU("SELECT * FROM WeekMenuRecipes WHERE WeekMenuId = ? AND Status = 1;"),
     PRODUCTS("SELECT * FROM Product WHERE 1 = ? AND status = ?;"),
-    ACTIVE_RECIPES("SELECT * FROM Recipe WHERE status = 1;"),
+    ACTIVE_RECIPES("SELECT * FROM Recipe WHERE status = ? ORDER BY name ASC;"),
     ACTIVE_WEEK_MENU("SELECT * FROM WeekMenu WHERE status = 1;"),
     PRODUCT_WHERE_CATEGORY("SELECT * FROM Product WHERE category = ? and status = ?;"),
     ACTIVE_PRODUCT_IN_RECIPE("SELECT * FROM RecipeProduct WHERE recipeId = ? AND status = 1;"),

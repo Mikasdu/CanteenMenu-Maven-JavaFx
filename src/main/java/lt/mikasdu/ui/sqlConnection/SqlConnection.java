@@ -180,11 +180,12 @@ public class SqlConnection {
         return weekMenus;
     }
 
-    public static ObservableList<Recipes> returnActiveRecipeList() {
+    public static ObservableList<Recipes> returnActiveRecipeList(boolean isActive) {
         ObservableList<Recipes> recipesList = FXCollections.observableArrayList();
         String sql = SqlStatement.ACTIVE_RECIPES.getStatement();
         try (Connection conn = getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setBoolean(1, isActive);
             ResultSet resultSet = pstmt.executeQuery();
             while (resultSet.next()) {
                 BigDecimal bigDecimal = resultSet.getBigDecimal("price");

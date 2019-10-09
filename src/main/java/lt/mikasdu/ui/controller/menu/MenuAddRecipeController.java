@@ -28,7 +28,7 @@ public class MenuAddRecipeController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        ObservableList<Recipes> recipesList = SqlConnection.returnActiveRecipeList();
+        ObservableList<Recipes> recipesList = SqlConnection.returnActiveRecipeList(true);
         recipesListComboBox.setItems(recipesList);
         quantityInput.setTextFormatter(Formatter.formatIntegerNumbers());
         weekDays.getItems().setAll(WeekDaysLt.values());

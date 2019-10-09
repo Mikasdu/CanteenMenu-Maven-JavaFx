@@ -1,7 +1,6 @@
 package lt.mikasdu.ui.controller;
 
 
-import javafx.beans.binding.Bindings;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -18,11 +17,10 @@ import java.math.BigDecimal;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-//todo remove from table category
-//todo sort recipes by name
-
+//todo pakeitaliojus istrintus kazkaip edit butonas buna active
 
 public class RecipesController implements Initializable {
+    @FXML private CheckBox showDeletedRecipes;
     @FXML private Button editRecipeProductButton;
     @FXML private Button deleteRecipeProductButton;
     @FXML private VBox recipeProductBox;
@@ -46,20 +44,34 @@ public class RecipesController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         setDefaultSettings();
         productQuantityInput.setTextFormatter(Formatter.formatDecimalQuantityNumbers());
-        recipesListView.getSelectionModel().selectedItemProperty().addListener((ob) ->
-                recipeListViewChange()
+        showDeletedRecipes.setOnAction(event ->
+                setRecipes(!showDeletedRecipes.isSelected())
         );
-//        tbData.getSelectionModel().selectedItemProperty().addListener(e -> {
-//            .setDisable(true);
-//            System.out.println("sout");
-//        });
+        recipesListView.getSelectionModel().selectedItemProperty().addListener((ob) -> {
+            recipeListViewChange();
+            deleteRecipeButton.setDisable(true);
+            if (!recipesListView.getSelectionModel().isEmpty()) {
+                if (recipesListView.getSelectionModel().getSelectedItem().isActive())
+                    deleteRecipeButton.setDisable(false);
+            }
+        });
+
+        tbData.getSelectionModel().selectedItemProperty().addListener(e -> {
+            editRecipeProductButton.setDisable(true);
+            deleteRecipeProductButton.setDisable(true);
+            if (!tbData.getSelectionModel().isEmpty()) {
+                editRecipeProductButton.setDisable(false);
+                deleteRecipeProductButton.setDisable(false);
+            }
+        });
     }
 
-    private void recipeProductBoxVisibility(boolean isVisisble){
+    private void recipeProductBoxVisibility(boolean isVisisble) {
         recipeProductBox.setDisable(!isVisisble);
     }
+
     private void setDefaultSettings() {
-        setRecipes();
+        setRecipes(true);
         recipeProductBoxVisibility(false);
         recipesListView.getSelectionModel().clearSelection();
         recipesListView.setDisable(false);
@@ -70,6 +82,8 @@ public class RecipesController implements Initializable {
     }
 
     private void showRecipeTable() {
+        editRecipeProductButton.setDisable(true);
+        deleteRecipeProductButton.setDisable(true);
         int recipeId = recipesListView.getSelectionModel().getSelectedItem().getId();
         ObservableList<RecipeProduct> recipeProducts = SqlConnection.returnActiveRecipeProduct(recipeId);
         productId.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -81,8 +95,8 @@ public class RecipesController implements Initializable {
         tbData.setItems(recipeProducts);
     }
 
-    private void setRecipes() {
-        ObservableList<Recipes> recipesList = SqlConnection.returnActiveRecipeList();
+    private void setRecipes(boolean isActive) {
+        ObservableList<Recipes> recipesList = SqlConnection.returnActiveRecipeList(isActive);
         recipesListView.setItems(recipesList);
     }
 
@@ -186,4 +200,5 @@ public class RecipesController implements Initializable {
     public void editSelectedRecipe() {
         recipeWindow(recipesListView.getSelectionModel().getSelectedItem());
     }
+
 }
