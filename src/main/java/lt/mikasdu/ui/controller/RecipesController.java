@@ -51,8 +51,11 @@ public class RecipesController implements Initializable {
             recipeListViewChange();
             deleteRecipeButton.setDisable(true);
             if (!recipesListView.getSelectionModel().isEmpty()) {
+                editRecipeButton.setDisable(false);
                 if (recipesListView.getSelectionModel().getSelectedItem().isActive())
                     deleteRecipeButton.setDisable(false);
+            } else {
+                editRecipeButton.setDisable(true);
             }
         });
 
@@ -122,13 +125,13 @@ public class RecipesController implements Initializable {
             productBox.setDisable(true);
     }
 
-    public void recipeListViewChange() {
+    private void recipeListViewChange() {
         if (!recipesListView.getSelectionModel().isEmpty()) {
             setProductCategories();
             recipeProductBoxVisibility(true);
             showRecipeTable();
-            deleteRecipeButton.setDisable(false);
-            editRecipeButton.setDisable(false);
+//            deleteRecipeButton.setDisable(false);
+//            editRecipeButton.setDisable(false);
             recipeDescriptionLabel.setText(recipesListView.getSelectionModel().getSelectedItem().getDescription());
         }
     }
@@ -169,23 +172,19 @@ public class RecipesController implements Initializable {
     }
 
     public void changeProductQuantityButton() {
-        if (!tbData.getSelectionModel().isEmpty()) {
-            RecipeProduct product = tbData.getSelectionModel().getSelectedItem();
-            String quantity = product.getQuantity().toString();
-            product.setQuantity(new BigDecimal(AlertBox.alertWithInput(quantity)));
-            product.updateDatabase();
-            showRecipeTable();
-        } else AlertBox.alertSimple(AlertMessage.ERROR_PLEASECHOOSE);
+        RecipeProduct product = tbData.getSelectionModel().getSelectedItem();
+        String quantity = product.getQuantity().toString();
+        product.setQuantity(new BigDecimal(AlertBox.alertWithInput(quantity)));
+        product.updateDatabase();
+        showRecipeTable();
     }
 
     public void removeProductFromRecipeButton() {
-        if (!tbData.getSelectionModel().isEmpty()) {
-            boolean answer = AlertBox.alertWithConformation(AlertMessage.CONFIRM_DELETE);
-            if (answer) {
-                tbData.getSelectionModel().getSelectedItem().removeFromDatabase();
-                showRecipeTable();
-            }
-        } else AlertBox.alertSimple(AlertMessage.ERROR_PLEASECHOOSE);
+        boolean answer = AlertBox.alertWithConformation(AlertMessage.CONFIRM_DELETE); //todo add what deleting ?
+        if (answer) {
+            tbData.getSelectionModel().getSelectedItem().removeFromDatabase();
+            showRecipeTable();
+        }
     }
 
     public void addNewRecipe() {

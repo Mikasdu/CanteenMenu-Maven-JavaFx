@@ -4,6 +4,7 @@ package lt.mikasdu.ui.controller.recipes;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import lt.mikasdu.Formatter;
 import lt.mikasdu.Recipes;
@@ -15,11 +16,12 @@ import java.math.BigDecimal;
 
 public class RecipeItemController {
 
+    @FXML private VBox recipeInputsBox;
     @FXML private Label headerLabelCategory;
     @FXML private TextField recipeNameInput;
     @FXML private TextArea recipeDescriptionInput;
     @FXML private TextField recipePriceInput;
-    @FXML private HBox statusFieldsBox;
+    @FXML private HBox isDeletedBox;
     @FXML private CheckBox checkBoxRecipeStatus;
     @FXML private Button cancelButton;
 
@@ -61,7 +63,9 @@ public class RecipeItemController {
     }
 
     public void removeDeletedTag() {
-         //todo ...
+        recipeInputsBox.setDisable(checkBoxRecipeStatus.isSelected());
+        recipe.setActive(!checkBoxRecipeStatus.isSelected());
+        recipeNameInput.setText(recipe.getName());
     }
 
     public void buttonCancel() {

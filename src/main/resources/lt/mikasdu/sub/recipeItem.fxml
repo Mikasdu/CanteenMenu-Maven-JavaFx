@@ -13,6 +13,7 @@
         </HBox>
         <VBox styleClass="box-borders">
             <VBox>
+                <VBox fx:id="recipeInputsBox">
                 <Label text="Recepto pavadinimas"/>
                 <TextField fx:id="recipeNameInput"/>
                 <Label text="Recepto aprašymas"/>
@@ -20,9 +21,9 @@
 
                 <Label text="Kaina €"/>
                 <TextField fx:id="recipePriceInput"/>
-
+                </VBox>
                 <Label/>
-                <HBox fx:id="statusFieldsBox">
+                <HBox fx:id="isDeletedBox">
                     <CheckBox fx:id="checkBoxRecipeStatus" onAction="#removeDeletedTag"/>
                     <Label text="Nebenaudojamas"/>
                 </HBox>
