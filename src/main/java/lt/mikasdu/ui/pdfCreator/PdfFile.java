@@ -5,10 +5,11 @@ import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
-import com.itextpdf.kernel.pdf.PdfPage;
 import com.itextpdf.kernel.pdf.PdfWriter;
-import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
+import com.itextpdf.kernel.pdf.canvas.draw.SolidLine;
 import com.itextpdf.layout.Document;
+import com.itextpdf.layout.element.Div;
+import com.itextpdf.layout.element.LineSeparator;
 import com.itextpdf.layout.element.List;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.property.TextAlignment;
@@ -71,7 +72,7 @@ public class PdfFile {
 
     public static void createMenuPdf(ObservableList<WeekMenuRecipes> items, String dateFromTo) throws IOException {
         Document document = createDocument("Savaites_meniu ");
-        document.setMargins(10, 50, 10, 100);
+        document.setMargins(10, 50, 10, 50);
         PdfFont font = PdfFontFactory.createFont(StandardFonts.TIMES_BOLD, PdfEncodings.CP1257);
         HashMap<Integer, Paragraph> paragraphHashMap = new HashMap<>();
         for (int i = 1; i < 8; i++) {
@@ -80,12 +81,13 @@ public class PdfFile {
         for (WeekMenuRecipes item : items) {
             item.setParagraph(paragraphHashMap);
         }
-        String headerText = settings.getUserName() + " " + dateFromTo + "\n" + settings.getAppDescription();
-        //headerText += "\n new line \n";
-        Paragraph para = new Paragraph(headerText).setFont(font).setTextAlignment(TextAlignment.CENTER).setFontSize(16);
+        String headerText = settings.getUserName() + " " + dateFromTo;
+        Paragraph para = new Paragraph(headerText).setFont(font).setTextAlignment(TextAlignment.CENTER).setFontSize(15);
         document.add(para);
-
-
+        drawSolidLine(document);
+        String titleText = settings.getAppDescription();
+        para = new Paragraph(titleText).setFont(font).setTextAlignment(TextAlignment.CENTER).setFontSize(12);
+        document.add(para);
 
         paragraphHashMap.forEach((key, value) -> {
             if (!value.isEmpty()) {
@@ -99,5 +101,15 @@ public class PdfFile {
         });
         document.close();
         AlertBox.alertSimple(AlertMessage.INFO_FILE_CREATED);
+    }
+
+    private static void drawSolidLine(Document document) {
+        Div div = new Div();
+        div.setPaddingLeft(-30);
+        div.setPaddingRight(-30);
+        SolidLine line = new SolidLine(1f);
+        LineSeparator ls = new LineSeparator(line);
+        div.add(ls);
+        document.add(div);
     }
 }
