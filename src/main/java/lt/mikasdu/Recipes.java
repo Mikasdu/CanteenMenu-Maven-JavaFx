@@ -64,8 +64,13 @@ public class Recipes implements Database {
         return isActive;
     }
 
-    public void setActive(boolean active) {
-        this.isActive = active;
+    public void setActive(boolean isActive) {
+        if(isActive){
+            this.name = this.name.replaceAll("\\(nenaudojamas\\)","");
+        } else if (!name.contains("(nenaudojamas)")){
+            this.name += "(nenaudojamas)";
+        }
+        this.isActive = isActive;
     }
 
 

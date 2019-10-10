@@ -36,6 +36,9 @@ public class RecipeItemController {
     }
 
     private void setDefaultSettings() {
+        checkBoxRecipeStatus.setSelected(!recipe.isActive());
+        isDeletedBox.setDisable(recipe.isActive());
+        recipeInputsBox.setDisable(!recipe.isActive());
         if (isNew) {
             headerLabelCategory.setText("Įveskite naują receptą");
         } else {

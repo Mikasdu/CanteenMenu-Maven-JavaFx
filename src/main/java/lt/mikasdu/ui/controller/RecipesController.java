@@ -17,8 +17,6 @@ import java.math.BigDecimal;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-//todo pakeitaliojus istrintus kazkaip edit butonas buna active
-
 public class RecipesController implements Initializable {
     @FXML private CheckBox showDeletedRecipes;
     @FXML private Button editRecipeProductButton;
@@ -43,21 +41,11 @@ public class RecipesController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setDefaultSettings();
+        recipeButtonsVisibility();
         productQuantityInput.setTextFormatter(Formatter.formatDecimalQuantityNumbers());
-        showDeletedRecipes.setOnAction(event ->
+        showDeletedRecipes.setOnAction(e ->
                 setRecipes(!showDeletedRecipes.isSelected())
         );
-        recipesListView.getSelectionModel().selectedItemProperty().addListener((ob) -> {
-            recipeListViewChange();
-            deleteRecipeButton.setDisable(true);
-            if (!recipesListView.getSelectionModel().isEmpty()) {
-                editRecipeButton.setDisable(false);
-                if (recipesListView.getSelectionModel().getSelectedItem().isActive())
-                    deleteRecipeButton.setDisable(false);
-            } else {
-                editRecipeButton.setDisable(true);
-            }
-        });
 
         tbData.getSelectionModel().selectedItemProperty().addListener(e -> {
             editRecipeProductButton.setDisable(true);
@@ -69,17 +57,29 @@ public class RecipesController implements Initializable {
         });
     }
 
-    private void recipeProductBoxVisibility(boolean isVisisble) {
-        recipeProductBox.setDisable(!isVisisble);
+    private void recipeButtonsVisibility() {
+        recipesListView.getSelectionModel().selectedItemProperty().addListener((ob) -> {
+            recipeListViewChange();
+            if (!recipesListView.getSelectionModel().isEmpty()) {
+                editRecipeButton.setDisable(false);
+                if (recipesListView.getSelectionModel().getSelectedItem().isActive())
+                    deleteRecipeButton.setDisable(false);
+            } else {
+                editRecipeButton.setDisable(true);
+                deleteRecipeButton.setDisable(true);
+            }
+        });
+    }
+
+    private void recipeProductBoxVisibility(boolean isVisible) {
+        recipeProductBox.setDisable(!isVisible);
     }
 
     private void setDefaultSettings() {
         setRecipes(true);
-        recipeProductBoxVisibility(false);
-        recipesListView.getSelectionModel().clearSelection();
-        recipesListView.setDisable(false);
         deleteRecipeButton.setDisable(true);
         editRecipeButton.setDisable(true);
+        recipeProductBoxVisibility(false);
         productQuantityInput.clear();
         productBox.getSelectionModel().clearSelection();
     }
@@ -130,9 +130,9 @@ public class RecipesController implements Initializable {
             setProductCategories();
             recipeProductBoxVisibility(true);
             showRecipeTable();
-//            deleteRecipeButton.setDisable(false);
-//            editRecipeButton.setDisable(false);
             recipeDescriptionLabel.setText(recipesListView.getSelectionModel().getSelectedItem().getDescription());
+        } else {
+            recipeProductBoxVisibility(false);
         }
     }
 
