@@ -38,7 +38,7 @@ public class SettingsController implements Initializable {
         defaultFolderTextField.setText(settings.getFilesPath());
         textFieldAppHeight.setText(settings.getAppHeightString());
         textFieldAppHeight.setTextFormatter(Formatter.formatIntegerNumbers());
-        textFieldAppWidth.setText(settings.getAppWidth());
+        textFieldAppWidth.setText(settings.getAppWidthString());
         textFieldAppWidth.setTextFormatter(Formatter.formatIntegerNumbers());
         checkBoxFullScreen.setSelected(settings.isFullScreen());
         checkBoxFullScreenAction();

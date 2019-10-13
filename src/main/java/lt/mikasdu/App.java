@@ -20,7 +20,7 @@ public class App extends Application {
         primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("image/CanteenMenu.png")));
         primaryStage.setScene(createScene(loadMainPane()));
         primaryStage.setMaximized(settings.isFullScreen());
-        primaryStage.setWidth(Double.parseDouble(settings.getAppWidth())); // TODO
+        primaryStage.setWidth(settings.getAppWidth());
         primaryStage.setHeight(settings.getAppHeight());
         primaryStage.show();
     }

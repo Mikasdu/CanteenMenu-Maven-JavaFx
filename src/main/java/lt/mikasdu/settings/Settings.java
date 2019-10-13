@@ -100,7 +100,10 @@ public class Settings {
         this.configProps.setProperty(propAppWidth, newAppWidth);
     }
 
-    public String getAppWidth() {
+    public double getAppWidth() {
+        return Double.parseDouble(this.configProps.getProperty(propAppWidth));
+    }
+    public String getAppWidthString() {
         return this.configProps.getProperty(propAppWidth);
     }
 
@@ -108,7 +111,7 @@ public class Settings {
         this.configProps.setProperty(propAppHeight, newAppHeight);
     }
 
-    public Double getAppHeight() {
+    public double getAppHeight() {
         return Double.parseDouble(this.configProps.getProperty(propAppHeight));
     }
 
