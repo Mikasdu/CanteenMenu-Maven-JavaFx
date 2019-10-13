@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68a7ebb9-642d-498c-a95e-2174f80e25e8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/settings/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/settings/Settings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lt/mikasdu/TestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lt/mikasdu/TestTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +89,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.App">
+  <component name="RunManager" selected="JUnit.TestTest.mkdir">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="lt.mikasdu.App" />
       <module name="canteen-menu" />
@@ -126,6 +127,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestTest.mkdir" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="canteen-menu" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lt.mikasdu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="lt.mikasdu" />
+      <option name="MAIN_CLASS_NAME" value="lt.mikasdu.TestTest" />
+      <option name="METHOD_NAME" value="mkdir" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="canteen-menu" />
       <extension name="coverage">
@@ -142,29 +159,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ValidatorTest.validatorExistingFileNotAsDirectory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="canteen-menu" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="lt.mikasdu.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="lt.mikasdu" />
-      <option name="MAIN_CLASS_NAME" value="lt.mikasdu.ValidatorTest" />
-      <option name="METHOD_NAME" value="validatorExistingFileNotAsDirectory" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestTest.mkdir" />
         <item itemvalue="Application.App" />
         <item itemvalue="JUnit.All in canteen-menu" />
         <item itemvalue="JUnit.ProductCategoriesTest.createEmptyProductCategory" />
         <item itemvalue="JUnit.TestTest.test" />
-        <item itemvalue="JUnit.ValidatorTest.validatorExistingFileNotAsDirectory" />
       </list>
     </recent_temporary>
   </component>
@@ -178,27 +179,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1569522625077</updated>
-    </task>
-    <task id="LOCAL-00014" summary="updated settings">
-      <created>1569623389842</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1569623389842</updated>
-    </task>
-    <task id="LOCAL-00015" summary="updated settings">
-      <created>1569662448172</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1569662448172</updated>
-    </task>
-    <task id="LOCAL-00016" summary="updated settings">
-      <created>1569662780607</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1569662780607</updated>
     </task>
     <task id="LOCAL-00017" summary="updated settings">
       <created>1569672434015</created>
@@ -522,7 +502,28 @@
       <option name="project" value="LOCAL" />
       <updated>1570986871413</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="update">
+      <created>1570987168220</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1570987168220</updated>
+    </task>
+    <task id="LOCAL-00064" summary="update">
+      <created>1570987303611</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1570987303611</updated>
+    </task>
+    <task id="LOCAL-00065" summary="update">
+      <created>1570987386072</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1570987386072</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

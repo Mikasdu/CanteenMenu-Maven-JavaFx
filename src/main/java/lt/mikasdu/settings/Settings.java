@@ -28,7 +28,6 @@ public class Settings {
         this.setFullScreen(false);
         this.setAppWidth("800");
         this.setAppHeight("600");
-
         this.loadConfigFile();
     }
 
@@ -57,6 +56,10 @@ public class Settings {
     }
 
     public void setFilesPath(String path) {
+        File folder = new File(path);
+        if (!folder.exists()) {
+            folder.mkdirs();
+        }
         this.configProps.setProperty(propFilesPath, path);
     }
 
