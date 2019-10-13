@@ -70,6 +70,7 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>8.8.3</version>
                 <configuration>
+                    <appName>CanteenMenu</appName>
                     <vendor>canteen-menu</vendor>
                     <mainClass>lt.mikasdu.App</mainClass>
                 </configuration>

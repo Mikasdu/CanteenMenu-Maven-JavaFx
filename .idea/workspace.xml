@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="68a7ebb9-642d-498c-a95e-2174f80e25e8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/settings/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/settings/Settings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/lt/mikasdu/TestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lt/mikasdu/TestTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,7 +40,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/lt/mikasdu/sub" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/deploy/package/windows" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15527344" />
     <property name="project.structure.side.proportion" value="0.36763006" />
@@ -66,11 +66,11 @@
       <recent name="lt.mikasdu" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GitHub\CanteenMenu-Maven-JavaFx\src\main\deploy\package\windows" />
       <recent name="D:\GitHub\CanteenMenu-Maven-JavaFx\src\main\resources\lt\mikasdu\sub" />
       <recent name="D:\GitHub\CanteenMenu-Maven-JavaFx\src\main\resources\lt\mikasdu" />
       <recent name="D:\GitHub\CanteenMenu-Maven-JavaFx" />
       <recent name="D:\GitHub\CanteenMenu-Maven-JavaFx\src\main\java\lt\mikasdu" />
-      <recent name="D:\GitHub\CanteenMenu-Maven-JavaFx\src\main" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="lt.mikasdu" />
@@ -179,13 +179,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1569522625077</updated>
-    </task>
-    <task id="LOCAL-00017" summary="updated settings">
-      <created>1569672434015</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1569672434015</updated>
     </task>
     <task id="LOCAL-00018" summary="updated settings">
       <created>1569673040355</created>
@@ -523,7 +516,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570987386072</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="update">
+      <created>1570988233123</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1570988233123</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
