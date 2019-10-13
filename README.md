@@ -7,6 +7,7 @@ Canteen Menu with Maven and JavaFx
 ## Updates, naujausi viršuje.
 
 
+
 -Atnaujintas .pom, sutvarkytas jfx:native buildas.
 
 -Kategorijų meniu perkeltas į view.
