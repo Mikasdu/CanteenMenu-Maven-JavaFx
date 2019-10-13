@@ -3,6 +3,7 @@ package lt.mikasdu;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import lt.mikasdu.settings.Settings;
@@ -16,6 +17,7 @@ public class App extends Application {
     public void start(Stage primaryStage) throws Exception {
         Settings settings = new Settings();
         primaryStage.setTitle(settings.getAppName());
+        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("image/CanteenMenu.png")));
         primaryStage.setScene(createScene(loadMainPane()));
         primaryStage.setMaximized(settings.isFullScreen());
         primaryStage.setWidth(Double.parseDouble(settings.getAppWidth())); // TODO
