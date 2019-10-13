@@ -1,11 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68a7ebb9-642d-498c-a95e-2174f80e25e8" name="Default Changelist" comment="">
+    <list default="true" id="68a7ebb9-642d-498c-a95e-2174f80e25e8" name="Default Changelist" comment="update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/pdfCreator/PdfFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/pdfCreator/PdfFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/settings/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/settings/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/RecipesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/controller/RecipesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/sqlConnection/SqlConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mikasdu/ui/sqlConnection/SqlConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/canteen-menu.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/2019-09-27T20-23-25_543.dump" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/2019-09-27T20-24-29_882.dump" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/2019-09-27T23-07-08_972.dump" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/2019-09-27T23-20-59_291.dump" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/2019-09-28T15-20-10_580.dump" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/2019-09-28T15-21-16_143.dump" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/2019-09-28T15-55-20_249.dump" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-lt.mikasdu.AppNavigatorTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-lt.mikasdu.AppNavigatorTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-lt.mikasdu.ValidatorTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-lt.mikasdu.ValidatorTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/lt.mikasdu.AppNavigatorTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/lt.mikasdu.AppNavigatorTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/lt.mikasdu.ValidatorTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/lt.mikasdu.ValidatorTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/canteen-menu.kotlin_module" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,9 +74,15 @@
       <recent name="groovy.util.GroovyTestCase" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\GitHub\CanteenMenu-Maven-JavaFx\src\main\resources\lt\mikasdu\DB" />
+      <recent name="D:\GitHub\CanteenMenu-Maven-JavaFx\src\main\resources\lt\mikasdu" />
       <recent name="C:\Users\Mikas\IdeaProjects\CanteenMenu\src\main\resources\lt\mikasdu" />
       <recent name="C:\Users\Mikas\IdeaProjects\CanteenMenu\src\main\resources\lt.mikasdu" />
       <recent name="C:\Users\Mikas\IdeaProjects\CanteenMenu\src\main\java\lt\mikasdu" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="lt.mikasdu.ui.controller" />
+      <recent name="lt.mikasdu" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\GitHub\CanteenMenu-Maven-JavaFx\src\main\resources\lt\mikasdu\sub" />
@@ -66,10 +90,6 @@
       <recent name="D:\GitHub\CanteenMenu-Maven-JavaFx" />
       <recent name="D:\GitHub\CanteenMenu-Maven-JavaFx\src\main\java\lt\mikasdu" />
       <recent name="D:\GitHub\CanteenMenu-Maven-JavaFx\src\main" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="lt.mikasdu.ui.controller" />
-      <recent name="lt.mikasdu" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="lt.mikasdu" />
@@ -178,13 +198,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1569522625077</updated>
-    </task>
-    <task id="LOCAL-00007" summary="settings update">
-      <created>1569616333282</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1569616333282</updated>
     </task>
     <task id="LOCAL-00008" summary="new tests, new validator">
       <created>1569617031086</created>
@@ -522,7 +535,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570735369539</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="update">
+      <created>1570738945299</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1570738945299</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

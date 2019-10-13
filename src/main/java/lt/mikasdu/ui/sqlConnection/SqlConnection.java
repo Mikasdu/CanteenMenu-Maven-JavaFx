@@ -16,7 +16,7 @@ public class SqlConnection {
     public static Connection getConnection() {
         try {
             Class.forName("org.sqlite.JDBC");
-            return DriverManager.getConnection("jdbc:sqlite:database.db");
+            return DriverManager.getConnection("jdbc:sqlite::resource:lt/mikasdu/DB/database.db");
         } catch (Exception e) {
             AlertBox.exceptionAlert(e);
         }

@@ -180,7 +180,7 @@ public class RecipesController implements Initializable {
     }
 
     public void removeProductFromRecipeButton() {
-        boolean answer = AlertBox.alertWithConformation(AlertMessage.CONFIRM_DELETE); //todo add what deleting ?
+        boolean answer = AlertBox.alertWithConformation(AlertMessage.CONFIRM_DELETE);
         if (answer) {
             tbData.getSelectionModel().getSelectedItem().removeFromDatabase();
             showRecipeTable();

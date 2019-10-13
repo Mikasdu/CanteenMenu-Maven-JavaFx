@@ -1,8 +1,10 @@
 lt\mikasdu\RecipeProduct.class
 lt\mikasdu\ui\controller\MainController.class
+lt\mikasdu\ui\controller\recipes\RecipeItemController.class
 lt\mikasdu\ui\controller\menu\MenuAddRecipeController.class
 lt\mikasdu\ui\sqlConnection\Database.class
 lt\mikasdu\WeekMenuRecipes.class
+lt\mikasdu\Formatter.class
 lt\mikasdu\ui\controller\menu\MenuGenerateFileController.class
 lt\mikasdu\ProductCategories.class
 lt\mikasdu\settings\Settings.class
@@ -17,10 +19,13 @@ lt\mikasdu\WeekMenu.class
 lt\mikasdu\ui\sqlConnection\SqlConnection.class
 lt\mikasdu\ui\controller\PurchaseController.class
 lt\mikasdu\AppNavigator.class
+lt\mikasdu\ui\controller\categories\ProductCategoriesItemController.class
 lt\mikasdu\ui\controller\SettingsController.class
+lt\mikasdu\Formatter$1.class
 lt\mikasdu\ui\controller\menu\MenuAddItemController.class
 lt\mikasdu\ui\alerts\AlertBox.class
 lt\mikasdu\ui\alerts\AlertMessage.class
+lt\mikasdu\ui\controller\products\ProductItemController.class
 lt\mikasdu\ui\controller\ProductCategoriesController.class
 lt\mikasdu\ui\sqlConnection\SqlStatement.class
 lt\mikasdu\WeekDaysLt.class

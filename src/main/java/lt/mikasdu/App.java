@@ -37,6 +37,8 @@ public class App extends Application {
         AppNavigator.loadApp(AppNavigator.PRODUCTS);
         return mainPane;
     }
-}
 
-//TODO jei istrini produkta jis yra rodomas recepte ? uztrausti tokiu trinima ?
+    public static void main(String[] args) {
+        Application.launch(args);
+    }
+}
